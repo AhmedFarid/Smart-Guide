@@ -1,0 +1,6 @@
+framework module Pods_Smart_Guide {
+  umbrella header "Pods-Smart Guide-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let user_token = helper.getAPIToken().userToken{
+            if helper.getAPIToken().role == "supervisor" {
+                print("user_token\(user_token)")
+                let tab = UIStoryboard(name: "supervisor", bundle: nil).instantiateInitialViewController()!
+                window?.rootViewController = tab
+            }else if helper.getAPIToken().role == "driver" {
+                print("user_token\(user_token)")
+                let tab = UIStoryboard(name: "driver", bundle: nil).instantiateInitialViewController()!
+                window?.rootViewController = tab
+            }else if helper.getAPIToken().role == "guide" {
+                print("user_token\(user_token)")
+                let tab = UIStoryboard(name: "guide", bundle: nil).instantiateInitialViewController()!
+                window?.rootViewController = tab
+            }else {
+                print("user_token\(user_token)")
+                let tab = UIStoryboard(name: "member", bundle: nil).instantiateInitialViewController()!
+                window?.rootViewController = tab
+            }
+        }
+        
+        
+        
+        IQKeyboardManager.shared.enable = true
+
         return true
     }
 

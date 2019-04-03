@@ -8,20 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7A224A224F0022E46B /* AppDelegate.swift */; };
-		75046F7D224A224F0022E46B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7C224A224F0022E46B /* ViewController.swift */; };
-		75046F80224A224F0022E46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F7E224A224F0022E46B /* Main.storyboard */; };
+		75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7C224A224F0022E46B /* loginAuhtVC.swift */; };
+		75046F80224A224F0022E46B /* auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F7E224A224F0022E46B /* auth.storyboard */; };
 		75046F82224A22510022E46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75046F81224A22510022E46B /* Assets.xcassets */; };
 		75046F85224A22510022E46B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F83224A22510022E46B /* LaunchScreen.storyboard */; };
+		75046F8E224A2E440022E46B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F8D224A2E440022E46B /* GradientView.swift */; };
+		75046F92224A36610022E46B /* Alharbi Alhanoof Font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */; };
+		75046F94224A41D70022E46B /* roundedTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F93224A41D70022E46B /* roundedTF.swift */; };
+		75046F96224A4BEB0022E46B /* textimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F95224A4BEB0022E46B /* textimage.swift */; };
+		75046F9E224A65030022E46B /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F9D224A65030022E46B /* helper.swift */; };
+		75046FA0224A65460022E46B /* showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F9F224A65460022E46B /* showAlert.swift */; };
+		75046FA2224A658D0022E46B /* supervisor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046FA1224A658D0022E46B /* supervisor.storyboard */; };
+		75046FA4224A6DCB0022E46B /* Cofig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046FA3224A6DCB0022E46B /* Cofig.swift */; };
+		75046FA6224A6F0C0022E46B /* superVisers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046FA5224A6F0C0022E46B /* superVisers.swift */; };
+		75046FA8224A704E0022E46B /* API-SuperVisour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046FA7224A704E0022E46B /* API-SuperVisour.swift */; };
+		75046FAA224A7E180022E46B /* API - Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046FA9224A7E180022E46B /* API - Auth.swift */; };
+		75046FAC224A826F0022E46B /* driver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046FAB224A826F0022E46B /* driver.storyboard */; };
+		75046FAE224A82800022E46B /* guide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046FAD224A82800022E46B /* guide.storyboard */; };
+		75046FB0224A82990022E46B /* member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046FAF224A82990022E46B /* member.storyboard */; };
+		75046FB3224A95520022E46B /* addTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046FB2224A95520022E46B /* addTripVC.swift */; };
+		A76FB2A50575F47D91F1C2A8 /* Pods_Smart_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD17CA3943B3898745B71B04 /* Pods_Smart_Guide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.debug.xcconfig"; sourceTree = "<group>"; };
+		2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.release.xcconfig"; sourceTree = "<group>"; };
 		75046F77224A224F0022E46B /* Smart Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75046F7A224A224F0022E46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75046F7C224A224F0022E46B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75046F7F224A224F0022E46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75046F7C224A224F0022E46B /* loginAuhtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAuhtVC.swift; sourceTree = "<group>"; };
+		75046F7F224A224F0022E46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/auth.storyboard; sourceTree = "<group>"; };
 		75046F81224A22510022E46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75046F84224A22510022E46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75046F86224A22510022E46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75046F8D224A2E440022E46B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alharbi Alhanoof Font.otf"; sourceTree = "<group>"; };
+		75046F93224A41D70022E46B /* roundedTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTF.swift; sourceTree = "<group>"; };
+		75046F95224A4BEB0022E46B /* textimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textimage.swift; sourceTree = "<group>"; };
+		75046F9D224A65030022E46B /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		75046F9F224A65460022E46B /* showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
+		75046FA1224A658D0022E46B /* supervisor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = supervisor.storyboard; sourceTree = "<group>"; };
+		75046FA3224A6DCB0022E46B /* Cofig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cofig.swift; sourceTree = "<group>"; };
+		75046FA5224A6F0C0022E46B /* superVisers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = superVisers.swift; sourceTree = "<group>"; };
+		75046FA7224A704E0022E46B /* API-SuperVisour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-SuperVisour.swift"; sourceTree = "<group>"; };
+		75046FA9224A7E180022E46B /* API - Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API - Auth.swift"; sourceTree = "<group>"; };
+		75046FAB224A826F0022E46B /* driver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = driver.storyboard; sourceTree = "<group>"; };
+		75046FAD224A82800022E46B /* guide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guide.storyboard; sourceTree = "<group>"; };
+		75046FAF224A82990022E46B /* member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = member.storyboard; sourceTree = "<group>"; };
+		75046FB2224A95520022E46B /* addTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTripVC.swift; sourceTree = "<group>"; };
+		BD17CA3943B3898745B71B04 /* Pods_Smart_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76FB2A50575F47D91F1C2A8 /* Pods_Smart_Guide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2204BE9069FEDC72053DE812 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */,
+				2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		75046F6E224A224F0022E46B = {
 			isa = PBXGroup;
 			children = (
 				75046F79224A224F0022E46B /* Smart Guide */,
 				75046F78224A224F0022E46B /* Products */,
+				2204BE9069FEDC72053DE812 /* Pods */,
+				95595BA564D8130912C0F9BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +101,116 @@
 			isa = PBXGroup;
 			children = (
 				75046F7A224A224F0022E46B /* AppDelegate.swift */,
-				75046F7C224A224F0022E46B /* ViewController.swift */,
-				75046F7E224A224F0022E46B /* Main.storyboard */,
 				75046F81224A22510022E46B /* Assets.xcassets */,
-				75046F83224A22510022E46B /* LaunchScreen.storyboard */,
 				75046F86224A22510022E46B /* Info.plist */,
+				75046F8C224A2DC60022E46B /* storyboard */,
+				75046F9B224A5EA20022E46B /* URLS */,
+				75046F9A224A5E970022E46B /* Model */,
+				75046F98224A5E840022E46B /* API */,
+				75046F9C224A5EBA0022E46B /* cellClass */,
+				75046F97224A4C100022E46B /* ViewController */,
+				75046F99224A5E8D0022E46B /* Extension */,
+				75046F90224A36280022E46B /* fonts */,
+				75046F8F224A2E490022E46B /* view */,
 			);
 			path = "Smart Guide";
+			sourceTree = "<group>";
+		};
+		75046F8C224A2DC60022E46B /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				75046F83224A22510022E46B /* LaunchScreen.storyboard */,
+				75046F7E224A224F0022E46B /* auth.storyboard */,
+				75046FA1224A658D0022E46B /* supervisor.storyboard */,
+				75046FAB224A826F0022E46B /* driver.storyboard */,
+				75046FAD224A82800022E46B /* guide.storyboard */,
+				75046FAF224A82990022E46B /* member.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		75046F8F224A2E490022E46B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				75046F8D224A2E440022E46B /* GradientView.swift */,
+				75046F93224A41D70022E46B /* roundedTF.swift */,
+				75046F95224A4BEB0022E46B /* textimage.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		75046F90224A36280022E46B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		75046F97224A4C100022E46B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75046FB1224A95390022E46B /* superVisoer */,
+				75046F7C224A224F0022E46B /* loginAuhtVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		75046F98224A5E840022E46B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				75046FA7224A704E0022E46B /* API-SuperVisour.swift */,
+				75046FA9224A7E180022E46B /* API - Auth.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		75046F99224A5E8D0022E46B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				75046F9D224A65030022E46B /* helper.swift */,
+				75046F9F224A65460022E46B /* showAlert.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		75046F9A224A5E970022E46B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75046FA5224A6F0C0022E46B /* superVisers.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75046F9B224A5EA20022E46B /* URLS */ = {
+			isa = PBXGroup;
+			children = (
+				75046FA3224A6DCB0022E46B /* Cofig.swift */,
+			);
+			path = URLS;
+			sourceTree = "<group>";
+		};
+		75046F9C224A5EBA0022E46B /* cellClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellClass;
+			sourceTree = "<group>";
+		};
+		75046FB1224A95390022E46B /* superVisoer */ = {
+			isa = PBXGroup;
+			children = (
+				75046FB2224A95520022E46B /* addTripVC.swift */,
+			);
+			path = superVisoer;
+			sourceTree = "<group>";
+		};
+		95595BA564D8130912C0F9BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD17CA3943B3898745B71B04 /* Pods_Smart_Guide.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75046F89224A22510022E46B /* Build configuration list for PBXNativeTarget "Smart Guide" */;
 			buildPhases = (
+				049936564D36BACD75731C7D /* [CP] Check Pods Manifest.lock */,
 				75046F73224A224F0022E46B /* Sources */,
 				75046F74224A224F0022E46B /* Frameworks */,
 				75046F75224A224F0022E46B /* Resources */,
+				53FA8E3851DBABB898534848 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +247,7 @@
 				TargetAttributes = {
 					75046F76224A224F0022E46B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -122,33 +274,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75046FB0224A82990022E46B /* member.storyboard in Resources */,
 				75046F85224A22510022E46B /* LaunchScreen.storyboard in Resources */,
+				75046FAE224A82800022E46B /* guide.storyboard in Resources */,
 				75046F82224A22510022E46B /* Assets.xcassets in Resources */,
-				75046F80224A224F0022E46B /* Main.storyboard in Resources */,
+				75046FAC224A826F0022E46B /* driver.storyboard in Resources */,
+				75046F92224A36610022E46B /* Alharbi Alhanoof Font.otf in Resources */,
+				75046FA2224A658D0022E46B /* supervisor.storyboard in Resources */,
+				75046F80224A224F0022E46B /* auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		049936564D36BACD75731C7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart Guide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53FA8E3851DBABB898534848 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		75046F73224A224F0022E46B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75046F7D224A224F0022E46B /* ViewController.swift in Sources */,
+				75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */,
+				75046F96224A4BEB0022E46B /* textimage.swift in Sources */,
+				75046F94224A41D70022E46B /* roundedTF.swift in Sources */,
+				75046FAA224A7E180022E46B /* API - Auth.swift in Sources */,
+				75046FA0224A65460022E46B /* showAlert.swift in Sources */,
+				75046F9E224A65030022E46B /* helper.swift in Sources */,
+				75046F8E224A2E440022E46B /* GradientView.swift in Sources */,
+				75046FB3224A95520022E46B /* addTripVC.swift in Sources */,
+				75046FA4224A6DCB0022E46B /* Cofig.swift in Sources */,
 				75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */,
+				75046FA8224A704E0022E46B /* API-SuperVisour.swift in Sources */,
+				75046FA6224A6F0C0022E46B /* superVisers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		75046F7E224A224F0022E46B /* Main.storyboard */ = {
+		75046F7E224A224F0022E46B /* auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				75046F7F224A224F0022E46B /* Base */,
 			);
-			name = Main.storyboard;
+			name = auth.storyboard;
 			sourceTree = "<group>";
 		};
 		75046F83224A22510022E46B /* LaunchScreen.storyboard */ = {
@@ -280,6 +492,7 @@
 		};
 		75046F8A224A22510022E46B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,13 +504,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ebakers.Smart-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		75046F8B224A22510022E46B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +523,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ebakers.Smart-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

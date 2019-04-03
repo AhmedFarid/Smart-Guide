@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+
+struct URLs {
+    
+    static let main = "http://omelqoura.com/public/api/"
+    
+    static let login = main + "login"
+    
+    static let getGuide = main + "getGuide"
+    
+    static let getDriver = main + "getDriver"
+    
+    static let getMember = main + "getMember"
+    
+    static let getBus = main + "getBus"
+    
+    static let addTrip = main + "addTrip"
+    
+}
