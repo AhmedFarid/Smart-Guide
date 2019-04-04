@@ -25,4 +25,6 @@ struct URLs {
     
     static let addTrip = main + "addTrip"
     
+    static let getTrip = main + "getTrip"
+    
 }

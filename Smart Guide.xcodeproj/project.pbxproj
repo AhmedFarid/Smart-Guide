@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6914551A225628E900570939 /* detialsTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69145519225628E900570939 /* detialsTripVC.swift */; };
+		695454D62254F8E100034C26 /* tripceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695454D52254F8E100034C26 /* tripceCell.swift */; };
+		69C5BDC22254C41800FBC0CD /* rounndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5BDC12254C41800FBC0CD /* rounndedView.swift */; };
+		69C5BDC42254C6D200FBC0CD /* homeSuperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5BDC32254C6D200FBC0CD /* homeSuperVC.swift */; };
 		75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7A224A224F0022E46B /* AppDelegate.swift */; };
 		75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7C224A224F0022E46B /* loginAuhtVC.swift */; };
 		75046F80224A224F0022E46B /* auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F7E224A224F0022E46B /* auth.storyboard */; };
@@ -33,6 +37,10 @@
 /* Begin PBXFileReference section */
 		26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.debug.xcconfig"; sourceTree = "<group>"; };
 		2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.release.xcconfig"; sourceTree = "<group>"; };
+		69145519225628E900570939 /* detialsTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detialsTripVC.swift; sourceTree = "<group>"; };
+		695454D52254F8E100034C26 /* tripceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripceCell.swift; sourceTree = "<group>"; };
+		69C5BDC12254C41800FBC0CD /* rounndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rounndedView.swift; sourceTree = "<group>"; };
+		69C5BDC32254C6D200FBC0CD /* homeSuperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeSuperVC.swift; sourceTree = "<group>"; };
 		75046F77224A224F0022E46B /* Smart Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75046F7A224A224F0022E46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75046F7C224A224F0022E46B /* loginAuhtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAuhtVC.swift; sourceTree = "<group>"; };
@@ -135,6 +143,7 @@
 				75046F8D224A2E440022E46B /* GradientView.swift */,
 				75046F93224A41D70022E46B /* roundedTF.swift */,
 				75046F95224A4BEB0022E46B /* textimage.swift */,
+				69C5BDC12254C41800FBC0CD /* rounndedView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 		75046F9C224A5EBA0022E46B /* cellClass */ = {
 			isa = PBXGroup;
 			children = (
+				695454D52254F8E100034C26 /* tripceCell.swift */,
 			);
 			path = cellClass;
 			sourceTree = "<group>";
@@ -201,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				75046FB2224A95520022E46B /* addTripVC.swift */,
+				69C5BDC32254C6D200FBC0CD /* homeSuperVC.swift */,
+				69145519225628E900570939 /* detialsTripVC.swift */,
 			);
 			path = superVisoer;
 			sourceTree = "<group>";
@@ -340,6 +352,7 @@
 				75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */,
 				75046F96224A4BEB0022E46B /* textimage.swift in Sources */,
 				75046F94224A41D70022E46B /* roundedTF.swift in Sources */,
+				69C5BDC22254C41800FBC0CD /* rounndedView.swift in Sources */,
 				75046FAA224A7E180022E46B /* API - Auth.swift in Sources */,
 				75046FA0224A65460022E46B /* showAlert.swift in Sources */,
 				75046F9E224A65030022E46B /* helper.swift in Sources */,
@@ -348,7 +361,10 @@
 				75046FA4224A6DCB0022E46B /* Cofig.swift in Sources */,
 				75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */,
 				75046FA8224A704E0022E46B /* API-SuperVisour.swift in Sources */,
+				6914551A225628E900570939 /* detialsTripVC.swift in Sources */,
 				75046FA6224A6F0C0022E46B /* superVisers.swift in Sources */,
+				695454D62254F8E100034C26 /* tripceCell.swift in Sources */,
+				69C5BDC42254C6D200FBC0CD /* homeSuperVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

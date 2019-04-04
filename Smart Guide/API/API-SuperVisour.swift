@@ -123,6 +123,50 @@ class API_SuperVisour: NSObject {
         }
     }
     
+    class func getTrip (completion: @escaping (_ error: Error?,_ sparParts: [trips]?)-> Void) {
+        
+        let url = URLs.getTrip
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,nil)
+            return
+        }
+        
+        let parameters = [
+            "lang" : "ar",
+            "user_token": user_token,
+            "type": "1"
+        ]
+        print(parameters)
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
+            
+            
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+                
+            case .success(let value):
+                print(value)
+                let json = JSON(value)
+                guard let dataArray = json["data"].array else{
+                    completion(nil, nil)
+                    return
+                }
+                print(dataArray)
+                var products = [trips]()
+                for data in dataArray {
+                    if let data = data.dictionary, let prodect = trips.init(dict: data){
+                        products.append(prodect)
+                    }
+                }
+                completion(nil, products)
+            }
+        }
+    }
+    
     class func getBus (completion: @escaping (_ error: Error?,_ sparParts: [superViserBus]?)-> Void) {
         
         
@@ -210,7 +254,7 @@ class API_SuperVisour: NSObject {
                     print("user token \(user_token)")
                     //helper.saveAPIToken(token: user_token)
                     completion(nil, true , nil)
-                }else if let data = json["message"][0].string {
+                }else if let data = json["data"].string {
                     print(data)
                     completion(nil, true, data)
                 }else  {
