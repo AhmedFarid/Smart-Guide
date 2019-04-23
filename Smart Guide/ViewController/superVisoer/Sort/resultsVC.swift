@@ -1,32 +1,35 @@
 //
-//  homeSuperVC.swift
+//  resultsVC.swift
 //  Smart Guide
 //
-//  Created by Farido on 4/3/19.
+//  Created by Farido on 4/18/19.
 //  Copyright © 2019 farid. All rights reserved.
 //
 
 import UIKit
 
-class homeSuperVC: UIViewController {
+class resultsVC: UIViewController {
 
+   
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var trip = [trips]()
+    var tripID = "1"
+    var url = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        handleRefreshHomeTrips()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         handleRefreshHomeTrips()
     }
     
     
-    
     @objc private func handleRefreshHomeTrips() {
-        API_SuperVisour.getTrip{ (error: Error?, trip: [trips]?) in
+        API_SuperVisour.filterByStatus(urls: url,status: tripID){ (error: Error?, trip: [trips]?) in
             if let trip = trip {
                 self.trip = trip
                 print("xxx\(self.trip)")
@@ -39,7 +42,7 @@ class homeSuperVC: UIViewController {
 
 
 
-extension homeSuperVC: UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension resultsVC: UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trip.count

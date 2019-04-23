@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 
 struct URLs {
@@ -19,12 +20,26 @@ struct URLs {
     
     static let getDriver = main + "getDriver"
     
-    static let getMember = main + "getMember"
+    static let getPath = main + "getPath"
     
     static let getBus = main + "getBus"
     
     static let addTrip = main + "addTrip"
     
     static let getTrip = main + "getTrip"
+    
+    static let filterByStatus = main + "filterByStatus"
+    
+    static let editTripStatus = main + "editTripStatus"
+    
+    static let startTrip = main + "startTrip"
+    
+    static let tripPause = main + "tripPause"
+    
+    static let getTripsGuide = main + "getTripsGuide"
+    
+    
+    
+    
     
 }

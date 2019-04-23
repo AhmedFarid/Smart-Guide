@@ -13,5 +13,7 @@ target 'Smart Guide' do
   pod 'SwiftyJSON'
   pod 'Kingfisher'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

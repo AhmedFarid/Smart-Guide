@@ -78,29 +78,24 @@ class superViserMember: NSObject {
     
     var id: String
     var name: String
+    var price: String
+    var userTokenCompany: String
+    
     
     
     init?(dict: [String: JSON]){
         
-        guard let id = dict["id"]?.string,let name = dict["name"]?.string else {return nil}
+        guard let id = dict["id"]?.string,let name = dict["from_to"]?.string,let price = dict["price"]?.string,let userTokenCompany = dict["userTokenCompany"]?.string else {return nil}
         self.id = id
         self.name = name
+        self.price = price
+        self.userTokenCompany = userTokenCompany
     }
-//    
-//    "id": "1",
-//    "name": "Mahmoud ahmed",
-//    "email": "mo@gmail.com",
-//    "phone": "",
-//    "mobile": "",
-//    "address": "",
-//    "ssn": "202",
-//    "nationality": "مصرى",
-//    "image": "public/upload/member/v1bJjRg7M6IznywN3qJDY3ZPQyTWBudxZQb5CRPH.png",
-//    "birthday": "08-03-1948",
-//    "user_token": "opub3NrswyNVJHVv0zzjVBY51SZ9q0ZO5rqAqQwCkz2rT5zvR5RhBPbBUUVe",
-//    "company_id": "1",
-//    "userTokenCompany": "RmS7NCsmRzrkorq8iOgOLl22Zx5uFykGkLl40X9wyGV3KqJUqKM5Hb9OgXPk"
-    
+//    /"from_to" : "فراخ | Welcome asdasdasd",
+//    "id" : "1",
+//    "price" : "20.00",
+//    "userTokenCompany" : "CZxXhVi4G7sl9o9pJSy7hy5aUh74V2wgDRn2nAGoQvrmB171nOph7OJV5sKp"
+//
 }
 
 
@@ -126,6 +121,18 @@ class superViserBus: NSObject {
     
 }
 
+class stues{
+    var id: String?
+    var name: String?
+    
+    
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
+}
+
+
 
 
 class trips: NSObject {
@@ -134,29 +141,25 @@ class trips: NSObject {
     var tripName: String
     var companyId: String
     var companyName: String
-    var guideId: String
     var guideName: String
-    var memberId: String
-    var memberName: String
-    var driverId: String
     var driverName: String
-    var busId: String
+    //var busId: String
     var busName: String
     var numberPassenger: String
     var dateStart: String
     var dateEnd: String
     var from: String
     var to: String
-    var startLat: String
-    var startLng: String
-    var endLat: String
-    var endLng: String
+    var latStart: String
+    var lngStart: String
+    var latEnd: String
+    var lngEnd: String
+    var price: String
     var status: String
-    
     
     init?(dict: [String: JSON]){
         
-        guard let tripId = dict["tripId"]?.string,let tripName = dict["tripName"]?.string,let companyId = dict["companyId"]?.string,let companyName = dict["companyName"]?.string,let guideId = dict["guideId"]?.string,let guideName = dict["guideName"]?.string,let memberId = dict["memberId"]?.string,let memberName = dict["memberName"]?.string,let driverId = dict["driverId"]?.string,let driverName = dict["driverName"]?.string,let busId = dict["busId"]?.string,let busName = dict["busName"]?.string,let numberPassenger = dict["numberPassenger"]?.string,let dateStart = dict["dateStart"]?.string,let dateEnd = dict["dateEnd"]?.string,let from = dict["from"]?.string,let to = dict["to"]?.string,let startLat = dict["startLat"]?.string,let startLng = dict["startLng"]?.string,let endLat = dict["endLat"]?.string,let endLng = dict["endLng"]?.string,let status = dict["status"]?.string  else {return nil}
+        guard let tripId = dict["tripId"]?.string,let tripName = dict["tripName"]?.string,let companyId = dict["companyId"]?.string,let companyName = dict["companyName"]?.string,let guideName = dict["guideName"]?.string,let driverName = dict["driverName"]?.string,let busName = dict["busName"]?.string,let numberPassenger = dict["numberPassenger"]?.string,let dateStart = dict["dateStart"]?.string,let dateEnd = dict["dateEnd"]?.string,let from = dict["from"]?.string,let to = dict["to"]?.string,let latStart = dict["latStart"]?.string,let lngStart = dict["lngStart"]?.string,let latEnd = dict["latEnd"]?.string,let lngEnd = dict["lngEnd"]?.string,let price = dict["price"]?.string,let status = dict["status"]?.string  else {return nil}
         
         
         
@@ -164,47 +167,22 @@ class trips: NSObject {
         self.tripName = tripName
         self.companyId = companyId
         self.companyName = companyName
-        self.guideId = guideId
-        self.memberId = memberId
-        self.memberName = memberName
-        self.driverId = driverId
+        self.guideName = guideName
         self.driverName = driverName
-        self.busId = busId
+        //self.busId = busId
         self.busName = busName
         self.numberPassenger = numberPassenger
         self.dateStart = dateStart
         self.dateEnd = dateEnd
         self.from = from
         self.to = to
-        self.startLat = startLat
-        self.startLng = startLng
-        self.endLng = endLng
+        self.latStart = latStart
+        self.lngStart = lngStart
+        self.latEnd = latEnd
+        self.lngEnd = lngEnd
+        self.price = price
         self.status = status
-        self.guideName = guideName
-        self.endLat = endLat
     }
     
-}
 
-//"": "5",
-//"": "welcome",
-//"": "1",
-//"": "e-bakers",
-//"": "1",
-//"": "waaaa",
-//"": "1",
-//"": "Mahmoud ahmed",
-//"": "1",
-//"": "Khaled mahmoud",
-//"": "1",
-//"": "man",
-//"": "50",
-//"": "2012-12-06 01:25:00",
-//"": "2013-12-06 01:25:00",
-//"": "الرياض",
-//"": "مكة",
-//"": null,
-//"": null,
-//"": null,
-//"": null,
-//"": "نشط"
+}

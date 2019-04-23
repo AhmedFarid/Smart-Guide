@@ -19,13 +19,13 @@ class helper: NSObject {
         if getAPIToken().userToken == nil {
             let sb = UIStoryboard(name: "auth", bundle: nil)
             vc = sb.instantiateInitialViewController()!
-        }else if getAPIToken().role == "supervisor" {
+        }else if getAPIToken().role == "supervisors" {
             let sb = UIStoryboard(name: "supervisor", bundle: nil)
             vc = sb.instantiateInitialViewController()!
-        }else if getAPIToken().role == "driver" {
+        }else if getAPIToken().role == "drivers" {
             let sb = UIStoryboard(name: "driver", bundle: nil)
             vc = sb.instantiateInitialViewController()!
-        }else if getAPIToken().role == "guide" {
+        }else if getAPIToken().role == "guides" {
             let sb = UIStoryboard(name: "guide", bundle: nil)
             vc = sb.instantiateInitialViewController()!
         }else {

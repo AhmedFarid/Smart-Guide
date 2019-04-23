@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import IQKeyboardManagerSwift
 
 
@@ -18,17 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        FirebaseApp.configure()
         if let user_token = helper.getAPIToken().userToken{
-            if helper.getAPIToken().role == "supervisor" {
+            if helper.getAPIToken().role == "supervisors" {
                 print("user_token\(user_token)")
                 let tab = UIStoryboard(name: "supervisor", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
-            }else if helper.getAPIToken().role == "driver" {
+            }else if helper.getAPIToken().role == "drivers" {
                 print("user_token\(user_token)")
                 let tab = UIStoryboard(name: "driver", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
-            }else if helper.getAPIToken().role == "guide" {
+            }else if helper.getAPIToken().role == "guides" {
                 print("user_token\(user_token)")
                 let tab = UIStoryboard(name: "guide", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab

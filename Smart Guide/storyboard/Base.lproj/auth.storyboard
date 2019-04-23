@@ -122,6 +122,10 @@
                                     <action selector="getpassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4LE-7T-4J7"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CuQ-qC-HNi">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.097851015627384186" green="0.231504887342453" blue="0.42008760571479797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -131,8 +135,10 @@
                             <constraint firstItem="W1a-Ro-mHZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LCb-pN-hEX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PgQ-ly-g8j" secondAttribute="trailing" constant="100" id="M7k-Lk-tLL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W1a-Ro-mHZ" secondAttribute="trailing" constant="16" id="TGk-zs-ZF6"/>
+                            <constraint firstItem="CuQ-qC-HNi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ws2-TG-HYH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hdr-zj-y5f" secondAttribute="trailing" constant="125" id="ac9-Q6-248"/>
                             <constraint firstItem="W1a-Ro-mHZ" firstAttribute="top" secondItem="85o-cb-7XG" secondAttribute="bottom" constant="30" id="dcH-6x-Eoi"/>
+                            <constraint firstItem="CuQ-qC-HNi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dmj-hM-F9C"/>
                             <constraint firstItem="PgQ-ly-g8j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="sDU-TP-mWh"/>
                             <constraint firstItem="85o-cb-7XG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tBO-WN-Pru"/>
                             <constraint firstItem="hdr-zj-y5f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="tig-6D-rOT"/>
@@ -144,6 +150,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTF" destination="56J-yb-HVR" id="bor-up-u8b"/>
+                        <outlet property="spiner" destination="CuQ-qC-HNi" id="bcf-rI-DgA"/>
                         <outlet property="userNameTF" destination="oKD-2r-0a2" id="a1o-ek-Fin"/>
                     </connections>
                 </viewController>

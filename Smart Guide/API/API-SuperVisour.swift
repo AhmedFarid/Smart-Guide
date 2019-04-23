@@ -89,7 +89,7 @@ class API_SuperVisour: NSObject {
     class func getMember (completion: @escaping (_ error: Error?,_ sparParts: [superViserMember]?)-> Void) {
         
         
-        let url = URLs.getMember
+        let url = URLs.getPath
         
         let parameters = [
             "lang" : "ar"
@@ -123,7 +123,7 @@ class API_SuperVisour: NSObject {
         }
     }
     
-    class func getTrip (completion: @escaping (_ error: Error?,_ sparParts: [trips]?)-> Void) {
+    class func getTrip (type: String,completion: @escaping (_ error: Error?,_ sparParts: [trips]?)-> Void) {
         
         let url = URLs.getTrip
         
@@ -135,13 +135,10 @@ class API_SuperVisour: NSObject {
         let parameters = [
             "lang" : "ar",
             "user_token": user_token,
-            "type": "1"
+            "type": type
         ]
         print(parameters)
-        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
-            
-            
             switch response.result
             {
             case .failure(let error):
@@ -167,13 +164,56 @@ class API_SuperVisour: NSObject {
         }
     }
     
-    class func getBus (completion: @escaping (_ error: Error?,_ sparParts: [superViserBus]?)-> Void) {
+    class func filterByStatus (urls: String,status: String,completion: @escaping (_ error: Error?,_ sparParts: [trips]?)-> Void) {
+        
+        let url = urls
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,nil)
+            return
+        }
+        
+        let parameters = [
+            "lang" : "ar",
+            "user_token": user_token,
+            "status": status
+        ]
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+                
+            case .success(let value):
+                print(value)
+                let json = JSON(value)
+                guard let dataArray = json["data"].array else{
+                    completion(nil, nil)
+                    return
+                }
+                print(dataArray)
+                var products = [trips]()
+                for data in dataArray {
+                    if let data = data.dictionary, let prodect = trips.init(dict: data){
+                        products.append(prodect)
+                    }
+                }
+                completion(nil, products)
+            }
+        }
+    }
+    
+    
+    class func getBus (driver_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserBus]?)-> Void) {
         
         
         let url = URLs.getBus
         
         let parameters = [
-            "lang" : "ar"
+            "lang" : "ar",
+            "driver_id": driver_id
         ]
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
@@ -205,16 +245,16 @@ class API_SuperVisour: NSObject {
     }
     
     
-    class func addTrib(name_en: String, name_ar: String, guide_id: String, member_id: String,driver_id: String, bus_id: String, from: String, to: String,date_time_start: String, date_time_end: String,start_lat: String,start_lng: String,end_lat: String,end_lng: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
+    class func addTrib(name_en: String, name_ar: String, guide_id: String, driver_id: String,bus_id: String, date_time_start: String, date_time_end: String, path_id: String,company_id: String, price: String,status: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
         
         let url = URLs.addTrip
         
         guard let user_token = helper.getAPIToken().userToken else {
-            completion(nil,false, nil)
+            completion(nil,false, nil,false)
             return
         }
         guard let company_id = helper.getAPIToken().companyId else {
-            completion(nil,false, nil)
+            completion(nil,false, nil,false)
             return
         }
         
@@ -223,19 +263,15 @@ class API_SuperVisour: NSObject {
             "name_en": name_en,
             "name_ar": name_ar,
             "guide_id": guide_id,
-            "member_id": member_id,
             "driver_id": driver_id,
             "bus_id": bus_id,
-            "from": from,
-            "to": to,
             "date_time_start": date_time_start,
             "date_time_end": date_time_end,
-            "start_lat": start_lat,
-            "start_lng": start_lng,
-            "end_lat": end_lat,
-            "end_lng": end_lng,
+            "path_id": path_id,
             "company_id": company_id,
-            "user_token": user_token
+            "user_token": user_token,
+            "status": status,
+            "price": price
         ]
         
         print(parameters)
@@ -243,24 +279,172 @@ class API_SuperVisour: NSObject {
             switch response.result
             {
             case .failure(let error):
-                completion(error, false, nil)
+                completion(error, false, nil,false)
                 print(error)
                 //self.showAlert(title: "Error", message: "\(error)")
                 
             case .success(let value):
                 let json = JSON(value)
                 print(value)
-                if let user_token = json["data"]["userToken"].string {
-                    print("user token \(user_token)")
-                    //helper.saveAPIToken(token: user_token)
-                    completion(nil, true , nil)
-                }else if let data = json["data"].string {
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
                     print(data)
-                    completion(nil, true, data)
-                }else  {
+                    completion(nil, true, data,status)
+                    }
+                }else {
                     let data = json["error"].string
                     print(data ?? "no")
-                    completion(nil, true, data)
+                    completion(nil, true, data,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+
+    
+    class func editTrip(trip_id: String,status: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+        
+        let url = URLs.editTripStatus
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,false, nil,false)
+            return
+        }
+        
+        print(url)
+        let parameters = [
+            "trip_id": trip_id,
+            "user_token": user_token,
+            "status": status
+            
+        ]
+        
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false, nil,false)
+                print(error)
+                //self.showAlert(title: "Error", message: "\(error)")
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
+                            print(data)
+                            completion(nil, true, data,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil, true, data,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+
+    
+    class func startTrip(trip_id: String,headings: String,message:String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+        
+        let url = URLs.startTrip
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,false, nil,false)
+            return
+        }
+        
+        print(url)
+        let parameters = [
+            "trip_id": trip_id,
+            "user_token": user_token,
+            "headings": headings,
+            "message": message
+        ]
+        
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false, nil,false)
+                print(error)
+                //self.showAlert(title: "Error", message: "\(error)")
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
+                            print(data)
+                            completion(nil, true, data,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil, true, data,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
+    class func tripPause(trip_id: String,headings: String,message:String,status:String,completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+        
+        let url = URLs.tripPause
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,false, nil,false)
+            return
+        }
+        
+        print(url)
+        let parameters = [
+            "trip_id": trip_id,
+            "user_token": user_token,
+            "headings": headings,
+            "message": message,
+            "status": status
+        ]
+        
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false, nil,false)
+                print(error)
+                //self.showAlert(title: "Error", message: "\(error)")
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
+                            print(data)
+                            completion(nil, true, data,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil, true, data,status)
+                    }
                 }
                 
             }

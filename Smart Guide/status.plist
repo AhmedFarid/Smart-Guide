@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>1</string>
+		<key>name</key>
+		<string>مسنده</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>3</string>
+		<key>name</key>
+		<string>معلق</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>7</string>
+		<key>name</key>
+		<string>مجدوله</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>8</string>
+		<key>name</key>
+		<string>فوريه</string>
+	</dict>
+</array>
+</plist>

@@ -12,11 +12,13 @@ class loginAuhtVC: UIViewController {
     
     @IBOutlet weak var userNameTF: roundedTF!
     @IBOutlet weak var passwordTF: roundedTF!
+    @IBOutlet weak var spiner: UIActivityIndicatorView!
     var iconClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageText()
+        spiner.isHidden = true
         
     }
     
@@ -52,18 +54,21 @@ class loginAuhtVC: UIViewController {
             self.showAlert(title: title, message: messages)
             return
         }
-        
-        API_AUTH.login(email: userName , password: passwords) { (error: Error?, success: Bool, data) in
+        self.spiner.startAnimating()
+        self.spiner.isHidden = false
+        API_AUTH.login(email: userName , password: passwords) { (error: Error?, success: Bool, status ,data) in
             if success {
-                if data == nil {
-                    print("success")
+                if status == true {	
                 }else {
-                    self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                    self.showAlert(title: "Login failed", message: data ?? "")
                 }
-                //
             }else {
-                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                self.showAlert(title: "check your connection", message: "")
             }
+            
+            self.spiner.stopAnimating()
+            self.spiner.isHidden = true
+
             
         }
     }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A3FEBC476C3A1A52256AEAF3E3E140"
+               BlueprintIdentifier = "BFA445DDA42BA3844130F3B0E3257B5F"
                BlueprintName = "Pods-Smart Guide"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-Smart Guide.framework">

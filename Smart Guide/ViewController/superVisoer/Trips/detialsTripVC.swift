@@ -11,7 +11,7 @@ import UIKit
 class detialsTripVC: UIViewController {
     
     var singleItem: trips?
-
+    
     @IBOutlet weak var busName: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var tripName: UILabel!
@@ -22,6 +22,7 @@ class detialsTripVC: UIViewController {
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var endDate: UILabel!
     @IBOutlet weak var numberOfBassenger: UILabel!
+    @IBOutlet weak var puseEntrip: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,5 +36,31 @@ class detialsTripVC: UIViewController {
         startDate.text = " موعد بداء الرحله \(singleItem?.dateStart ?? "")"
         endDate.text = " موعد انهاء الرحله \(singleItem?.dateEnd ?? "")"
         numberOfBassenger.text = " عدد الركاب \(singleItem?.numberPassenger ?? "")"
+        if singleItem?.status == "متواقف"{
+            puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
+        }else {
+            puseEntrip.setTitle("تعليق الرحلة", for: UIControl.State.normal)
+        }
+    }
+    
+    @IBAction func startTrip(_ sender: Any) {
+        performSegue(withIdentifier: "suge1", sender: nil)
+    }
+    @IBAction func mapCVBTN(_ sender: Any) {
+        performSegue(withIdentifier: "mapSuge", sender: nil)
+    }
+    @IBAction func editeBTN(_ sender: Any) {
+        performSegue(withIdentifier: "suge", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destaiantion = segue.destination as? editTripVC{
+            destaiantion.singleItem = singleItem
+        }else if let destaiantion = segue.destination as? mapVC {
+            destaiantion.singleItem = singleItem
+        }else if let destaiantion = segue.destination as? startTripVC{
+            destaiantion.trip_id = singleItem?.tripId ?? ""
+            destaiantion.tripStatus = singleItem?.status ?? ""
+        }
     }
 }

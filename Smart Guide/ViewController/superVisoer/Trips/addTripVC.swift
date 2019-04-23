@@ -17,20 +17,25 @@ class addTripVC: UIViewController {
     @IBOutlet weak var busNumTF: roundedTF!
     @IBOutlet weak var driverNameTF: roundedTF!
     @IBOutlet weak var memberNameTF: roundedTF!
-    @IBOutlet weak var reciverPalceTF: roundedTF!
-    @IBOutlet weak var downPalceTF: roundedTF!
     @IBOutlet weak var startTime: roundedTF!
     @IBOutlet weak var EndTime: roundedTF!
+    @IBOutlet weak var stutse: roundedTF!
     
+    
+    var singleItem: trips?
     var guide = [superViserGuides]()
     var drivers = [superViserDriver]()
     var member = [superViserMember]()
     var buss = [superViserBus]()
     
+    var stute = Array<stues>()
+    
     var guides = ""
     var driver = ""
     var members = ""
     var bus = ""
+    var selectedStutes = ""
+    var price = ""
     private var datePiker: UIDatePicker?
     
     
@@ -38,12 +43,25 @@ class addTripVC: UIViewController {
         super.viewDidLoad()
         
         textEnabeld()
-        createBussPiker()
+        createmeStatusPiker()
         createmeMemberPiker()
         createmeDriversPiker()
         createmeGuidePiker()
         createDateStart()
         createDateEnd()
+    }
+    
+    func  ReadTheStuts(){
+        let bath = Bundle.main.path(forResource: "status", ofType: "plist")!
+        let url = URL(fileURLWithPath: bath)
+        let data = try! Data(contentsOf: url)
+        let plist =  try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
+        let dictArry = plist as! [[String:String]]
+        for dic  in dictArry {
+            stute.append(stues(id: dic["id"] ?? "", name: dic["name"] ?? ""))
+        }
+        
+        
     }
     
     func createDateStart(){
@@ -115,7 +133,7 @@ class addTripVC: UIViewController {
     }
     
     @objc private func handleRefreshBuss() {
-        API_SuperVisour.getBus{ (error: Error?, buss: [superViserBus]?) in
+        API_SuperVisour.getBus(driver_id: driver){(error: Error?, buss: [superViserBus]?) in
             if let buss = buss {
                 self.buss = buss
                 print("xxx\(self.buss)")
@@ -191,6 +209,16 @@ class addTripVC: UIViewController {
         GuidePiker.reloadAllComponents()
     }
     
+    func createmeStatusPiker(){
+        ReadTheStuts()
+        let stutesPiker = UIPickerView()
+        stutesPiker.delegate = self
+        stutesPiker.dataSource = self
+        stutesPiker.tag = 4
+        stutse.inputView = stutesPiker
+    }
+    
+    
     
     @IBAction func addTrips(_ sender: Any) {
         guard (helper.getAPIToken().userToken != nil)  else {
@@ -238,18 +266,6 @@ class addTripVC: UIViewController {
             self.showAlert(title: messages, message: title)
             return
         }
-        guard let recivePalce = reciverPalceTF.text, !recivePalce.isEmpty else {
-            let messages = NSLocalizedString("اضافه رحله", comment: "hhhh")
-            let title = NSLocalizedString("اضافه مكان الاستلام", comment: "hhhh")
-            self.showAlert(title: messages, message: title)
-            return
-        }
-        guard let downPalce = downPalceTF.text, !downPalce.isEmpty else {
-            let messages = NSLocalizedString("اضافه رحله", comment: "hhhh")
-            let title = NSLocalizedString("اضافه مكن التسليم", comment: "hhhh")
-            self.showAlert(title: messages, message: title)
-            return
-        }
         
         guard let startTim = startTime.text, !startTim.isEmpty else {
             let messages = NSLocalizedString("اضافه رحله", comment: "hhhh")
@@ -263,23 +279,22 @@ class addTripVC: UIViewController {
             self.showAlert(title: messages, message: title)
             return
         }
+        let compay = helper.getAPIToken().companyId ?? ""
         
-        API_SuperVisour.addTrib(name_en: nameEn, name_ar: nameAr, guide_id: guides, member_id: members, driver_id: driver, bus_id: bus, from: recivePalce, to: downPalce, date_time_start: startTim, date_time_end: endTimes, start_lat: "0", start_lng: "0", end_lat: "0", end_lng: "0"){ (error: Error?, success, data) in
+        API_SuperVisour.addTrib(name_en: nameEn , name_ar: nameAr, guide_id: guides, driver_id: driver, bus_id: bus, date_time_start: startTim, date_time_end: endTimes, path_id: members, company_id: compay, price: price, status: selectedStutes){ (error: Error?, success, data,stutus) in
             if success {
-                let title = NSLocalizedString("اضافه رحله", comment: "profuct list lang")
-                self.showAlert(title: title, message: data ?? "")
+                if stutus == true{
+                    let title = NSLocalizedString("اضافه رحله", comment: "profuct list lang")
+                    self.showAlert(title: title, message: data ?? "")
+                }else {
+                    let title = NSLocalizedString("اضافه رحله", comment: "profuct list lang")
+                    self.showAlert(title: title, message: data ?? "")
+                }
             }else {
                 print("Error")
             }
         }
-        
-        
-        
-        
     }
-    
-    
-    
 }
 
 
@@ -297,8 +312,10 @@ extension addTripVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return member.count
         }else if pickerView.tag == 2 {
             return drivers.count
-        }else {
+        }else if pickerView.tag == 3 {
             return guide.count
+        }else {
+            return stute.count
         }
     }
     
@@ -309,8 +326,10 @@ extension addTripVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return member[row].name
         }else if pickerView.tag == 2 {
             return drivers[row].name
-        }else {
+        }else if pickerView.tag == 3{
             return guide[row].name
+        }else {
+            return stute[row].name
         }
     }
     
@@ -323,14 +342,20 @@ extension addTripVC: UIPickerViewDelegate, UIPickerViewDataSource {
         }else if pickerView.tag == 1{
             memberNameTF.text = member[row].name
             members = member[row].id
+            price = member[row].price
             self.view.endEditing(false)
         }else if pickerView.tag == 2 {
             driverNameTF.text = drivers[row].name
             driver = drivers[row].id
+            createBussPiker()
             self.view.endEditing(false)
-        }else {
+        }else if pickerView.tag == 3{
             guidNameTF.text = guide[row].name
             guides = guide[row].id
+            self.view.endEditing(false)
+        }else {
+            stutse.text = stute[row].name
+            selectedStutes = stute[row].id ?? ""
             self.view.endEditing(false)
         }
     }
