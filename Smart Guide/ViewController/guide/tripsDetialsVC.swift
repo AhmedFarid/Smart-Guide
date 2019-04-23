@@ -44,14 +44,22 @@ class tripsDetialsVC: UIViewController {
     }
     
     @IBAction func startTrip(_ sender: Any) {
-        performSegue(withIdentifier: "suge1", sender: nil)
+        performSegue(withIdentifier: "suge", sender: nil)
     }
     @IBAction func mapCVBTN(_ sender: Any) {
         performSegue(withIdentifier: "mapSuge", sender: nil)
     }
     
+    @IBAction func edtrip(_ sender: Any) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destaiantion = segue.destination as? mapVC{
+            destaiantion.singleItems = singleItem
+        }else if let destaiantion = segue.destination as? taripsActionVC {
+            destaiantion.singleItems = singleItem
+        }else if let destaiantion = segue.destination as? endTripVC {
             destaiantion.singleItems = singleItem
         }
     }

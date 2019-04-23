@@ -38,8 +38,10 @@ struct URLs {
     
     static let getTripsGuide = main + "getTripsGuide"
     
+    static let requestPauseTrip = main + "requestPauseTrip"
     
-    
-    
+    static let endTripGuide = main + "endTripGuide"
+
+    static let getNotifications = main + "getNotifications"
     
 }

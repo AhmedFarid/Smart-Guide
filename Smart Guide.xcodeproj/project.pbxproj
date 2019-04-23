@@ -26,6 +26,12 @@
 		69DC5F11226F3A3100B39603 /* getTripsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F10226F3A3100B39603 /* getTripsVC.swift */; };
 		69DC5F13226F3B4500B39603 /* guidtripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F12226F3B4500B39603 /* guidtripsCell.swift */; };
 		69DC5F15226F405100B39603 /* tripsDetialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F14226F405100B39603 /* tripsDetialsVC.swift */; };
+		69DC5F17226F618200B39603 /* taripsActionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F16226F618200B39603 /* taripsActionVC.swift */; };
+		69DC5F19226F660000B39603 /* endTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F18226F660000B39603 /* endTripVC.swift */; };
+		69DC5F1B226F6D3500B39603 /* notifacations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F1A226F6D3500B39603 /* notifacations.swift */; };
+		69DC5F1D226F6F1500B39603 /* API+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F1C226F6F1500B39603 /* API+Notifications.swift */; };
+		69DC5F1F226F769900B39603 /* notifactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F1E226F769900B39603 /* notifactionCell.swift */; };
+		69DC5F21226F7CE400B39603 /* notifactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F20226F7CE400B39603 /* notifactionVC.swift */; };
 		75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7A224A224F0022E46B /* AppDelegate.swift */; };
 		75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F7C224A224F0022E46B /* loginAuhtVC.swift */; };
 		75046F80224A224F0022E46B /* auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F7E224A224F0022E46B /* auth.storyboard */; };
@@ -71,6 +77,12 @@
 		69DC5F10226F3A3100B39603 /* getTripsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTripsVC.swift; sourceTree = "<group>"; };
 		69DC5F12226F3B4500B39603 /* guidtripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidtripsCell.swift; sourceTree = "<group>"; };
 		69DC5F14226F405100B39603 /* tripsDetialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripsDetialsVC.swift; sourceTree = "<group>"; };
+		69DC5F16226F618200B39603 /* taripsActionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taripsActionVC.swift; sourceTree = "<group>"; };
+		69DC5F18226F660000B39603 /* endTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endTripVC.swift; sourceTree = "<group>"; };
+		69DC5F1A226F6D3500B39603 /* notifacations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifacations.swift; sourceTree = "<group>"; };
+		69DC5F1C226F6F1500B39603 /* API+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Notifications.swift"; sourceTree = "<group>"; };
+		69DC5F1E226F769900B39603 /* notifactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifactionCell.swift; sourceTree = "<group>"; };
+		69DC5F20226F7CE400B39603 /* notifactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifactionVC.swift; sourceTree = "<group>"; };
 		75046F77224A224F0022E46B /* Smart Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75046F7A224A224F0022E46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75046F7C224A224F0022E46B /* loginAuhtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAuhtVC.swift; sourceTree = "<group>"; };
@@ -153,6 +165,8 @@
 			children = (
 				69DC5F10226F3A3100B39603 /* getTripsVC.swift */,
 				69DC5F14226F405100B39603 /* tripsDetialsVC.swift */,
+				69DC5F16226F618200B39603 /* taripsActionVC.swift */,
+				69DC5F18226F660000B39603 /* endTripVC.swift */,
 			);
 			path = guide;
 			sourceTree = "<group>";
@@ -232,9 +246,11 @@
 		75046F97224A4C100022E46B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6952AE96226F2AB30018E803 /* menuVC.swift */,
 				69DC5F0F226F39FC00B39603 /* guide */,
 				75046FB1224A95390022E46B /* superVisoer */,
 				699A2931226C8C5000211DB9 /* Auth */,
+				69DC5F20226F7CE400B39603 /* notifactionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -245,6 +261,7 @@
 				75046FA7224A704E0022E46B /* API-SuperVisour.swift */,
 				75046FA9224A7E180022E46B /* API - Auth.swift */,
 				69DC5F0D226F395600B39603 /* API+Guide.swift */,
+				69DC5F1C226F6F1500B39603 /* API+Notifications.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -263,6 +280,7 @@
 			children = (
 				75046FA5224A6F0C0022E46B /* superVisers.swift */,
 				69DC5F0B226F34EA00B39603 /* guides.swift */,
+				69DC5F1A226F6D3500B39603 /* notifacations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +298,7 @@
 			children = (
 				695454D52254F8E100034C26 /* tripceCell.swift */,
 				69DC5F12226F3B4500B39603 /* guidtripsCell.swift */,
+				69DC5F1E226F769900B39603 /* notifactionCell.swift */,
 			);
 			path = cellClass;
 			sourceTree = "<group>";
@@ -289,7 +308,6 @@
 			children = (
 				6947A3FC2268E11C00708143 /* Sort */,
 				699A2932226C8C6100211DB9 /* Trips */,
-				6952AE96226F2AB30018E803 /* menuVC.swift */,
 			);
 			path = superVisoer;
 			sourceTree = "<group>";
@@ -434,9 +452,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DC5F1B226F6D3500B39603 /* notifacations.swift in Sources */,
+				69DC5F1F226F769900B39603 /* notifactionCell.swift in Sources */,
 				75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */,
 				699A292E226C7E7A00211DB9 /* editTripVC.swift in Sources */,
 				699A2934226C8C8300211DB9 /* mapVC.swift in Sources */,
+				69DC5F21226F7CE400B39603 /* notifactionVC.swift in Sources */,
 				75046F96224A4BEB0022E46B /* textimage.swift in Sources */,
 				75046F94224A41D70022E46B /* roundedTF.swift in Sources */,
 				69C5BDC22254C41800FBC0CD /* rounndedView.swift in Sources */,
@@ -449,8 +470,10 @@
 				69DC5F15226F405100B39603 /* tripsDetialsVC.swift in Sources */,
 				69DC5F11226F3A3100B39603 /* getTripsVC.swift in Sources */,
 				69DC5F13226F3B4500B39603 /* guidtripsCell.swift in Sources */,
+				69DC5F1D226F6F1500B39603 /* API+Notifications.swift in Sources */,
 				6947A4022268EB2600708143 /* dateVC.swift in Sources */,
 				75046F9E224A65030022E46B /* helper.swift in Sources */,
+				69DC5F17226F618200B39603 /* taripsActionVC.swift in Sources */,
 				75046F8E224A2E440022E46B /* GradientView.swift in Sources */,
 				75046FB3224A95520022E46B /* addTripVC.swift in Sources */,
 				75046FA4224A6DCB0022E46B /* Cofig.swift in Sources */,
@@ -459,6 +482,7 @@
 				75046FA8224A704E0022E46B /* API-SuperVisour.swift in Sources */,
 				6947A4002268E58200708143 /* resultsVC.swift in Sources */,
 				6914551A225628E900570939 /* detialsTripVC.swift in Sources */,
+				69DC5F19226F660000B39603 /* endTripVC.swift in Sources */,
 				75046FA6224A6F0C0022E46B /* superVisers.swift in Sources */,
 				6952AE97226F2AB30018E803 /* menuVC.swift in Sources */,
 				695454D62254F8E100034C26 /* tripceCell.swift in Sources */,

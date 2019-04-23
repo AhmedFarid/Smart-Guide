@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WSF-ba-FBS">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="9Yb-B7-wuy" customClass="getTripsVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3h-d8-BE6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W0s-iV-8bm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="atQ-rf-kzE">
                                     <size key="itemSize" width="157" height="149"/>
@@ -34,7 +34,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="aPO-7q-3ZY" customClass="guidtripsCell" customModule="Smart_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="157" height="149"/>
+                                        <rect key="frame" x="81.5" y="10" width="157" height="149"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="157" height="149"/>
@@ -134,7 +134,11 @@
                         <viewLayoutGuide key="safeArea" id="3zq-jF-V6u"/>
                     </view>
                     <navigationItem key="navigationItem" id="NhU-RX-vq7">
-                        <barButtonItem key="leftBarButtonItem" image="notifications-button" id="ijL-ER-k1c"/>
+                        <barButtonItem key="leftBarButtonItem" image="notifications-button" id="ijL-ER-k1c">
+                            <connections>
+                                <segue destination="0Aq-eZ-V9o" kind="show" id="vhe-6R-8b0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Group 151" id="F1o-a4-i5r">
                             <connections>
                                 <segue destination="K0G-3U-sx6" kind="show" id="e5e-cq-JsH"/>
@@ -156,7 +160,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WSF-ba-FBS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="9RX-vi-hm5">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -178,19 +182,19 @@
             <objects>
                 <viewController id="AFt-XC-PVZ" customClass="tripsDetialsVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Rm-oW-JXs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrR-3w-D5Q" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                <rect key="frame" x="16" y="62" width="343" height="479"/>
+                                <rect key="frame" x="16" y="20.5" width="288" height="463"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jf3-js-o21">
-                                        <rect key="frame" x="20" y="421" width="303" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jf3-js-o21">
+                                        <rect key="frame" x="8" y="413" width="272" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mR-f5-aNl">
-                                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="عرض المسار">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -198,10 +202,21 @@
                                                     <action selector="mapCVBTN:" destination="AFt-XC-PVZ" eventType="touchUpInside" id="h2P-xj-ye7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-d5-jav">
-                                                <rect key="frame" x="166.5" y="0.0" width="136.5" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYj-ks-493">
+                                                <rect key="frame" x="94" y="0.0" width="84" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <state key="normal" title="انهاء الرحله">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="e4b-9R-5t7" kind="show" id="QE0-p4-v8e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-d5-jav">
+                                                <rect key="frame" x="188" y="0.0" width="84" height="32"/>
+                                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="بدء الرحلة">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -212,25 +227,25 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-VZ-5sB" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="8" width="243" height="149"/>
+                                        <rect key="frame" x="50" y="8" width="188" height="149"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus-side-view" translatesAutoresizingMaskIntoConstraints="NO" id="eez-rf-j4Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="243" height="83"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="83"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="83" id="ddg-mx-gfD"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygw-W6-zkC">
-                                                <rect key="frame" x="0.0" y="83" width="243" height="66"/>
+                                                <rect key="frame" x="0.0" y="83" width="188" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG9-oR-k9v">
-                                                        <rect key="frame" x="8" y="8" width="227" height="19.5"/>
+                                                        <rect key="frame" x="8" y="8" width="172" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                         <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-fZ-lMU">
-                                                        <rect key="frame" x="8" y="35.5" width="227" height="19.5"/>
+                                                        <rect key="frame" x="8" y="35.5" width="172" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                         <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -283,52 +298,52 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-Ld-CGO">
-                                        <rect key="frame" x="16" y="173" width="311" height="240"/>
+                                        <rect key="frame" x="16" y="165" width="256" height="240"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muA-ES-qcd">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koT-ai-K9u">
-                                                <rect key="frame" x="0.0" y="31.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cF-dO-Dn5">
-                                                <rect key="frame" x="0.0" y="63" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="63" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cze-2y-CUT">
-                                                <rect key="frame" x="0.0" y="94.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="94.5" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-dc-gYJ">
-                                                <rect key="frame" x="0.0" y="126" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="126" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-Hg-Ivq">
-                                                <rect key="frame" x="0.0" y="157.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="157.5" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKx-Sk-z3D">
-                                                <rect key="frame" x="0.0" y="189" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="189" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTC-pl-NNY">
-                                                <rect key="frame" x="0.0" y="220.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="220.5" width="256" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -340,17 +355,17 @@
                                 <constraints>
                                     <constraint firstItem="RdQ-fZ-lMU" firstAttribute="leading" secondItem="KrR-3w-D5Q" secondAttribute="leading" constant="58" id="3Es-VX-Sex"/>
                                     <constraint firstAttribute="trailing" secondItem="qDx-VZ-5sB" secondAttribute="trailing" constant="50" id="56V-dc-ebv"/>
-                                    <constraint firstItem="jf3-js-o21" firstAttribute="leading" secondItem="KrR-3w-D5Q" secondAttribute="leading" constant="20" id="8Hb-Q6-F3A"/>
+                                    <constraint firstItem="jf3-js-o21" firstAttribute="leading" secondItem="KrR-3w-D5Q" secondAttribute="leading" constant="8" id="8Hb-Q6-F3A"/>
                                     <constraint firstItem="RdQ-fZ-lMU" firstAttribute="top" secondItem="UG9-oR-k9v" secondAttribute="bottom" constant="8" id="8RU-5v-1fp"/>
                                     <constraint firstItem="qDx-VZ-5sB" firstAttribute="top" secondItem="KrR-3w-D5Q" secondAttribute="top" constant="8" id="Ktx-we-Qkp"/>
                                     <constraint firstAttribute="trailing" secondItem="RdQ-fZ-lMU" secondAttribute="trailing" constant="58" id="Q1P-qj-xC5"/>
                                     <constraint firstItem="jf3-js-o21" firstAttribute="top" secondItem="3i9-Ld-CGO" secondAttribute="bottom" constant="8" id="Tjn-3d-t7a"/>
                                     <constraint firstAttribute="trailing" secondItem="3i9-Ld-CGO" secondAttribute="trailing" constant="16" id="cGV-8T-bAy"/>
-                                    <constraint firstAttribute="trailing" secondItem="jf3-js-o21" secondAttribute="trailing" constant="20" id="eug-AJ-Nqt"/>
+                                    <constraint firstAttribute="trailing" secondItem="jf3-js-o21" secondAttribute="trailing" constant="8" id="eug-AJ-Nqt"/>
                                     <constraint firstAttribute="bottom" secondItem="jf3-js-o21" secondAttribute="bottom" constant="18" id="nnZ-mY-ghu"/>
                                     <constraint firstItem="3i9-Ld-CGO" firstAttribute="leading" secondItem="KrR-3w-D5Q" secondAttribute="leading" constant="16" id="sjh-gE-LNY"/>
                                     <constraint firstItem="qDx-VZ-5sB" firstAttribute="leading" secondItem="KrR-3w-D5Q" secondAttribute="leading" constant="50" id="ykx-EE-tP5"/>
-                                    <constraint firstItem="3i9-Ld-CGO" firstAttribute="top" secondItem="qDx-VZ-5sB" secondAttribute="bottom" constant="16" id="zbu-KK-dEk"/>
+                                    <constraint firstItem="3i9-Ld-CGO" firstAttribute="top" secondItem="qDx-VZ-5sB" secondAttribute="bottom" constant="8" id="zbu-KK-dEk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -393,6 +408,7 @@
                         <outlet property="to" destination="Dak-dc-gYJ" id="w3F-y7-KOm"/>
                         <outlet property="tripName" destination="muA-ES-qcd" id="5EP-vm-WeK"/>
                         <segue destination="kSK-U1-AHg" kind="show" identifier="mapSuge" id="LWh-PJ-7pe"/>
+                        <segue destination="MUW-Kl-76b" kind="show" identifier="suge" id="g3m-hX-wQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKf-Ns-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,11 +420,11 @@
             <objects>
                 <viewController id="kSK-U1-AHg" customClass="mapVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FGU-dC-34I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7PR-20-kmj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -433,33 +449,33 @@
             <objects>
                 <viewController id="K0G-3U-sx6" customClass="menuVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAT-P5-Qny">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRX-oN-aYM">
-                                <rect key="frame" x="100" y="13" width="175" height="233"/>
+                                <rect key="frame" x="100" y="13" width="120" height="134"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q1-rD-yqo">
-                                <rect key="frame" x="8" y="254" width="359" height="23"/>
+                                <rect key="frame" x="8" y="155" width="304" height="23"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-RB-fPx">
-                                <rect key="frame" x="8" y="285" width="359" height="23"/>
+                                <rect key="frame" x="8" y="186" width="304" height="23"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjS-2a-BkQ">
-                                <rect key="frame" x="8" y="316" width="359" height="1"/>
+                                <rect key="frame" x="8" y="217" width="304" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="IfM-rh-Mc6"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-Fe-YXw">
-                                <rect key="frame" x="272" y="385" width="95" height="36"/>
+                                <rect key="frame" x="217" y="286" width="95" height="36"/>
                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
                                 <state key="normal" title="تسجيل الخروج">
@@ -470,7 +486,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eew-Fw-bMf">
-                                <rect key="frame" x="270" y="333" width="97" height="36"/>
+                                <rect key="frame" x="215" y="234" width="97" height="36"/>
                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
                                 <state key="normal" title="طلبات القديمه">
@@ -515,6 +531,377 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOj-QL-t6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2" y="940"/>
+        </scene>
+        <!--Tarips ActionVC-->
+        <scene sceneID="2Nb-ND-ejf">
+            <objects>
+                <viewController id="MUW-Kl-76b" customClass="taripsActionVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ruu-dn-YoE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="عنوان الرساله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVW-Nl-XYl" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                <rect key="frame" x="8" y="84" width="304" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WSw-lJ-8ns"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <real key="value" value="101"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lfs-1y-DlP" customClass="roundedTV" customModule="Smart_Guide" customModuleProvider="target">
+                                <rect key="frame" x="8" y="167.5" width="304" height="148"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lfs-1y-DlP" secondAttribute="height" multiplier="76:37" id="PfM-aV-n6Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <real key="value" value="101"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرساله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-5a-acL">
+                                <rect key="frame" x="8" y="137" width="304" height="22.5"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
+                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-iY-ORX">
+                                <rect key="frame" x="106" y="340.5" width="109" height="40"/>
+                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                <state key="normal" title="بدء الرحلة">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTrip:" destination="MUW-Kl-76b" eventType="touchUpInside" id="Lan-jO-gPB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QvI-iY-ORX" firstAttribute="leading" secondItem="dV2-Wj-5Yl" secondAttribute="leading" constant="106" id="0c6-9H-IiL"/>
+                            <constraint firstItem="OLw-5a-acL" firstAttribute="leading" secondItem="dV2-Wj-5Yl" secondAttribute="leading" constant="8" id="2Uu-zR-fkh"/>
+                            <constraint firstItem="Lfs-1y-DlP" firstAttribute="top" secondItem="OLw-5a-acL" secondAttribute="bottom" constant="8" id="5FO-6x-hfi"/>
+                            <constraint firstItem="Lfs-1y-DlP" firstAttribute="leading" secondItem="dV2-Wj-5Yl" secondAttribute="leading" constant="8" id="9kB-gZ-HnI"/>
+                            <constraint firstAttribute="trailing" secondItem="OLw-5a-acL" secondAttribute="trailing" constant="8" id="Aem-vA-Slz"/>
+                            <constraint firstItem="nVW-Nl-XYl" firstAttribute="top" secondItem="dV2-Wj-5Yl" secondAttribute="top" constant="84" id="CNF-zL-E7e"/>
+                            <constraint firstItem="dV2-Wj-5Yl" firstAttribute="trailing" secondItem="Lfs-1y-DlP" secondAttribute="trailing" constant="8" id="Hkk-yj-yCY"/>
+                            <constraint firstItem="nVW-Nl-XYl" firstAttribute="leading" secondItem="dV2-Wj-5Yl" secondAttribute="leading" constant="8" id="Ibp-iU-rip"/>
+                            <constraint firstItem="OLw-5a-acL" firstAttribute="top" secondItem="nVW-Nl-XYl" secondAttribute="bottom" constant="8" id="XHf-ZB-bxf"/>
+                            <constraint firstItem="dV2-Wj-5Yl" firstAttribute="trailing" secondItem="QvI-iY-ORX" secondAttribute="trailing" constant="105" id="ilS-NS-C0m"/>
+                            <constraint firstItem="dV2-Wj-5Yl" firstAttribute="trailing" secondItem="nVW-Nl-XYl" secondAttribute="trailing" constant="8" id="qrW-e3-dhe"/>
+                            <constraint firstItem="QvI-iY-ORX" firstAttribute="top" secondItem="Lfs-1y-DlP" secondAttribute="bottom" constant="25" id="tKh-5k-H2f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dV2-Wj-5Yl"/>
+                    </view>
+                    <connections>
+                        <outlet property="head" destination="nVW-Nl-XYl" id="dUJ-xA-z4j"/>
+                        <outlet property="massageTF" destination="Lfs-1y-DlP" id="Z10-2z-X4X"/>
+                        <outlet property="startUbateBTNOutle" destination="QvI-iY-ORX" id="6sR-te-OXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUZ-dl-Cqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="940"/>
+        </scene>
+        <!--End TripVC-->
+        <scene sceneID="Pvk-lm-ceP">
+            <objects>
+                <viewController id="e4b-9R-5t7" customClass="endTripVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ot-pH-KK4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="عنوان الرساله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YE1-XX-JJL" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                <rect key="frame" x="8" y="84" width="304" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wVU-Zf-8zk"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <real key="value" value="101"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-jL-JUe" customClass="roundedTV" customModule="Smart_Guide" customModuleProvider="target">
+                                <rect key="frame" x="8" y="167.5" width="304" height="148"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eNJ-jL-JUe" secondAttribute="height" multiplier="76:37" id="YDI-FR-ibH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <real key="value" value="101"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرساله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-Gx-jif">
+                                <rect key="frame" x="8" y="137" width="304" height="22.5"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
+                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="are-c5-OPj">
+                                <rect key="frame" x="106" y="340.5" width="109" height="40"/>
+                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                <state key="normal" title="انهاء الرحله">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTrip:" destination="e4b-9R-5t7" eventType="touchUpInside" id="QdI-Ly-66b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eNJ-jL-JUe" firstAttribute="leading" secondItem="bTI-7E-NUR" secondAttribute="leading" constant="8" id="7Dr-Jj-sxe"/>
+                            <constraint firstItem="bTI-7E-NUR" firstAttribute="trailing" secondItem="eNJ-jL-JUe" secondAttribute="trailing" constant="8" id="Dxj-Fq-fGn"/>
+                            <constraint firstItem="l7q-Gx-jif" firstAttribute="leading" secondItem="bTI-7E-NUR" secondAttribute="leading" constant="8" id="EIO-uy-u5X"/>
+                            <constraint firstItem="YE1-XX-JJL" firstAttribute="top" secondItem="bTI-7E-NUR" secondAttribute="top" constant="84" id="G6y-PA-UQv"/>
+                            <constraint firstItem="YE1-XX-JJL" firstAttribute="leading" secondItem="bTI-7E-NUR" secondAttribute="leading" constant="8" id="HBO-aj-00L"/>
+                            <constraint firstItem="l7q-Gx-jif" firstAttribute="top" secondItem="YE1-XX-JJL" secondAttribute="bottom" constant="8" id="Qha-IH-BTV"/>
+                            <constraint firstItem="eNJ-jL-JUe" firstAttribute="top" secondItem="l7q-Gx-jif" secondAttribute="bottom" constant="8" id="Vfr-mf-jdj"/>
+                            <constraint firstItem="bTI-7E-NUR" firstAttribute="trailing" secondItem="are-c5-OPj" secondAttribute="trailing" constant="105" id="XGm-pG-6of"/>
+                            <constraint firstItem="bTI-7E-NUR" firstAttribute="trailing" secondItem="YE1-XX-JJL" secondAttribute="trailing" constant="8" id="fBZ-zf-scg"/>
+                            <constraint firstItem="are-c5-OPj" firstAttribute="leading" secondItem="bTI-7E-NUR" secondAttribute="leading" constant="106" id="lcE-Vt-UjR"/>
+                            <constraint firstAttribute="trailing" secondItem="l7q-Gx-jif" secondAttribute="trailing" constant="8" id="vUw-d2-icc"/>
+                            <constraint firstItem="are-c5-OPj" firstAttribute="top" secondItem="eNJ-jL-JUe" secondAttribute="bottom" constant="25" id="xUu-G4-QJK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bTI-7E-NUR"/>
+                    </view>
+                    <connections>
+                        <outlet property="head" destination="YE1-XX-JJL" id="wMR-T9-a7e"/>
+                        <outlet property="massageTF" destination="eNJ-jL-JUe" id="Dgr-kM-pm1"/>
+                        <outlet property="startUbateBTNOutle" destination="are-c5-OPj" id="XEm-hW-G7P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KyE-te-GOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="-502"/>
+        </scene>
+        <!--NotifactionVC-->
+        <scene sceneID="Xis-JT-O28">
+            <objects>
+                <viewController id="0Aq-eZ-V9o" customClass="notifactionVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Uk-kd-Wwp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZS-F9-993">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="PfH-Z0-hAK" customClass="notifactionCell" customModule="Smart_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PfH-Z0-hAK" id="DUv-qB-L3j">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-gF-7k6" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="304" height="153.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المشرف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJF-uD-yPK">
+                                                            <rect key="frame" x="8" y="8" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rr5-T5-wHx">
+                                                            <rect key="frame" x="8" y="35.5" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المرشد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWK-Fz-1gx">
+                                                            <rect key="frame" x="8" y="63" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPL-uD-f9l">
+                                                            <rect key="frame" x="8" y="90.5" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmA-oL-fGE">
+                                                            <rect key="frame" x="8" y="118" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wWK-Fz-1gx" firstAttribute="leading" secondItem="uZP-gF-7k6" secondAttribute="leading" constant="8" id="09w-l3-6Y0"/>
+                                                        <constraint firstItem="bJF-uD-yPK" firstAttribute="top" secondItem="uZP-gF-7k6" secondAttribute="top" constant="8" id="11R-n2-DgE"/>
+                                                        <constraint firstItem="wWK-Fz-1gx" firstAttribute="top" secondItem="rr5-T5-wHx" secondAttribute="bottom" constant="8" id="2WR-NP-r9J"/>
+                                                        <constraint firstItem="bJF-uD-yPK" firstAttribute="leading" secondItem="uZP-gF-7k6" secondAttribute="leading" constant="8" id="3U2-NE-CYz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QPL-uD-f9l" secondAttribute="trailing" constant="8" id="KmQ-HX-x6v"/>
+                                                        <constraint firstItem="rr5-T5-wHx" firstAttribute="top" secondItem="bJF-uD-yPK" secondAttribute="bottom" constant="8" id="Of9-Kq-Lw6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wWK-Fz-1gx" secondAttribute="trailing" constant="8" id="SAQ-gx-aju"/>
+                                                        <constraint firstItem="kmA-oL-fGE" firstAttribute="top" secondItem="QPL-uD-f9l" secondAttribute="bottom" constant="8" id="Si1-Oc-eQC"/>
+                                                        <constraint firstItem="kmA-oL-fGE" firstAttribute="leading" secondItem="uZP-gF-7k6" secondAttribute="leading" constant="8" id="W1J-At-omJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kmA-oL-fGE" secondAttribute="trailing" constant="8" id="cuK-eV-zvv"/>
+                                                        <constraint firstItem="QPL-uD-f9l" firstAttribute="leading" secondItem="uZP-gF-7k6" secondAttribute="leading" constant="8" id="d9a-z6-PBQ"/>
+                                                        <constraint firstItem="rr5-T5-wHx" firstAttribute="leading" secondItem="uZP-gF-7k6" secondAttribute="leading" constant="8" id="edI-Ys-t45"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rr5-T5-wHx" secondAttribute="trailing" constant="8" id="elS-rF-Z9d"/>
+                                                        <constraint firstItem="QPL-uD-f9l" firstAttribute="top" secondItem="wWK-Fz-1gx" secondAttribute="bottom" constant="8" id="g7d-sU-ez3"/>
+                                                        <constraint firstItem="rr5-T5-wHx" firstAttribute="top" secondItem="bJF-uD-yPK" secondAttribute="bottom" constant="8" id="ibk-ee-dcE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bJF-uD-yPK" secondAttribute="trailing" constant="8" id="inG-Xw-Hhf"/>
+                                                        <constraint firstItem="wWK-Fz-1gx" firstAttribute="top" secondItem="rr5-T5-wHx" secondAttribute="bottom" constant="8" id="rBO-5o-J3E"/>
+                                                        <constraint firstItem="QPL-uD-f9l" firstAttribute="top" secondItem="wWK-Fz-1gx" secondAttribute="bottom" constant="8" id="s9t-Mo-8Lb"/>
+                                                        <constraint firstItem="kmA-oL-fGE" firstAttribute="top" secondItem="QPL-uD-f9l" secondAttribute="bottom" constant="8" id="wPm-Aj-wZk"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uZP-gF-7k6" firstAttribute="top" secondItem="DUv-qB-L3j" secondAttribute="top" constant="8" id="9fk-FZ-YaO"/>
+                                                <constraint firstAttribute="bottom" secondItem="uZP-gF-7k6" secondAttribute="bottom" constant="8" id="bOX-7a-xEr"/>
+                                                <constraint firstItem="uZP-gF-7k6" firstAttribute="leading" secondItem="DUv-qB-L3j" secondAttribute="leading" constant="8" id="k9p-Mc-A6d"/>
+                                                <constraint firstAttribute="trailing" secondItem="uZP-gF-7k6" secondAttribute="trailing" constant="8" id="vDN-os-Yxq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="driverName" destination="rr5-T5-wHx" id="sJV-3x-ba3"/>
+                                            <outlet property="guidName" destination="wWK-Fz-1gx" id="nsA-Qm-0OV"/>
+                                            <outlet property="headMassege" destination="QPL-uD-f9l" id="1di-Hz-6w2"/>
+                                            <outlet property="message" destination="kmA-oL-fGE" id="PTa-mK-gSf"/>
+                                            <outlet property="superVisorName" destination="bJF-uD-yPK" id="9z3-48-Yra"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hZS-F9-993" firstAttribute="leading" secondItem="F68-zh-IEB" secondAttribute="leading" id="MTs-Es-iCx"/>
+                            <constraint firstItem="F68-zh-IEB" firstAttribute="trailing" secondItem="hZS-F9-993" secondAttribute="trailing" id="Mqz-n9-a9r"/>
+                            <constraint firstItem="hZS-F9-993" firstAttribute="top" secondItem="F68-zh-IEB" secondAttribute="top" id="ecz-Ec-SOJ"/>
+                            <constraint firstItem="F68-zh-IEB" firstAttribute="bottom" secondItem="hZS-F9-993" secondAttribute="bottom" id="kMS-dW-1t2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F68-zh-IEB"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="hZS-F9-993" id="END-a7-uJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tj-fi-Ia6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1864" y="970"/>
         </scene>
     </scenes>
     <resources>

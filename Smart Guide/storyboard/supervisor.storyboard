@@ -165,11 +165,15 @@
                                     <segue destination="5Jq-nv-iQF" kind="show" id="r6U-6t-x6k"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="notifications-button" id="YcX-dR-n4Z"/>
+                            <barButtonItem image="notifications-button" id="YcX-dR-n4Z">
+                                <connections>
+                                    <segue destination="frV-R2-xnA" kind="show" id="flf-jc-zzr"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="Group 151" id="RvG-eR-Zln">
                             <connections>
-                                <segue destination="KJc-yT-H18" kind="show" id="XCj-M6-aWR"/>
+                                <segue destination="d20-v4-a8q" kind="show" id="Ehh-os-p3W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -181,79 +185,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phk-cx-Ciu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-416" y="970"/>
-        </scene>
-        <!--MenuVC-->
-        <scene sceneID="Chn-ty-g6H">
-            <objects>
-                <viewController id="KJc-yT-H18" customClass="menuVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B6E-su-Aq0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vx4-rX-gLp">
-                                <rect key="frame" x="100" y="13" width="120" height="120"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wb-nr-IvY">
-                                <rect key="frame" x="8" y="141" width="304" height="23"/>
-                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9Q-M5-j3T">
-                                <rect key="frame" x="8" y="172" width="304" height="23"/>
-                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShW-2I-UH6">
-                                <rect key="frame" x="8" y="203" width="304" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="HtJ-fI-7tP"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lW3-Dj-MBQ">
-                                <rect key="frame" x="217" y="220" width="95" height="36"/>
-                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
-                                <state key="normal" title="تسجيل الخروج">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutBtN:" destination="KJc-yT-H18" eventType="touchUpInside" id="woZ-r6-yz1"/>
-                                    <action selector="startTrip:" destination="MYx-4H-a3k" eventType="touchUpInside" id="4gf-AH-gvo"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.082734324038028717" green="0.32134678959846497" blue="0.53392535448074341" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="bottom" secondItem="lW3-Dj-MBQ" secondAttribute="bottom" constant="248" id="3Fk-Vi-b09"/>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="trailing" secondItem="8wb-nr-IvY" secondAttribute="trailing" constant="8" id="5uU-pv-KHY"/>
-                            <constraint firstItem="ShW-2I-UH6" firstAttribute="leading" secondItem="3mn-1m-9yZ" secondAttribute="leading" constant="8" id="7cl-uM-USy"/>
-                            <constraint firstItem="ShW-2I-UH6" firstAttribute="top" secondItem="F9Q-M5-j3T" secondAttribute="bottom" constant="8" id="ErU-Mx-o7F"/>
-                            <constraint firstItem="8wb-nr-IvY" firstAttribute="leading" secondItem="3mn-1m-9yZ" secondAttribute="leading" constant="8" id="HZS-7D-dWd"/>
-                            <constraint firstItem="vx4-rX-gLp" firstAttribute="leading" secondItem="3mn-1m-9yZ" secondAttribute="leading" constant="100" id="JqL-4m-ysj"/>
-                            <constraint firstItem="lW3-Dj-MBQ" firstAttribute="top" secondItem="ShW-2I-UH6" secondAttribute="bottom" constant="16" id="Jsc-lt-UFx"/>
-                            <constraint firstItem="F9Q-M5-j3T" firstAttribute="leading" secondItem="3mn-1m-9yZ" secondAttribute="leading" constant="8" id="Jtx-bT-kPb"/>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="trailing" secondItem="F9Q-M5-j3T" secondAttribute="trailing" constant="8" id="Tvb-l0-FJk"/>
-                            <constraint firstItem="F9Q-M5-j3T" firstAttribute="top" secondItem="8wb-nr-IvY" secondAttribute="bottom" constant="8" id="UuJ-gi-DYP"/>
-                            <constraint firstItem="vx4-rX-gLp" firstAttribute="top" secondItem="3mn-1m-9yZ" secondAttribute="top" constant="13" id="cuy-DT-jbO"/>
-                            <constraint firstItem="8wb-nr-IvY" firstAttribute="top" secondItem="vx4-rX-gLp" secondAttribute="bottom" constant="8" id="dIH-nQ-hhZ"/>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="trailing" secondItem="lW3-Dj-MBQ" secondAttribute="trailing" constant="8" id="jMt-an-hX5"/>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="trailing" secondItem="ShW-2I-UH6" secondAttribute="trailing" constant="8" id="mlh-Oe-LkU"/>
-                            <constraint firstItem="3mn-1m-9yZ" firstAttribute="trailing" secondItem="vx4-rX-gLp" secondAttribute="trailing" constant="100" id="vVu-Gn-D3I"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="3mn-1m-9yZ"/>
-                    </view>
-                    <connections>
-                        <outlet property="imageProfile" destination="vx4-rX-gLp" id="Je4-0Z-E7d"/>
-                        <outlet property="name" destination="8wb-nr-IvY" id="YAV-GR-l3W"/>
-                        <outlet property="phone" destination="F9Q-M5-j3T" id="VOm-3y-3ga"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gOr-6h-Wh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-410.625" y="1712.323943661972"/>
         </scene>
         <!--Detials TripVC-->
         <scene sceneID="xmf-en-E0x">
@@ -601,6 +532,7 @@
                     <connections>
                         <outlet property="head" destination="5eC-DS-bvQ" id="vpC-Bm-7eN"/>
                         <outlet property="massageTF" destination="Nbr-rX-sHX" id="Cz8-sc-bM3"/>
+                        <outlet property="startUbateBTNOutle" destination="RTu-Ib-W4h" id="2Yw-Zd-GKR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWZ-At-MG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1170,6 +1102,141 @@
             </objects>
             <point key="canvasLocation" x="950" y="-317"/>
         </scene>
+        <!--NotifactionVC-->
+        <scene sceneID="rzy-rt-d93">
+            <objects>
+                <viewController id="frV-R2-xnA" customClass="notifactionVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyg-tD-z8V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ziv-fr-puS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="XUH-p1-AcI" customClass="notifactionCell" customModule="Smart_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XUH-p1-AcI" id="Xay-Ug-mJ4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-XL-rrb" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="304" height="153.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المشرف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHO-3T-fyZ">
+                                                            <rect key="frame" x="8" y="8" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGS-I7-DK1">
+                                                            <rect key="frame" x="8" y="35.5" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المرشد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcu-FF-adi">
+                                                            <rect key="frame" x="8" y="63" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6X-8L-e9B">
+                                                            <rect key="frame" x="8" y="90.5" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-jY-Mg4">
+                                                            <rect key="frame" x="8" y="118" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="iHO-3T-fyZ" firstAttribute="top" secondItem="ILL-XL-rrb" secondAttribute="top" constant="8" id="3jM-sL-Gi1"/>
+                                                        <constraint firstItem="iHO-3T-fyZ" firstAttribute="leading" secondItem="ILL-XL-rrb" secondAttribute="leading" constant="8" id="BBV-9q-h0j"/>
+                                                        <constraint firstItem="GGS-I7-DK1" firstAttribute="top" secondItem="iHO-3T-fyZ" secondAttribute="bottom" constant="8" id="CJg-OR-IkZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="s6X-8L-e9B" secondAttribute="trailing" constant="8" id="EBL-Vl-QNG"/>
+                                                        <constraint firstItem="2Yf-jY-Mg4" firstAttribute="top" secondItem="s6X-8L-e9B" secondAttribute="bottom" constant="8" id="HS1-Yl-Hkg"/>
+                                                        <constraint firstItem="rcu-FF-adi" firstAttribute="leading" secondItem="ILL-XL-rrb" secondAttribute="leading" constant="8" id="LZL-lJ-RXo"/>
+                                                        <constraint firstItem="s6X-8L-e9B" firstAttribute="top" secondItem="rcu-FF-adi" secondAttribute="bottom" constant="8" id="NzO-uK-hRy"/>
+                                                        <constraint firstItem="s6X-8L-e9B" firstAttribute="leading" secondItem="ILL-XL-rrb" secondAttribute="leading" constant="8" id="Yv5-4S-7JY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iHO-3T-fyZ" secondAttribute="trailing" constant="8" id="el2-g3-Bm5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2Yf-jY-Mg4" secondAttribute="trailing" constant="8" id="fFG-6O-Tko"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GGS-I7-DK1" secondAttribute="trailing" constant="8" id="fX0-bQ-NMl"/>
+                                                        <constraint firstItem="GGS-I7-DK1" firstAttribute="leading" secondItem="ILL-XL-rrb" secondAttribute="leading" constant="8" id="i9x-rj-hHD"/>
+                                                        <constraint firstItem="2Yf-jY-Mg4" firstAttribute="leading" secondItem="ILL-XL-rrb" secondAttribute="leading" constant="8" id="oGj-t2-yd1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rcu-FF-adi" secondAttribute="trailing" constant="8" id="rT2-5E-8qY"/>
+                                                        <constraint firstItem="s6X-8L-e9B" firstAttribute="top" secondItem="rcu-FF-adi" secondAttribute="bottom" constant="8" id="rV1-2e-b2i"/>
+                                                        <constraint firstItem="rcu-FF-adi" firstAttribute="top" secondItem="GGS-I7-DK1" secondAttribute="bottom" constant="8" id="sOx-Nd-R7u"/>
+                                                        <constraint firstItem="2Yf-jY-Mg4" firstAttribute="top" secondItem="s6X-8L-e9B" secondAttribute="bottom" constant="8" id="wch-XP-AqX"/>
+                                                        <constraint firstItem="GGS-I7-DK1" firstAttribute="top" secondItem="iHO-3T-fyZ" secondAttribute="bottom" constant="8" id="yh9-3r-vKJ"/>
+                                                        <constraint firstItem="rcu-FF-adi" firstAttribute="top" secondItem="GGS-I7-DK1" secondAttribute="bottom" constant="8" id="z9w-41-ZW7"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ILL-XL-rrb" secondAttribute="trailing" constant="8" id="Th1-ag-dey"/>
+                                                <constraint firstAttribute="bottom" secondItem="ILL-XL-rrb" secondAttribute="bottom" constant="8" id="cYp-Dn-Uhx"/>
+                                                <constraint firstItem="ILL-XL-rrb" firstAttribute="top" secondItem="Xay-Ug-mJ4" secondAttribute="top" constant="8" id="cfL-NF-Uun"/>
+                                                <constraint firstItem="ILL-XL-rrb" firstAttribute="leading" secondItem="Xay-Ug-mJ4" secondAttribute="leading" constant="8" id="qJk-Zc-Pds"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="driverName" destination="GGS-I7-DK1" id="gkL-zG-7nk"/>
+                                            <outlet property="guidName" destination="rcu-FF-adi" id="KWz-rq-Et0"/>
+                                            <outlet property="headMassege" destination="s6X-8L-e9B" id="xX3-Ux-NsZ"/>
+                                            <outlet property="message" destination="2Yf-jY-Mg4" id="NSD-ef-Yd6"/>
+                                            <outlet property="superVisorName" destination="iHO-3T-fyZ" id="bRp-ht-1l0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ziv-fr-puS" firstAttribute="leading" secondItem="D6e-1X-C5k" secondAttribute="leading" id="NIe-It-LgD"/>
+                            <constraint firstItem="D6e-1X-C5k" firstAttribute="trailing" secondItem="Ziv-fr-puS" secondAttribute="trailing" id="O4I-sV-18X"/>
+                            <constraint firstItem="Ziv-fr-puS" firstAttribute="top" secondItem="D6e-1X-C5k" secondAttribute="top" id="s3L-9Z-Urf"/>
+                            <constraint firstItem="D6e-1X-C5k" firstAttribute="bottom" secondItem="Ziv-fr-puS" secondAttribute="bottom" id="s7O-An-Oio"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D6e-1X-C5k"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ziv-fr-puS" id="S0X-B7-IPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4R6-oU-YVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1864" y="970"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jrc-kt-gdz">
             <objects>
@@ -1669,6 +1736,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0MA-bh-RdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1710" y="-194"/>
+        </scene>
+        <!--MenuVC-->
+        <scene sceneID="3Ub-bX-e7H">
+            <objects>
+                <viewController id="d20-v4-a8q" customClass="menuVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZFU-jh-8nm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jn-sa-2vs">
+                                <rect key="frame" x="100" y="13" width="120" height="134"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvS-gI-Y7f">
+                                <rect key="frame" x="8" y="155" width="304" height="23"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlv-NO-Tdr">
+                                <rect key="frame" x="8" y="186" width="304" height="23"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E83-X1-8dX">
+                                <rect key="frame" x="8" y="217" width="304" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="oHo-ag-tib"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-Ff-EGP">
+                                <rect key="frame" x="217" y="286" width="95" height="36"/>
+                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                <state key="normal" title="تسجيل الخروج">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtN:" destination="d20-v4-a8q" eventType="touchUpInside" id="AzI-wT-Z7K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8o-a1-05l">
+                                <rect key="frame" x="215" y="234" width="97" height="36"/>
+                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                <state key="normal" title="طلبات القديمه">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtN:" destination="d20-v4-a8q" eventType="touchUpInside" id="Uly-pq-aFi"/>
+                                    <action selector="oldTripsBTN:" destination="d20-v4-a8q" eventType="touchUpInside" id="fO1-PG-8Zi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082734324040000001" green="0.32134678960000002" blue="0.5339253545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0jn-sa-2vs" firstAttribute="top" secondItem="eIo-sE-fhQ" secondAttribute="top" constant="13" id="3oX-2c-Q37"/>
+                            <constraint firstItem="SvS-gI-Y7f" firstAttribute="top" secondItem="0jn-sa-2vs" secondAttribute="bottom" constant="8" id="5ia-lg-2RL"/>
+                            <constraint firstItem="hlv-NO-Tdr" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="5yH-uq-lTP"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="T8o-a1-05l" secondAttribute="trailing" constant="8" id="6MW-Oy-tGM"/>
+                            <constraint firstItem="hlv-NO-Tdr" firstAttribute="top" secondItem="SvS-gI-Y7f" secondAttribute="bottom" constant="8" id="Cpc-ct-YDA"/>
+                            <constraint firstItem="SvS-gI-Y7f" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="Dha-qq-CN1"/>
+                            <constraint firstItem="UA8-Ff-EGP" firstAttribute="top" secondItem="T8o-a1-05l" secondAttribute="bottom" constant="16" id="ExX-YI-OZW"/>
+                            <constraint firstItem="E83-X1-8dX" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="FTa-kg-RqF"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="0jn-sa-2vs" secondAttribute="trailing" constant="100" id="GHB-hu-BzU"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="hlv-NO-Tdr" secondAttribute="trailing" constant="8" id="LSz-2D-hqH"/>
+                            <constraint firstItem="T8o-a1-05l" firstAttribute="top" secondItem="E83-X1-8dX" secondAttribute="bottom" constant="16" id="NAK-cT-rnv"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="UA8-Ff-EGP" secondAttribute="trailing" constant="8" id="X3V-kn-S2q"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="UA8-Ff-EGP" secondAttribute="trailing" constant="8" id="jNH-fY-fjH"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="bottom" secondItem="UA8-Ff-EGP" secondAttribute="bottom" constant="182" id="l92-6L-S4b"/>
+                            <constraint firstItem="E83-X1-8dX" firstAttribute="top" secondItem="hlv-NO-Tdr" secondAttribute="bottom" constant="8" id="oa1-cs-a2d"/>
+                            <constraint firstItem="0jn-sa-2vs" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="100" id="olR-lo-dGZ"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="SvS-gI-Y7f" secondAttribute="trailing" constant="8" id="xFe-4G-pNh"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="E83-X1-8dX" secondAttribute="trailing" constant="8" id="ygZ-CI-af0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eIo-sE-fhQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageProfile" destination="0jn-sa-2vs" id="ryO-wt-e5H"/>
+                        <outlet property="name" destination="SvS-gI-Y7f" id="w0G-VE-UjJ"/>
+                        <outlet property="oldGuidTrips" destination="T8o-a1-05l" id="gmh-cO-kUs"/>
+                        <outlet property="phone" destination="hlv-NO-Tdr" id="LhI-gu-C4w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyl-tD-Gpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443" y="1693"/>
         </scene>
     </scenes>
     <resources>

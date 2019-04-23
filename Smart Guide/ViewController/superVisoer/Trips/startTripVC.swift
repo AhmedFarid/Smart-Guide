@@ -12,12 +12,18 @@ class startTripVC: UIViewController {
     
     @IBOutlet weak var head: roundedTF!
     @IBOutlet weak var massageTF: roundedTV!
+    @IBOutlet weak var startUbateBTNOutle: UIButton!
     
     var trip_id = ""
     var tripStatus = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if tripStatus == "متواقف"{
+            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+        }else {
+            startUbateBTNOutle.setTitle("تعليق الرحلة", for: UIControl.State.normal)
+        }
     }
     
     @IBAction func startTrip(_ sender: Any) {
