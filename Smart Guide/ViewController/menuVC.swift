@@ -19,10 +19,10 @@ class menuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if helper.getAPIToken().role == "supervisors"{
-            oldGuidTrips.isHidden = true
-        }else {
+        if helper.getAPIToken().role == "guides"{
             oldGuidTrips.isHidden = false
+        }else {
+            oldGuidTrips.isHidden = true
         }
         
         name.text = "الاسم: \(helper.getAPIToken().name ?? "")"

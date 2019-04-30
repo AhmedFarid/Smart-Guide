@@ -1,16 +1,16 @@
 //
-//  detialsTripVC.swift
+//  tripDetilsVC.swift
 //  Smart Guide
 //
-//  Created by Farido on 4/4/19.
+//  Created by Farido on 4/30/19.
 //  Copyright © 2019 farid. All rights reserved.
 //
 
 import UIKit
 
-class detialsTripVC: UIViewController {
-    
-    var singleItem: trips?
+class tripDetilsVC: UIViewController {
+
+    var singleItem: drivers?
     
     @IBOutlet weak var busName: UILabel!
     @IBOutlet weak var status: UILabel!
@@ -29,18 +29,14 @@ class detialsTripVC: UIViewController {
         busName.text = " اسم الحافله \(singleItem?.busName ?? "")"
         status.text = " الحاله \(singleItem?.status ?? "")"
         tripName.text = " اسم الرحله \(singleItem?.tripName ?? "")"
-        guidName.text = " اسم المرشد \(singleItem?.guideName ?? "")"
+        guidName.text = " اسم المشرف \(singleItem?.supervisorName ?? "")"
         driverName.text = " اسم السائق \(singleItem?.driverName ?? "")"
         from.text = " مكان بداء الرحله \(singleItem?.from ?? "")"
         to.text = " مكان الوصلو \(singleItem?.to ?? "")"
         startDate.text = " موعد بداء الرحله \(singleItem?.dateStart ?? "")"
         endDate.text = " موعد انهاء الرحله \(singleItem?.dateEnd ?? "")"
         numberOfBassenger.text = " عدد الركاب \(singleItem?.numberPassenger ?? "")"
-        if singleItem?.statusId == "1"{
-            puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
-        }else if singleItem?.statusId == "3"{
-            puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
-        }else if singleItem?.statusId == "7"{
+        if singleItem?.status == "متواقف"{
             puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
         }else {
             puseEntrip.setTitle("تعليق الرحلة", for: UIControl.State.normal)
@@ -48,23 +44,21 @@ class detialsTripVC: UIViewController {
     }
     
     @IBAction func startTrip(_ sender: Any) {
-        performSegue(withIdentifier: "suge1", sender: nil)
+        performSegue(withIdentifier: "suge", sender: nil)
     }
     @IBAction func mapCVBTN(_ sender: Any) {
         performSegue(withIdentifier: "mapSuge", sender: nil)
     }
-    @IBAction func editeBTN(_ sender: Any) {
-        performSegue(withIdentifier: "suge", sender: nil)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destaiantion = segue.destination as? editTripVC{
-            destaiantion.singleItem = singleItem
-        }else if let destaiantion = segue.destination as? mapVC {
-            destaiantion.singleItem = singleItem
-        }else if let destaiantion = segue.destination as? startTripVC{
-            destaiantion.trip_id = singleItem?.tripId ?? ""
-            destaiantion.tripStatus = singleItem?.statusId ?? ""
-        }
+        if let destaiantion = segue.destination as? driverMapVC{
+            destaiantion.singleItems = singleItem
+//        }else if let destaiantion = segue.destination as? taripsActionVC {
+//            destaiantion.singleItems = singleItem
+//        }else if let destaiantion = segue.destination as? endTripVC {
+//            destaiantion.singleItems = singleItem
+//        }
+//    }
     }
+  }
 }

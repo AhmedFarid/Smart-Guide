@@ -1,19 +1,15 @@
 //
-//  guides.swift
+//  drivers.swift
 //  Smart Guide
 //
-//  Created by Farido on 4/23/19.
+//  Created by Farido on 4/30/19.
 //  Copyright © 2019 farid. All rights reserved.
 //
 
 import UIKit
 import SwiftyJSON
 
-class guides: NSObject {
-
-}
-
-class guidesTrips: NSObject {
+class drivers: NSObject {
     
     var tripId: String
     var tripName: String
@@ -34,9 +30,9 @@ class guidesTrips: NSObject {
     var latStart: String
     var lngStart: String
     var latEnd: String
+    var lngEnd: String
     var price: String
     var status: String
-    var lngEnd: String
     var statusId: String
     
     init?(dict: [String: JSON]){
@@ -73,44 +69,30 @@ class guidesTrips: NSObject {
     }
     
     
+
 }
 
-class getRequestPauseTrips: NSObject {
-    
-    var requestId: Int
-    var from: String
-    var to: String
-    var tripId: String
-    var status: String
-    var companyId: String
-    var driver_id: String
-    var driverName: String
-    var guideId: String
-    var guideName: String
-    var busId: String
-    var busNumber: String
-    var pathId: String
-    var startTime: String
-    var startDate: String
-    
-    
-    init?(dict: [String: JSON]){
-        
-        guard let requestId = dict["requestId"]?.int,let from = dict["from"]?.string,let to = dict["to"]?.string,let tripId = dict["tripId"]?.string,let status = dict["status"]?.string,let companyId = dict["companyId"]?.string,let driver_id = dict["driver_id"]?.string,let driverName = dict["driverName"]?.string,let guideId = dict["guideId"]?.string,let guideName = dict["guideName"]?.string,let busId = dict["busId"]?.string,let busNumber = dict["busNumber"]?.string,let pathId = dict["pathId"]?.string,let startTime = dict["startTime"]?.string,let startDate = dict["startDate"]?.string else {return nil}
-        self.requestId = requestId
-        self.from = from
-        self.to = to
-        self.tripId = tripId
-        self.status = status
-        self.companyId = companyId
-        self.driver_id = driver_id
-        self.driverName = driverName
-        self.guideId = guideId
-        self.guideName = guideName
-        self.busId = busId
-        self.busNumber = busNumber
-        self.pathId = pathId
-        self.startTime = startTime
-        self.startDate = startDate
-    }
-}
+
+//"tripId": "2",
+//"tripName": "مرحبا",
+//"companyId": "1",
+//"companyName": "مرحبا",
+//"guideId": "1",
+//"guideName": "محمود اجمد",
+//"supervisorId": "1",
+//"supervisorName": "وليد",
+//"driverId": "1",
+//"driverName": "محمود اجمد",
+//"busName": "المهندسين",
+//"numberPassenger": "60",
+//"dateStart": "06-12-2012 01:04 AM",
+//"dateEnd": "06-12-2013 01:04 AM",
+//"from": "لحوم",
+//"to": "المهندسين",
+//"latStart": "30.00916944325995",
+//"lngStart": "31.48141829013821",
+//"latEnd": "29.986126114805526",
+//"lngEnd": "31.213540711402857",
+//"price": "1.00",
+//"status": "معلق",
+//"statusId": "3"

@@ -44,4 +44,11 @@ struct URLs {
 
     static let getNotifications = main + "getNotifications"
     
+    static let getRequestPauseTrip = main + "getRequestPauseTrip"
+    
+    static let requestAnswer = main + "requestAnswer"
+    
+    static let getRequestPauseTripGuide = main + "getRequestPauseTripGuide"
+    
+    static let getTripsDriver = main + "getTripsDriver"
 }

@@ -1746,29 +1746,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jn-sa-2vs">
-                                <rect key="frame" x="100" y="13" width="120" height="134"/>
+                                <rect key="frame" x="100" y="13" width="120" height="139"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvS-gI-Y7f">
-                                <rect key="frame" x="8" y="155" width="304" height="23"/>
+                                <rect key="frame" x="8" y="160" width="304" height="23"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الجوال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlv-NO-Tdr">
-                                <rect key="frame" x="8" y="186" width="304" height="23"/>
+                                <rect key="frame" x="8" y="191" width="304" height="23"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E83-X1-8dX">
-                                <rect key="frame" x="8" y="217" width="304" height="1"/>
+                                <rect key="frame" x="8" y="222" width="304" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oHo-ag-tib"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-Ff-EGP">
-                                <rect key="frame" x="217" y="286" width="95" height="36"/>
+                                <rect key="frame" x="217" y="343" width="95" height="36"/>
                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
                                 <state key="normal" title="تسجيل الخروج">
@@ -1779,7 +1779,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8o-a1-05l">
-                                <rect key="frame" x="215" y="234" width="97" height="36"/>
+                                <rect key="frame" x="215" y="239" width="97" height="36"/>
                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
                                 <state key="normal" title="طلبات القديمه">
@@ -1790,25 +1790,39 @@
                                     <action selector="oldTripsBTN:" destination="d20-v4-a8q" eventType="touchUpInside" id="fO1-PG-8Zi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcm-Os-MQL">
+                                <rect key="frame" x="219" y="291" width="93" height="36"/>
+                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                <state key="normal" title="طلبات التعليق">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bLC-Nv-8LD" kind="show" id="8h9-MP-UWF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.082734324040000001" green="0.32134678960000002" blue="0.5339253545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wcm-Os-MQL" firstAttribute="top" secondItem="T8o-a1-05l" secondAttribute="bottom" constant="16" id="28O-4n-13X"/>
                             <constraint firstItem="0jn-sa-2vs" firstAttribute="top" secondItem="eIo-sE-fhQ" secondAttribute="top" constant="13" id="3oX-2c-Q37"/>
                             <constraint firstItem="SvS-gI-Y7f" firstAttribute="top" secondItem="0jn-sa-2vs" secondAttribute="bottom" constant="8" id="5ia-lg-2RL"/>
                             <constraint firstItem="hlv-NO-Tdr" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="5yH-uq-lTP"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="T8o-a1-05l" secondAttribute="trailing" constant="8" id="6MW-Oy-tGM"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="bottom" secondItem="UA8-Ff-EGP" secondAttribute="bottom" constant="125" id="6aK-24-Qo3"/>
                             <constraint firstItem="hlv-NO-Tdr" firstAttribute="top" secondItem="SvS-gI-Y7f" secondAttribute="bottom" constant="8" id="Cpc-ct-YDA"/>
                             <constraint firstItem="SvS-gI-Y7f" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="Dha-qq-CN1"/>
-                            <constraint firstItem="UA8-Ff-EGP" firstAttribute="top" secondItem="T8o-a1-05l" secondAttribute="bottom" constant="16" id="ExX-YI-OZW"/>
                             <constraint firstItem="E83-X1-8dX" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="8" id="FTa-kg-RqF"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="0jn-sa-2vs" secondAttribute="trailing" constant="100" id="GHB-hu-BzU"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="hlv-NO-Tdr" secondAttribute="trailing" constant="8" id="LSz-2D-hqH"/>
                             <constraint firstItem="T8o-a1-05l" firstAttribute="top" secondItem="E83-X1-8dX" secondAttribute="bottom" constant="16" id="NAK-cT-rnv"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="UA8-Ff-EGP" secondAttribute="trailing" constant="8" id="T5h-pC-9aj"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="UA8-Ff-EGP" secondAttribute="trailing" constant="8" id="X3V-kn-S2q"/>
+                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="wcm-Os-MQL" secondAttribute="trailing" constant="8" id="a4l-qw-hK2"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="UA8-Ff-EGP" secondAttribute="trailing" constant="8" id="jNH-fY-fjH"/>
-                            <constraint firstItem="eIo-sE-fhQ" firstAttribute="bottom" secondItem="UA8-Ff-EGP" secondAttribute="bottom" constant="182" id="l92-6L-S4b"/>
                             <constraint firstItem="E83-X1-8dX" firstAttribute="top" secondItem="hlv-NO-Tdr" secondAttribute="bottom" constant="8" id="oa1-cs-a2d"/>
                             <constraint firstItem="0jn-sa-2vs" firstAttribute="leading" secondItem="eIo-sE-fhQ" secondAttribute="leading" constant="100" id="olR-lo-dGZ"/>
+                            <constraint firstItem="UA8-Ff-EGP" firstAttribute="top" secondItem="wcm-Os-MQL" secondAttribute="bottom" constant="16" id="vRo-Jf-Rhj"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="SvS-gI-Y7f" secondAttribute="trailing" constant="8" id="xFe-4G-pNh"/>
                             <constraint firstItem="eIo-sE-fhQ" firstAttribute="trailing" secondItem="E83-X1-8dX" secondAttribute="trailing" constant="8" id="ygZ-CI-af0"/>
                         </constraints>
@@ -1824,6 +1838,319 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyl-tD-Gpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-443" y="1693"/>
+        </scene>
+        <!--GuidesVC-->
+        <scene sceneID="ZuA-UI-DvB">
+            <objects>
+                <viewController id="bLC-Nv-8LD" customClass="guidesVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DHl-Pa-APF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XRh-wi-FQL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="76" id="rQJ-nH-DN0" customClass="requestesCell" customModule="Smart_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rQJ-nH-DN0" id="N92-St-Eei">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jet-fE-GEN" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="304" height="59.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المشرف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flY-5d-eLt">
+                                                            <rect key="frame" x="8" y="8" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-rr-vtw">
+                                                            <rect key="frame" x="8" y="35.5" width="288" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="cDb-rr-vtw" secondAttribute="trailing" constant="8" id="08d-HN-LSC"/>
+                                                        <constraint firstItem="cDb-rr-vtw" firstAttribute="top" secondItem="flY-5d-eLt" secondAttribute="bottom" constant="8" id="0KQ-1d-Prs"/>
+                                                        <constraint firstItem="flY-5d-eLt" firstAttribute="leading" secondItem="Jet-fE-GEN" secondAttribute="leading" constant="8" id="BU2-ru-eAX"/>
+                                                        <constraint firstItem="cDb-rr-vtw" firstAttribute="leading" secondItem="Jet-fE-GEN" secondAttribute="leading" constant="8" id="RrN-L7-Khn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="flY-5d-eLt" secondAttribute="trailing" constant="8" id="cNS-vq-hD6"/>
+                                                        <constraint firstItem="cDb-rr-vtw" firstAttribute="top" secondItem="flY-5d-eLt" secondAttribute="bottom" constant="8" id="ePQ-Bm-FH1"/>
+                                                        <constraint firstItem="flY-5d-eLt" firstAttribute="top" secondItem="Jet-fE-GEN" secondAttribute="top" constant="8" id="yxy-MC-IdF"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.20000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                            <real key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jet-fE-GEN" firstAttribute="top" secondItem="N92-St-Eei" secondAttribute="top" constant="8" id="eke-g3-VjB"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jet-fE-GEN" secondAttribute="trailing" constant="8" id="mkV-of-RNw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jet-fE-GEN" secondAttribute="bottom" constant="8" id="vH8-S5-CX9"/>
+                                                <constraint firstItem="Jet-fE-GEN" firstAttribute="leading" secondItem="N92-St-Eei" secondAttribute="leading" constant="8" id="vN7-IH-9xc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="flY-5d-eLt" id="GuP-SC-FMw"/>
+                                            <outlet property="status" destination="cDb-rr-vtw" id="ex9-MM-fAj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XRh-wi-FQL" secondAttribute="trailing" id="1eG-Ss-vhc"/>
+                            <constraint firstItem="XRh-wi-FQL" firstAttribute="leading" secondItem="Aiz-ea-YQe" secondAttribute="leading" id="25e-eS-OkO"/>
+                            <constraint firstAttribute="bottom" secondItem="XRh-wi-FQL" secondAttribute="bottom" id="OPm-Rv-ORl"/>
+                            <constraint firstItem="XRh-wi-FQL" firstAttribute="top" secondItem="Aiz-ea-YQe" secondAttribute="top" id="SWc-oc-lC0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aiz-ea-YQe"/>
+                    </view>
+                    <connections>
+                        <outlet property="tabelView" destination="XRh-wi-FQL" id="VWa-ek-ITr"/>
+                        <segue destination="wYZ-gP-z0j" kind="show" identifier="suge" id="4ax-5y-TbW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WXT-BV-2I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1179.375" y="1691.1971830985915"/>
+        </scene>
+        <!--Tripe PuseVC-->
+        <scene sceneID="89n-eG-cQa">
+            <objects>
+                <viewController id="wYZ-gP-z0j" customClass="tripePuseVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUd-cO-Q3s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4P-ZN-LBM" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
+                                <rect key="frame" x="16" y="44" width="288" height="416"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-Mo-nab">
+                                        <rect key="frame" x="20" y="358" width="248" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-Pa-vTv">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="40"/>
+                                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <state key="normal" title="رفض">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mapCVBTN:" destination="wYZ-gP-z0j" eventType="touchUpInside" id="TKR-pe-YXD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-w8-hVb">
+                                                <rect key="frame" x="139" y="0.0" width="109" height="40"/>
+                                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <state key="normal" title="قبول">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startTrip:" destination="wYZ-gP-z0j" eventType="touchUpInside" id="ONE-Dj-f2A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9J-jB-lat" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="8" width="188" height="149"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus-side-view" translatesAutoresizingMaskIntoConstraints="NO" id="udi-d8-EH4">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="83"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="83" id="eeT-ey-gfg"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqs-Rk-4Hz">
+                                                <rect key="frame" x="0.0" y="83" width="188" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-6p-O4i">
+                                                        <rect key="frame" x="8" y="8" width="172" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                        <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNt-gG-jgg">
+                                                        <rect key="frame" x="8" y="35.5" width="172" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                        <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.074509803920000006" green="0.2700257599" blue="0.46326947210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="VNt-gG-jgg" secondAttribute="bottom" constant="11" id="4Nf-Kq-Q8D"/>
+                                                    <constraint firstItem="VNt-gG-jgg" firstAttribute="leading" secondItem="Qqs-Rk-4Hz" secondAttribute="leading" constant="8" id="4hg-eg-qUq"/>
+                                                    <constraint firstItem="NlU-6p-O4i" firstAttribute="leading" secondItem="Qqs-Rk-4Hz" secondAttribute="leading" constant="8" id="Gjs-Bu-vKn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NlU-6p-O4i" secondAttribute="trailing" constant="8" id="Q41-4U-psa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VNt-gG-jgg" secondAttribute="trailing" constant="8" id="RLh-pI-xW3"/>
+                                                    <constraint firstItem="VNt-gG-jgg" firstAttribute="top" secondItem="NlU-6p-O4i" secondAttribute="bottom" constant="8" id="TQk-kd-WOx"/>
+                                                    <constraint firstItem="NlU-6p-O4i" firstAttribute="top" secondItem="Qqs-Rk-4Hz" secondAttribute="top" constant="8" id="fgp-lc-oQ0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="udi-d8-EH4" firstAttribute="top" secondItem="R9J-jB-lat" secondAttribute="top" id="Kfn-jr-Eo2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qqs-Rk-4Hz" secondAttribute="trailing" id="LT0-D2-xU1"/>
+                                            <constraint firstItem="udi-d8-EH4" firstAttribute="leading" secondItem="R9J-jB-lat" secondAttribute="leading" id="PV7-Q0-eFA"/>
+                                            <constraint firstAttribute="bottom" secondItem="Qqs-Rk-4Hz" secondAttribute="bottom" id="PhH-fh-AWp"/>
+                                            <constraint firstItem="Qqs-Rk-4Hz" firstAttribute="top" secondItem="udi-d8-EH4" secondAttribute="bottom" id="XEh-Lr-UCb"/>
+                                            <constraint firstItem="Qqs-Rk-4Hz" firstAttribute="leading" secondItem="R9J-jB-lat" secondAttribute="leading" id="wob-az-6k2"/>
+                                            <constraint firstAttribute="trailing" secondItem="udi-d8-EH4" secondAttribute="trailing" id="zmr-Z5-pY5"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                <real key="value" value="101"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8ly-mw-lg4">
+                                        <rect key="frame" x="16" y="173" width="256" height="177"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-pO-A7Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-bD-2hA">
+                                                <rect key="frame" x="0.0" y="31.5" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-aQ-pJl">
+                                                <rect key="frame" x="0.0" y="63" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0N-4Z-gcf">
+                                                <rect key="frame" x="0.0" y="94.5" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maU-Yl-e1O">
+                                                <rect key="frame" x="0.0" y="126" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-9Q-kyf">
+                                                <rect key="frame" x="0.0" y="157.5" width="256" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="k4A-Mo-nab" firstAttribute="leading" secondItem="F4P-ZN-LBM" secondAttribute="leading" constant="20" id="3zK-cq-1Te"/>
+                                    <constraint firstItem="R9J-jB-lat" firstAttribute="leading" secondItem="F4P-ZN-LBM" secondAttribute="leading" constant="50" id="AbZ-bn-hdM"/>
+                                    <constraint firstAttribute="trailing" secondItem="8ly-mw-lg4" secondAttribute="trailing" constant="16" id="GTd-63-xQB"/>
+                                    <constraint firstItem="8ly-mw-lg4" firstAttribute="top" secondItem="R9J-jB-lat" secondAttribute="bottom" constant="16" id="Loc-dY-poX"/>
+                                    <constraint firstItem="VNt-gG-jgg" firstAttribute="leading" secondItem="F4P-ZN-LBM" secondAttribute="leading" constant="58" id="Pij-AL-GoQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="k4A-Mo-nab" secondAttribute="bottom" constant="18" id="Q3E-tb-2mz"/>
+                                    <constraint firstItem="8ly-mw-lg4" firstAttribute="leading" secondItem="F4P-ZN-LBM" secondAttribute="leading" constant="16" id="RPL-de-Hel"/>
+                                    <constraint firstAttribute="trailing" secondItem="R9J-jB-lat" secondAttribute="trailing" constant="50" id="T7U-PY-q5T"/>
+                                    <constraint firstItem="R9J-jB-lat" firstAttribute="top" secondItem="F4P-ZN-LBM" secondAttribute="top" constant="8" id="eYZ-Om-Mfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="VNt-gG-jgg" secondAttribute="trailing" constant="58" id="lAy-aO-lXN"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4A-Mo-nab" secondAttribute="trailing" constant="20" id="pOM-g1-Huc"/>
+                                    <constraint firstItem="VNt-gG-jgg" firstAttribute="top" secondItem="NlU-6p-O4i" secondAttribute="bottom" constant="8" id="r6i-iI-4p9"/>
+                                    <constraint firstItem="k4A-Mo-nab" firstAttribute="top" secondItem="8ly-mw-lg4" secondAttribute="bottom" constant="8" id="zND-q6-8R2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97630661730000001" green="0.9806153178" blue="0.98815149069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d9n-Vp-Jfc" firstAttribute="trailing" secondItem="F4P-ZN-LBM" secondAttribute="trailing" constant="16" id="cKd-HC-0Nv"/>
+                            <constraint firstItem="F4P-ZN-LBM" firstAttribute="leading" secondItem="d9n-Vp-Jfc" secondAttribute="leading" constant="16" id="ewr-hc-EcA"/>
+                            <constraint firstItem="F4P-ZN-LBM" firstAttribute="centerY" secondItem="HUd-cO-Q3s" secondAttribute="centerY" id="teT-WS-F6Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d9n-Vp-Jfc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RKI-HX-QJd"/>
+                    <connections>
+                        <outlet property="busName" destination="NlU-6p-O4i" id="o62-2A-LGx"/>
+                        <outlet property="driverName" destination="Pz8-bD-2hA" id="s5d-26-Rtx"/>
+                        <outlet property="endDate" destination="iQ8-9Q-kyf" id="30c-yL-e46"/>
+                        <outlet property="from" destination="dWa-aQ-pJl" id="a9b-7m-Bup"/>
+                        <outlet property="guidName" destination="eg7-pO-A7Q" id="T1S-J8-hG0"/>
+                        <outlet property="startDate" destination="maU-Yl-e1O" id="FEV-Q1-HQZ"/>
+                        <outlet property="status" destination="VNt-gG-jgg" id="OEH-Gr-EJR"/>
+                        <outlet property="to" destination="B0N-4Z-gcf" id="Zm7-tG-Cer"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoA-0a-cf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1866" y="1691"/>
         </scene>
     </scenes>
     <resources>

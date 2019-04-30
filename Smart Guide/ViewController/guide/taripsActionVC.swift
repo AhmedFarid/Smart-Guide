@@ -21,15 +21,19 @@ class taripsActionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if singleItems?.status == "متواقف"{
-            startUbateBTNOutle.setTitle("طلب بداء الرحلة", for: UIControl.State.normal)
+        if tripStatus == "1"{
+            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+        }else if tripStatus == "3"{
+            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+        }else if tripStatus == "7"{
+            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
         }else {
-            startUbateBTNOutle.setTitle("طلب تعليق الرحلة", for: UIControl.State.normal)
+            startUbateBTNOutle.setTitle("تعليق الرحلة", for: UIControl.State.normal)
         }
     }
     
     @IBAction func startTrip(_ sender: Any) {
-        if singleItems?.status == "متواقف"{
+        if tripStatus == "1" || tripStatus == "3" ||  tripStatus == "7"{
 //            API_SuperVisour.startTrip(trip_id: trip_id, headings: head.text ?? "", message: massageTF.text ?? ""){ (error: Error?, success, data,stutus) in
 //                if success {
 //                    if stutus == true{

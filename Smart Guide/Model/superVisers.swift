@@ -156,10 +156,11 @@ class trips: NSObject {
     var lngEnd: String
     var price: String
     var status: String
+    var statusId: String
     
     init?(dict: [String: JSON]){
         
-        guard let tripId = dict["tripId"]?.string,let tripName = dict["tripName"]?.string,let companyId = dict["companyId"]?.string,let companyName = dict["companyName"]?.string,let guideName = dict["guideName"]?.string,let driverName = dict["driverName"]?.string,let busName = dict["busName"]?.string,let numberPassenger = dict["numberPassenger"]?.string,let dateStart = dict["dateStart"]?.string,let dateEnd = dict["dateEnd"]?.string,let from = dict["from"]?.string,let to = dict["to"]?.string,let latStart = dict["latStart"]?.string,let lngStart = dict["lngStart"]?.string,let latEnd = dict["latEnd"]?.string,let lngEnd = dict["lngEnd"]?.string,let price = dict["price"]?.string,let status = dict["status"]?.string  else {return nil}
+        guard let tripId = dict["tripId"]?.string,let tripName = dict["tripName"]?.string,let companyId = dict["companyId"]?.string,let companyName = dict["companyName"]?.string,let guideName = dict["guideName"]?.string,let driverName = dict["driverName"]?.string,let busName = dict["busName"]?.string,let numberPassenger = dict["numberPassenger"]?.string,let dateStart = dict["dateStart"]?.string,let dateEnd = dict["dateEnd"]?.string,let from = dict["from"]?.string,let to = dict["to"]?.string,let latStart = dict["latStart"]?.string,let lngStart = dict["lngStart"]?.string,let latEnd = dict["latEnd"]?.string,let lngEnd = dict["lngEnd"]?.string,let price = dict["price"]?.string,let status = dict["status"]?.string,let statusId = dict["statusId"]?.string  else {return nil}
         
         
         
@@ -182,6 +183,7 @@ class trips: NSObject {
         self.lngEnd = lngEnd
         self.price = price
         self.status = status
+        self.statusId = statusId
     }
     
 
