@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class tripDetilsVC: UIViewController {
 
     var singleItem: drivers?
+    var statusType = ""
     
     @IBOutlet weak var busName: UILabel!
     @IBOutlet weak var status: UILabel!
@@ -26,6 +28,7 @@ class tripDetilsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        readStatus()
         busName.text = " اسم الحافله \(singleItem?.busName ?? "")"
         status.text = " الحاله \(singleItem?.status ?? "")"
         tripName.text = " اسم الرحله \(singleItem?.tripName ?? "")"
@@ -36,15 +39,41 @@ class tripDetilsVC: UIViewController {
         startDate.text = " موعد بداء الرحله \(singleItem?.dateStart ?? "")"
         endDate.text = " موعد انهاء الرحله \(singleItem?.dateEnd ?? "")"
         numberOfBassenger.text = " عدد الركاب \(singleItem?.numberPassenger ?? "")"
-        if singleItem?.status == "متواقف"{
+        if statusType == "off"{
             puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
         }else {
-            puseEntrip.setTitle("تعليق الرحلة", for: UIControl.State.normal)
+            puseEntrip.setTitle("انهاء الرحله", for: UIControl.State.normal)
         }
     }
     
+    func readStatus(){
+        let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(singleItem?.tripId ?? "")")
+        print(ref)
+        ref.observe(.value) { (snapshot: DataSnapshot) in
+            if let data = snapshot.value as? [String:AnyObject]{
+                if let statusType = data["status"] as? String{
+                    print(statusType)
+                    self.statusType = statusType
+                    print("xxxxxxx\(statusType)")
+                }
+            }
+        }
+        //refbus.removeAllObservers()
+    }
+    
     @IBAction func startTrip(_ sender: Any) {
-        performSegue(withIdentifier: "suge", sender: nil)
+        //performSegue(withIdentifier: "suge", sender: nil)
+        if statusType == "off"{
+            let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(singleItem?.tripId ?? "")")
+            ref.child("status").setValue("on")
+            puseEntrip.setTitle("انهاء الرحله", for: UIControl.State.normal)
+            self.showAlert(title: "حاله الرحله", message: "تم بداء الرحله")
+        }else {
+            let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(singleItem?.tripId ?? "")")
+            ref.child("status").setValue("off")
+            puseEntrip.setTitle("بداء الرحله", for: UIControl.State.normal)
+            self.showAlert(title: "حاله الرحله", message: "تم انهاء الرحله")
+        }
     }
     @IBAction func mapCVBTN(_ sender: Any) {
         performSegue(withIdentifier: "mapSuge", sender: nil)

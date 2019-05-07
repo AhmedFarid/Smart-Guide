@@ -23,18 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let user_token = helper.getAPIToken().userToken{
             if helper.getAPIToken().role == "supervisors" {
                 print("user_token\(user_token)")
+                print(helper.getAPIToken().role ?? "")
                 let tab = UIStoryboard(name: "supervisor", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
             }else if helper.getAPIToken().role == "drivers" {
                 print("user_token\(user_token)")
+                print(helper.getAPIToken().role ?? "")
                 let tab = UIStoryboard(name: "driver", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
             }else if helper.getAPIToken().role == "guides" {
                 print("user_token\(user_token)")
+                print(helper.getAPIToken().role ?? "")
                 let tab = UIStoryboard(name: "guide", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
             }else {
                 print("user_token\(user_token)")
+                print(helper.getAPIToken().role ?? "")
                 let tab = UIStoryboard(name: "member", bundle: nil).instantiateInitialViewController()!
                 window?.rootViewController = tab
             }

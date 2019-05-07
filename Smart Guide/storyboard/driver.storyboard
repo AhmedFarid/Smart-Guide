@@ -192,7 +192,7 @@
                                         <rect key="frame" x="8" y="413" width="327" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKN-gH-yFP">
-                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="عرض المسار">
@@ -202,16 +202,8 @@
                                                     <action selector="mapCVBTN:" destination="jSI-VG-3RH" eventType="touchUpInside" id="lTj-Ti-7Uc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S3-or-xBI">
-                                                <rect key="frame" x="112.5" y="0.0" width="102" height="32"/>
-                                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
-                                                <state key="normal" title="انهاء الرحله">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Od-cF-zLO">
-                                                <rect key="frame" x="224.5" y="0.0" width="102.5" height="32"/>
+                                                <rect key="frame" x="168.5" y="0.0" width="158.5" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="بدء الرحلة">
@@ -419,7 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tk4-UV-5jz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tk4-UV-5jz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </mapView>
                         </subviews>
@@ -460,34 +452,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-Ff-60N" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="304" height="153.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="153.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المشرف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6e-5t-Niv">
-                                                            <rect key="frame" x="8" y="8" width="288" height="19.5"/>
+                                                            <rect key="frame" x="8" y="8" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                             <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-7s-exA">
-                                                            <rect key="frame" x="8" y="35.5" width="288" height="19.5"/>
+                                                            <rect key="frame" x="8" y="35.5" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                             <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المرشد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-SP-T9g">
-                                                            <rect key="frame" x="8" y="63" width="288" height="19.5"/>
+                                                            <rect key="frame" x="8" y="63" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                             <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-LM-vAz">
-                                                            <rect key="frame" x="8" y="90.5" width="288" height="19.5"/>
+                                                            <rect key="frame" x="8" y="90.5" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                             <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان الرساله" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6md-59-pzg">
-                                                            <rect key="frame" x="8" y="118" width="288" height="19.5"/>
+                                                            <rect key="frame" x="8" y="118" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                             <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>

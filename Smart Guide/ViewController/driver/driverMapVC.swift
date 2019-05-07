@@ -26,7 +26,7 @@ class customPins: NSObject, MKAnnotation{
 }
 
 class driverMapVC: UIViewController {
-
+    
     var singleItems: drivers?
     var tripID = ""
     var speed = ""
@@ -35,25 +35,42 @@ class driverMapVC: UIViewController {
     var startLng = ""
     var endLat = ""
     var endLng = ""
+    let locationManager = CLLocationManager()
+    var userLat = 0.0
+    var userLng = 0.0
+    
     
     @IBOutlet weak var mapVC: MKMapView!
     var annotation = MKPointAnnotation()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         mapVC.delegate = self
         
-            tripID = singleItems?.tripId ?? ""
-            startLat = singleItems?.latStart ?? ""
-            startLng = singleItems?.lngStart ?? ""
-            endLat = singleItems?.latEnd ?? ""
-            endLng = singleItems?.lngEnd ?? ""
+        tripID = singleItems?.tripId ?? ""
+        startLat = singleItems?.latStart ?? ""
+        startLng = singleItems?.lngStart ?? ""
+        endLat = singleItems?.latEnd ?? ""
+        endLng = singleItems?.lngEnd ?? ""
         
         bus()
-        
+        getUserLocation()
         print("vvvvv\(endLng)")
         drowRoute()
     }
     
+    func getUserLocation(){
+        //self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
     
     func drowRoute() {
         let sourceLocation = CLLocationCoordinate2D(latitude: Double(startLat) ?? 0.0, longitude: Double(startLng) ?? 0.0)
@@ -93,39 +110,16 @@ class driverMapVC: UIViewController {
     
     
     
-    fileprivate func bus(){
-        let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(self.tripID)")
-        print(ref)
-        ref.observe(.value) { (snapshot: DataSnapshot) in
-            if let data = snapshot.value as? [String:AnyObject]{
-                if let speed = data["speed"] as? Int,let status = data["status"] as? String,let lat = data["lat"] as? String, let lng = data["lng"] as? String{
-                    print(speed)
-                    self.speed = "\(speed)"
-                    self.status = status
-                    print("xxxxxxx\(lat)")
-                    //////////////
-                    /////////////
-                    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                    let lat = CLLocationDegrees(lat)
-                    let long = CLLocationDegrees(lng)
-                    let center = CLLocationCoordinate2D(latitude: lat ?? 0.0, longitude: long ?? 0.0)
-                    let region = MKCoordinateRegion(center: center, span: span)
-                    self.mapVC.setRegion(region, animated: true)
-                    ////////
-                    ///////
-                    
-                    
-                    self.mapVC.removeAnnotation(self.annotation)
-                    //let busLocation = customPins(pinTitle: , pinSubTitle: , location: center,Id: 1)
-                    self.annotation.coordinate = center
-                    self.annotation.title = "bus speed: \(speed)"
-                    self.annotation.subtitle = "status: \(status)"
-                    self.mapVC.addAnnotation(self.annotation)
-                }
-            }
-        }
-        //refbus.removeAllObservers()
-        
+     func bus(){
+        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let lat = CLLocationDegrees(userLat)
+        let long = CLLocationDegrees(userLng)
+        let center = CLLocationCoordinate2D(latitude: lat , longitude: long )
+        let region = MKCoordinateRegion(center: center, span: span)
+        self.mapVC.setRegion(region, animated: true)
+        self.mapVC.removeAnnotation(self.annotation)
+        self.annotation.coordinate = center
+        self.mapVC.addAnnotation(self.annotation)
     }
 }
 
@@ -133,10 +127,13 @@ class driverMapVC: UIViewController {
 extension driverMapVC: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MyPin"
-        if annotation is MKUserLocation {
-            return nil
-        }
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotation is MKUserLocation {
+            //let pin = mapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.image = UIImage(named: "Group 168")
+            //return pin
+        }
+        
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         }
@@ -167,4 +164,25 @@ extension driverMapVC: MKMapViewDelegate {
         return renderer
     }
     
+}
+
+extension driverMapVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.userLat = locValue.latitude
+        self.userLng = locValue.longitude
+        let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(self.tripID)")
+        ref.child("lat").setValue("\(locValue.latitude)")
+        ref.child("lng").setValue("\(locValue.longitude)")
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let lat = CLLocationDegrees(locValue.latitude)
+        let long = CLLocationDegrees(locValue.longitude)
+        let center = CLLocationCoordinate2D(latitude: lat , longitude: long )
+        let region = MKCoordinateRegion(center: center, span: span)
+        self.mapVC.setRegion(region, animated: true)
+        self.mapVC.removeAnnotation(self.annotation)
+        self.annotation.coordinate = center
+    }
 }
