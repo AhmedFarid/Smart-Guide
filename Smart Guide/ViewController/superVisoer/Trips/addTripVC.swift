@@ -20,6 +20,12 @@ class addTripVC: UIViewController {
     @IBOutlet weak var startTime: roundedTF!
     @IBOutlet weak var EndTime: roundedTF!
     @IBOutlet weak var stutse: roundedTF!
+    @IBOutlet weak var price: roundedTF!
+    @IBOutlet weak var numberOfpassange: roundedTF!
+    @IBOutlet weak var statesSwitch: UISegmentedControl!
+    @IBOutlet weak var startTimeTF: roundedTF!
+    @IBOutlet weak var endTimeTF: roundedTF!
+    
     
     
     var singleItem: trips?
@@ -31,24 +37,31 @@ class addTripVC: UIViewController {
     var stute = Array<stues>()
     
     var guides = ""
-    var driver = ""
+    var driverID = ""
     var members = ""
     var bus = ""
     var selectedStutes = ""
-    var price = ""
+    var prices = ""
+    var careeID = ""
+    var states = "7"
+    
     private var datePiker: UIDatePicker?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.stutse.isEnabled = false
+        self.price.isEnabled = false
         textEnabeld()
-        createmeStatusPiker()
+        //createmeStatusPiker()
         createmeMemberPiker()
-        createmeDriversPiker()
-        createmeGuidePiker()
+        //createmeDriversPiker()
+        //createmeGuidePiker()
         createDateStart()
         createDateEnd()
+        createBussPiker()
+        createDateStartTime()
+        createDateEndTime()
     }
     
     func  ReadTheStuts(){
@@ -65,18 +78,60 @@ class addTripVC: UIViewController {
     }
     
     func createDateStart(){
-        
         datePiker = UIDatePicker()
-        datePiker?.datePickerMode = .dateAndTime
+        datePiker?.datePickerMode = .date
+        datePiker?.calendar = Calendar.init(identifier: Calendar.Identifier.islamicCivil)
+        
         datePiker?.addTarget(self, action: #selector(addTripVC.dateChanged(datePiker:)), for: .valueChanged)
         self.view.endEditing(false)
         startTime.inputView = datePiker
         
     }
     
+    func createDateStartTime(){
+        
+        datePiker = UIDatePicker()
+        datePiker?.datePickerMode = .time
+        datePiker?.calendar = Calendar.init(identifier: Calendar.Identifier.islamicCivil)
+        
+        datePiker?.addTarget(self, action: #selector(addTripVC.dateChangedStartTime(datePiker:)), for: .valueChanged)
+        self.view.endEditing(false)
+        startTimeTF.inputView = datePiker
+        
+    }
+    
+    @objc func dateChangedStartTime(datePiker: UIDatePicker) {
+        let dateFormater = DateFormatter()
+        dateFormater.locale = Locale.init(identifier: "en")
+        dateFormater.dateFormat = "HH:mm:ss"
+        startTimeTF.text = dateFormater.string(from: datePiker.date)
+        view.endEditing(true)
+    }
+    
+    func createDateEndTime(){
+        
+        datePiker = UIDatePicker()
+        datePiker?.datePickerMode = .time
+        datePiker?.calendar = Calendar.init(identifier: Calendar.Identifier.islamicCivil)
+        
+        datePiker?.addTarget(self, action: #selector(addTripVC.dateChangedEndTime(datePiker:)), for: .valueChanged)
+        self.view.endEditing(false)
+        endTimeTF.inputView = datePiker
+        
+    }
+    
+    @objc func dateChangedEndTime(datePiker: UIDatePicker) {
+        let dateFormater = DateFormatter()
+        dateFormater.locale = Locale.init(identifier: "en")
+        dateFormater.dateFormat = "HH:mm:ss"
+        endTimeTF.text = dateFormater.string(from: datePiker.date)
+        view.endEditing(true)
+    }
+    
     @objc func dateChanged(datePiker: UIDatePicker) {
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormater.locale = NSLocale(localeIdentifier: "en_SA") as Locale
+        dateFormater.dateFormat = "yyyy-MM-dd"
         startTime.text = dateFormater.string(from: datePiker.date)
         view.endEditing(true)
     }
@@ -84,7 +139,8 @@ class addTripVC: UIViewController {
     func createDateEnd(){
         
         datePiker = UIDatePicker()
-        datePiker?.datePickerMode = .dateAndTime
+        datePiker?.datePickerMode = .date
+        datePiker?.calendar = Calendar.init(identifier: Calendar.Identifier.islamicCivil)
         datePiker?.addTarget(self, action: #selector(addTripVC.dateChangedend(datePiker:)), for: .valueChanged)
         self.view.endEditing(false)
         EndTime.inputView = datePiker
@@ -93,14 +149,15 @@ class addTripVC: UIViewController {
     
     @objc func dateChangedend(datePiker: UIDatePicker) {
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormater.locale = NSLocale(localeIdentifier: "en_SA") as Locale
+        dateFormater.dateFormat = "yyyy-MM-dd"
         EndTime.text = dateFormater.string(from: datePiker.date)
         view.endEditing(true)
     }
     
     
     @objc private func handleRefreshGuide() {
-        API_SuperVisour.getGuide{ (error: Error?, guide: [superViserGuides]?) in
+        API_SuperVisour.getGuide(bus_id: bus){ (error: Error?, guide: [superViserGuides]?) in
             if let guide = guide {
                 self.guide = guide
                 print("xxx\(self.guide)")
@@ -111,7 +168,7 @@ class addTripVC: UIViewController {
     }
     
     @objc private func handleRefreshDrivers() {
-        API_SuperVisour.getDriver{ (error: Error?, drivers: [superViserDriver]?) in
+        API_SuperVisour.getDriver(bus_id: bus){ (error: Error?, drivers: [superViserDriver]?) in
             if let drivers = drivers {
                 self.drivers = drivers
                 print("xxx\(self.drivers)")
@@ -132,8 +189,34 @@ class addTripVC: UIViewController {
         
     }
     
+    @objc private func getCarier(){
+        API_SuperVisour.getCarrier(driver_id: driverID){ (error: Error?, id, name,stutus) in
+            if stutus == true{
+                self.stutse.text = name ?? ""
+                self.stutse.isEnabled = false
+                self.careeID = id ?? ""
+                self.getPrice()
+            }else {
+                
+            }
+        }
+    }
+    
+    @objc private func getPrice(){
+        API_SuperVisour.getPrice(carrier_id: careeID, path_id: members){ (error: Error?, data,stutus) in
+            if stutus == true{
+                self.price.text = data ?? ""
+                self.price.isEnabled = false
+                self.prices = data ?? ""
+            }else {
+                
+            }
+        }
+    }
+
+    
     @objc private func handleRefreshBuss() {
-        API_SuperVisour.getBus(driver_id: driver){(error: Error?, buss: [superViserBus]?) in
+        API_SuperVisour.getBus{(error: Error?, buss: [superViserBus]?) in
             if let buss = buss {
                 self.buss = buss
                 print("xxx\(self.buss)")
@@ -176,6 +259,7 @@ class addTripVC: UIViewController {
         busPiker.tag = 0
         busNumTF.inputView = busPiker
         handleRefreshBuss()
+        handleRefreshDrivers()
         busPiker.reloadAllComponents()
     }
     
@@ -216,6 +300,18 @@ class addTripVC: UIViewController {
         stutesPiker.dataSource = self
         stutesPiker.tag = 4
         stutse.inputView = stutesPiker
+    }
+    
+    @IBAction func switchAction(_ sender: Any) {
+        switch statesSwitch.selectedSegmentIndex {
+        case 0:
+            self.states = "7"
+        case 1:
+            self.states = "1"
+           
+        default:
+            break;
+        }
     }
     
     
@@ -281,7 +377,7 @@ class addTripVC: UIViewController {
         }
         let compay = helper.getAPIToken().companyId ?? ""
         
-        API_SuperVisour.addTrib(name_en: nameEn , name_ar: nameAr, guide_id: guides, driver_id: driver, bus_id: bus, date_time_start: startTim, date_time_end: endTimes, path_id: members, company_id: compay, price: price, status: selectedStutes){ (error: Error?, success, data,stutus) in
+        API_SuperVisour.addTrib(name_en: nameEn , name_ar: nameAr, guide_id: guides, driver_id: driverID, bus_id: bus, start_date: startTim, end_date: endTimes, path_id: members, company_id: compay, price: prices, status: states,number_passenger: numberOfpassange.text ?? "", start_time: startTimeTF.text ?? "", end_time: endTimeTF.text ?? ""){ (error: Error?, success, data,stutus) in
             if success {
                 if stutus == true{
                     let title = NSLocalizedString("اضافه رحله", comment: "profuct list lang")
@@ -338,17 +434,22 @@ extension addTripVC: UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView.tag == 0{
             busNumTF.text = buss[row].name
             bus = buss[row].id
+            createmeGuidePiker()
+            createmeDriversPiker()
             self.view.endEditing(false)
         }else if pickerView.tag == 1{
             memberNameTF.text = member[row].name
             members = member[row].id
-            price = member[row].price
+            //price = member[row].price
+            getPrice()
             self.view.endEditing(false)
         }else if pickerView.tag == 2 {
             driverNameTF.text = drivers[row].name
-            driver = drivers[row].id
-            createBussPiker()
+            driverID = drivers[row].id
+            //createBussPiker()
+            getCarier()
             self.view.endEditing(false)
+            
         }else if pickerView.tag == 3{
             guidNameTF.text = guide[row].name
             guides = guide[row].id

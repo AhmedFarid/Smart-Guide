@@ -12,7 +12,7 @@ import Firebase
 
 struct URLs {
     
-    static let main = "http://omelqoura.com/public/api/"
+    static let main = "http://omelqoura.com/api/"
     
     static let login = main + "login"
     
@@ -51,4 +51,21 @@ struct URLs {
     static let getRequestPauseTripGuide = main + "getRequestPauseTripGuide"
     
     static let getTripsDriver = main + "getTripsDriver"
+    
+    static let getCarrier = main + "getCarrier"
+    
+    static let getPrice = main + "getPrice"
+    
+    static let CancelTripSupervisor = main + "CancelTripSupervisor"
+    
+    static let startTripGuide = main + "startTripGuide"
+    
+    static let endTripDriver = main + "endTripDriver"
+    
+    static let getSupervisors = main + "getSupervisors"
+    
+    static let getTripsMemberSupervisor = main + "getTripsMemberSupervisor"
+    
+    static let endTripMember = main + "endTripMember"
+    
 }

@@ -16,7 +16,7 @@ class tripsDriverCell: UICollectionViewCell {
     func configuerCell(prodect: drivers) {
         
         
-        name.text = prodect.busName
+        name.text = prodect.tripName
         statues.text = prodect.status
     }
 }

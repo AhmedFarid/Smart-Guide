@@ -24,6 +24,12 @@
 		699A292E226C7E7A00211DB9 /* editTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699A292D226C7E7A00211DB9 /* editTripVC.swift */; };
 		699A2930226C86AA00211DB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699A292F226C86AA00211DB9 /* GoogleService-Info.plist */; };
 		699A2934226C8C8300211DB9 /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699A2933226C8C8300211DB9 /* mapVC.swift */; };
+		699BEF0222C399BB0045C7DD /* member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0122C399BB0045C7DD /* member.swift */; };
+		699BEF0422C39A670045C7DD /* API+Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0322C39A670045C7DD /* API+Members.swift */; };
+		699BEF0622C39AE40045C7DD /* memberSupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0522C39AE40045C7DD /* memberSupervisorCell.swift */; };
+		699BEF0922C39BAF0045C7DD /* memberSuperVisorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0822C39BAF0045C7DD /* memberSuperVisorVM.swift */; };
+		699BEF0B22C39F2F0045C7DD /* homeMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0A22C39F2F0045C7DD /* homeMemberVC.swift */; };
+		699BEF0D22C3A28B0045C7DD /* detilesMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699BEF0C22C3A28B0045C7DD /* detilesMemberVC.swift */; };
 		69AA6E4D227889C30075E502 /* drivers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA6E4C227889C30075E502 /* drivers.swift */; };
 		69AA6E4F22788B910075E502 /* API+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA6E4E22788B910075E502 /* API+Driver.swift */; };
 		69AA6E5122788F850075E502 /* tripsDriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA6E5022788F850075E502 /* tripsDriverCell.swift */; };
@@ -86,6 +92,12 @@
 		699A292D226C7E7A00211DB9 /* editTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTripVC.swift; sourceTree = "<group>"; };
 		699A292F226C86AA00211DB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		699A2933226C8C8300211DB9 /* mapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
+		699BEF0122C399BB0045C7DD /* member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = member.swift; sourceTree = "<group>"; };
+		699BEF0322C39A670045C7DD /* API+Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Members.swift"; sourceTree = "<group>"; };
+		699BEF0522C39AE40045C7DD /* memberSupervisorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberSupervisorCell.swift; sourceTree = "<group>"; };
+		699BEF0822C39BAF0045C7DD /* memberSuperVisorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memberSuperVisorVM.swift; sourceTree = "<group>"; };
+		699BEF0A22C39F2F0045C7DD /* homeMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeMemberVC.swift; sourceTree = "<group>"; };
+		699BEF0C22C3A28B0045C7DD /* detilesMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detilesMemberVC.swift; sourceTree = "<group>"; };
 		69AA6E4C227889C30075E502 /* drivers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drivers.swift; sourceTree = "<group>"; };
 		69AA6E4E22788B910075E502 /* API+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Driver.swift"; sourceTree = "<group>"; };
 		69AA6E5022788F850075E502 /* tripsDriverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripsDriverCell.swift; sourceTree = "<group>"; };
@@ -182,6 +194,16 @@
 				69393ED922708DD600707576 /* tripePuseVC.swift */,
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		699BEF0722C39B7B0045C7DD /* members */ = {
+			isa = PBXGroup;
+			children = (
+				699BEF0822C39BAF0045C7DD /* memberSuperVisorVM.swift */,
+				699BEF0A22C39F2F0045C7DD /* homeMemberVC.swift */,
+				699BEF0C22C3A28B0045C7DD /* detilesMemberVC.swift */,
+			);
+			path = members;
 			sourceTree = "<group>";
 		};
 		69AA6E52227890DF0075E502 /* driver */ = {
@@ -285,6 +307,7 @@
 				69AA6E52227890DF0075E502 /* driver */,
 				69DC5F0F226F39FC00B39603 /* guide */,
 				75046FB1224A95390022E46B /* superVisoer */,
+				699BEF0722C39B7B0045C7DD /* members */,
 				699A2931226C8C5000211DB9 /* Auth */,
 				69DC5F20226F7CE400B39603 /* notifactionVC.swift */,
 			);
@@ -299,6 +322,7 @@
 				69DC5F0D226F395600B39603 /* API+Guide.swift */,
 				69DC5F1C226F6F1500B39603 /* API+Notifications.swift */,
 				69AA6E4E22788B910075E502 /* API+Driver.swift */,
+				699BEF0322C39A670045C7DD /* API+Members.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -319,6 +343,7 @@
 				69DC5F0B226F34EA00B39603 /* guides.swift */,
 				69DC5F1A226F6D3500B39603 /* notifacations.swift */,
 				69AA6E4C227889C30075E502 /* drivers.swift */,
+				699BEF0122C399BB0045C7DD /* member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +365,7 @@
 				69393ED722707CDE00707576 /* requestesCell.swift */,
 				69393EDB2270A14800707576 /* historyGiudCell.swift */,
 				69AA6E5022788F850075E502 /* tripsDriverCell.swift */,
+				699BEF0522C39AE40045C7DD /* memberSupervisorCell.swift */,
 			);
 			path = cellClass;
 			sourceTree = "<group>";
@@ -504,14 +530,19 @@
 				69393ED622707AE000707576 /* guidesVC.swift in Sources */,
 				75046F94224A41D70022E46B /* roundedTF.swift in Sources */,
 				69C5BDC22254C41800FBC0CD /* rounndedView.swift in Sources */,
+				699BEF0622C39AE40045C7DD /* memberSupervisorCell.swift in Sources */,
 				69393EDC2270A14800707576 /* historyGiudCell.swift in Sources */,
+				699BEF0422C39A670045C7DD /* API+Members.swift in Sources */,
 				69AA6E5122788F850075E502 /* tripsDriverCell.swift in Sources */,
 				6947A3FE2268E13700708143 /* statusVC.swift in Sources */,
+				699BEF0222C399BB0045C7DD /* member.swift in Sources */,
+				699BEF0B22C39F2F0045C7DD /* homeMemberVC.swift in Sources */,
 				6981DAE7226DF95A00EC9A9C /* roundedTV.swift in Sources */,
 				75046FAA224A7E180022E46B /* API - Auth.swift in Sources */,
 				69DC5F0E226F395600B39603 /* API+Guide.swift in Sources */,
 				69DC5F0C226F34EA00B39603 /* guides.swift in Sources */,
 				75046FA0224A65460022E46B /* showAlert.swift in Sources */,
+				699BEF0D22C3A28B0045C7DD /* detilesMemberVC.swift in Sources */,
 				69DC5F15226F405100B39603 /* tripsDetialsVC.swift in Sources */,
 				69393ED822707CDE00707576 /* requestesCell.swift in Sources */,
 				69AA6E5622789D0B0075E502 /* tripDetilsVC.swift in Sources */,
@@ -528,6 +559,7 @@
 				75046FA4224A6DCB0022E46B /* Cofig.swift in Sources */,
 				69AA6E582278A4110075E502 /* driverMapVC.swift in Sources */,
 				6981DAE9226E010B00EC9A9C /* startTripVC.swift in Sources */,
+				699BEF0922C39BAF0045C7DD /* memberSuperVisorVM.swift in Sources */,
 				69393EDA22708DD600707576 /* tripePuseVC.swift in Sources */,
 				75046F7B224A224F0022E46B /* AppDelegate.swift in Sources */,
 				75046FA8224A704E0022E46B /* API-SuperVisour.swift in Sources */,

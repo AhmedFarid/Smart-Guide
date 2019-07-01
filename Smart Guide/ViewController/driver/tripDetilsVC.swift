@@ -39,10 +39,10 @@ class tripDetilsVC: UIViewController {
         startDate.text = " موعد بداء الرحله \(singleItem?.dateStart ?? "")"
         endDate.text = " موعد انهاء الرحله \(singleItem?.dateEnd ?? "")"
         numberOfBassenger.text = " عدد الركاب \(singleItem?.numberPassenger ?? "")"
-        if statusType == "off"{
-            puseEntrip.setTitle("بداء الرحلة", for: UIControl.State.normal)
+        if singleItem?.statusId == "2" || singleItem?.statusId == "6"{
+            puseEntrip.isHidden = false
         }else {
-            puseEntrip.setTitle("انهاء الرحله", for: UIControl.State.normal)
+            puseEntrip.isHidden = true
         }
     }
     
@@ -63,16 +63,29 @@ class tripDetilsVC: UIViewController {
     
     @IBAction func startTrip(_ sender: Any) {
         //performSegue(withIdentifier: "suge", sender: nil)
+        API_Driver.endTrip(trip_id: singleItem?.tripId ?? "", headings: "end", message: "End"){ (error: Error?, success, data,stutus) in
+            if success {
+                if stutus == true{
+                    let title = NSLocalizedString("انهاء", comment: "profuct list lang")
+                    self.showAlert(title: title, message: data ?? "")
+                }else {
+                    let title = NSLocalizedString("انهاء", comment: "profuct list lang")
+                    self.showAlert(title: title, message: data ?? "")
+                }
+            }else {
+                print("Error")
+            }
+        }
         if statusType == "off"{
             let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(singleItem?.tripId ?? "")")
             ref.child("status").setValue("on")
-            puseEntrip.setTitle("انهاء الرحله", for: UIControl.State.normal)
-            self.showAlert(title: "حاله الرحله", message: "تم بداء الرحله")
+            //puseEntrip.setTitle("انهاء الرحله", for: UIControl.State.normal)
+            //self.showAlert(title: "حاله الرحله", message: "تم بداء الرحله")
         }else {
             let ref = Database.database().reference().child("buses/\(helper.getAPIToken().companyId ?? "")/\(singleItem?.tripId ?? "")")
             ref.child("status").setValue("off")
-            puseEntrip.setTitle("بداء الرحله", for: UIControl.State.normal)
-            self.showAlert(title: "حاله الرحله", message: "تم انهاء الرحله")
+            //puseEntrip.setTitle("بداء الرحله", for: UIControl.State.normal)
+            //self.showAlert(title: "حاله الرحله", message: "تم انهاء الرحله")
         }
     }
     @IBAction func mapCVBTN(_ sender: Any) {

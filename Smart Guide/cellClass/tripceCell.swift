@@ -16,7 +16,7 @@ class tripceCell: UICollectionViewCell {
     func configuerCell(prodect: trips) {
         
         
-        name.text = prodect.busName
+        name.text = prodect.tripName
         statues.text = prodect.status
     }
 }

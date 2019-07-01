@@ -50,7 +50,13 @@ class editTripVC: UIViewController {
             if success {
                 if stutus == true{
                     let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
-                    self.showAlert(title: title, message: data ?? "")
+                    let alert = UIAlertController(title: title, message: data ?? "", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "تم", style: UIAlertAction.Style.default, handler: { action in
+                        let vc = UIStoryboard.init(name: "supervisor", bundle: Bundle.main).instantiateViewController(withIdentifier: "1") as? homeSuperVC
+                        self.navigationController?.pushViewController(vc!, animated: true)
+                        
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                 }else {
                     let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
                     self.showAlert(title: title, message: data ?? "")

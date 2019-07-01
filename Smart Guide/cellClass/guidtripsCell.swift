@@ -17,7 +17,7 @@ class guidtripsCell: UICollectionViewCell {
     func configuerCell(prodect: guidesTrips) {
         
         
-        name.text = prodect.busName
+        name.text = prodect.tripName
         statues.text = prodect.status
     }
 }

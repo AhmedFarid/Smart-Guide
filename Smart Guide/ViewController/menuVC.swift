@@ -25,6 +25,14 @@ class menuVC: UIViewController {
             oldGuidTrips.isHidden = true
         }
         
+        if helper.getAPIToken().role == "members"{
+            oldGuidTrips.isHidden = true
+        }else {
+            oldGuidTrips.isHidden = true
+        }
+        
+        
+        
         name.text = "الاسم: \(helper.getAPIToken().name ?? "")"
         phone.text = "الهاتف: \(helper.getAPIToken().phone ?? "")"
         

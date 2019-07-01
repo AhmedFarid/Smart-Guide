@@ -12,13 +12,21 @@ import Alamofire
 
 class API_SuperVisour: NSObject {
     
-    class func getGuide (completion: @escaping (_ error: Error?,_ sparParts: [superViserGuides]?)-> Void) {
+    class func getGuide (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserGuides]?)-> Void) {
         
         
         let url = URLs.getGuide
         
+        guard let company_id = helper.getAPIToken().companyId else {
+            completion(nil,nil)
+            return
+        }
+        
         let parameters = [
-            "lang" : "ar"
+            "lang" : "ar",
+            "company_id": company_id,
+            "bus_id":bus_id
+            
         ]
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
@@ -49,13 +57,20 @@ class API_SuperVisour: NSObject {
         }
     }
     
-    class func getDriver (completion: @escaping (_ error: Error?,_ sparParts: [superViserDriver]?)-> Void) {
+    class func getDriver (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserDriver]?)-> Void) {
         
         
         let url = URLs.getDriver
+        guard let company_id = helper.getAPIToken().companyId else {
+            completion(nil,nil)
+            return
+        }
+        
         
         let parameters = [
-            "lang" : "ar"
+            "lang" : "ar",
+            "bus_id": bus_id,
+            "company_id": company_id
         ]
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
@@ -91,8 +106,14 @@ class API_SuperVisour: NSObject {
         
         let url = URLs.getPath
         
+        guard let company_id = helper.getAPIToken().companyId else {
+            completion(nil,nil)
+            return
+        }
+        
         let parameters = [
-            "lang" : "ar"
+            "lang" : "ar",
+            "company_id": company_id
         ]
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
@@ -206,14 +227,19 @@ class API_SuperVisour: NSObject {
     }
     
     
-    class func getBus (driver_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserBus]?)-> Void) {
+    class func getBus (completion: @escaping (_ error: Error?,_ sparParts: [superViserBus]?)-> Void) {
         
         
         let url = URLs.getBus
         
+        guard let company_id = helper.getAPIToken().companyId else {
+            completion(nil,nil)
+            return
+        }
+        
         let parameters = [
             "lang" : "ar",
-            "driver_id": driver_id
+            "company_id": company_id
         ]
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
@@ -245,7 +271,91 @@ class API_SuperVisour: NSObject {
     }
     
     
-    class func addTrib(name_en: String, name_ar: String, guide_id: String, driver_id: String,bus_id: String, date_time_start: String, date_time_end: String, path_id: String,company_id: String, price: String,status: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+    class func getCarrier (driver_id: String,completion: @escaping (_ error: Error?,_ id: String?,_ name: String?,_ status: Bool?)-> Void) {
+        
+        
+        let url = URLs.getCarrier
+        
+        
+        let parameters = [
+            "lang" : "ar",
+            "driver_id": driver_id
+        ]
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
+            
+            
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, nil,nil,nil)
+                print(error)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let id = json["data"]["id"].string {
+                            let name = json["data"]["name"].string
+                            completion(nil,id,name,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil,data,nil,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
+    class func getPrice (carrier_id: String,path_id: String,completion: @escaping (_ error: Error?,_ data: String?,_ status: Bool?)-> Void) {
+        
+        
+        let url = URLs.getPrice
+        
+        
+        let parameters = [
+            "lang" : "ar",
+            "carrier_id": carrier_id,
+            "path_id": path_id
+        ]
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON  { response in
+            
+            
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, nil,false)
+                print(error)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
+                            completion(nil,data,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil,data,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
+    class func addTrib(name_en: String, name_ar: String, guide_id: String, driver_id: String,bus_id: String, start_date: String, end_date: String, path_id: String,company_id: String, price: String,status: String,number_passenger: String,start_time: String,end_time: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
         
         let url = URLs.addTrip
         
@@ -265,13 +375,16 @@ class API_SuperVisour: NSObject {
             "guide_id": guide_id,
             "driver_id": driver_id,
             "bus_id": bus_id,
-            "date_time_start": date_time_start,
-            "date_time_end": date_time_end,
             "path_id": path_id,
             "company_id": company_id,
             "user_token": user_token,
             "status": status,
-            "price": price
+            "price": price,
+            "number_passenger": number_passenger,
+            "start_date":start_date,
+            "end_date": end_date,
+            "start_time": start_time,
+            "end_time": end_time
         ]
         
         print(parameters)
@@ -353,6 +466,53 @@ class API_SuperVisour: NSObject {
         }
         
     }
+    
+    class func cancelTrrips(trip_id: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+        
+        let url = URLs.CancelTripSupervisor
+        
+        guard let user_token = helper.getAPIToken().userToken else {
+            completion(nil,false, nil,false)
+            return
+        }
+        
+        print(url)
+        let parameters = [
+            "trip_id": trip_id,
+            "user_token": user_token
+        ]
+        
+        print(parameters)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false, nil,false)
+                print(error)
+                //self.showAlert(title: "Error", message: "\(error)")
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(value)
+                if let status = json["status"].bool {
+                    print(status)
+                    if status == true{
+                        if let data = json["data"].string {
+                            print(data)
+                            completion(nil, true, data,status)
+                        }
+                    }else {
+                        let data = json["error"].string
+                        print(data ?? "no")
+                        completion(nil, true, data,status)
+                    }
+                }
+                
+            }
+        }
+        
+    }
+
 
     
     class func startTrip(trip_id: String,headings: String,message:String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {

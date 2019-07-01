@@ -18,7 +18,7 @@
         <!--Get TripsVC-->
         <scene sceneID="e2A-JI-QD3">
             <objects>
-                <viewController id="9Yb-B7-wuy" customClass="getTripsVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" id="9Yb-B7-wuy" customClass="getTripsVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3h-d8-BE6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +210,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="e4b-9R-5t7" kind="show" id="QE0-p4-v8e"/>
+                                                    <action selector="edtrip:" destination="AFt-XC-PVZ" eventType="touchUpInside" id="Fxr-bk-rys"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-d5-jav">
@@ -399,6 +399,7 @@
                         <outlet property="busName" destination="UG9-oR-k9v" id="1Qa-xi-AAg"/>
                         <outlet property="driverName" destination="6cF-dO-Dn5" id="cuq-gq-rlE"/>
                         <outlet property="endDate" destination="tKx-Sk-z3D" id="iog-gJ-Qnw"/>
+                        <outlet property="endtripBtn" destination="pYj-ks-493" id="nhd-zw-2qt"/>
                         <outlet property="from" destination="Cze-2y-CUT" id="Zbd-xi-4sQ"/>
                         <outlet property="guidName" destination="koT-ai-K9u" id="3hP-4g-v3s"/>
                         <outlet property="numberOfBassenger" destination="aTC-pl-NNY" id="YQA-ac-FEl"/>
@@ -409,6 +410,7 @@
                         <outlet property="tripName" destination="muA-ES-qcd" id="5EP-vm-WeK"/>
                         <segue destination="kSK-U1-AHg" kind="show" identifier="mapSuge" id="LWh-PJ-7pe"/>
                         <segue destination="MUW-Kl-76b" kind="show" identifier="suge" id="g3m-hX-wQe"/>
+                        <segue destination="e4b-9R-5t7" kind="show" identifier="x" id="zdR-Qj-R7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKf-Ns-JM1" userLabel="First Responder" sceneMemberID="firstResponder"/>

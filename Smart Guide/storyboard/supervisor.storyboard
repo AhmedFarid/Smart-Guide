@@ -18,7 +18,7 @@
         <!--Home SuperVC-->
         <scene sceneID="H1J-e2-Rtr">
             <objects>
-                <viewController id="P6J-kP-Tp6" customClass="homeSuperVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" id="P6J-kP-Tp6" customClass="homeSuperVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T2M-q6-dLL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,15 +195,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gck-hJ-FqW" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                <rect key="frame" x="16" y="12.5" width="288" height="479"/>
+                                <rect key="frame" x="16" y="16.5" width="288" height="471"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="s6R-eq-0DX">
-                                        <rect key="frame" x="20" y="421" width="248" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s6R-eq-0DX">
+                                        <rect key="frame" x="0.0" y="421" width="288" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-op-Uo3">
-                                                <rect key="frame" x="0.0" y="0.0" width="109" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="عرض المسار">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -212,10 +212,21 @@
                                                     <action selector="mapCVBTN:" destination="JQ1-K8-Jau" eventType="touchUpInside" id="guJ-7L-s61"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-Tr-nrh">
-                                                <rect key="frame" x="139" y="0.0" width="109" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXw-dW-EGG">
+                                                <rect key="frame" x="98.5" y="0.0" width="91" height="32"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                <state key="normal" title="الغاء">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelBTN:" destination="JQ1-K8-Jau" eventType="touchUpInside" id="m4m-en-5of"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-Tr-nrh">
+                                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="32"/>
+                                                <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="بدء الرحلة">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -360,9 +371,9 @@
                                     <constraint firstItem="KiV-gf-lf3" firstAttribute="leading" secondItem="gck-hJ-FqW" secondAttribute="leading" constant="16" id="bES-Oj-x4U"/>
                                     <constraint firstAttribute="trailing" secondItem="32A-zX-r4j" secondAttribute="trailing" constant="58" id="ciF-VR-IoL"/>
                                     <constraint firstAttribute="bottom" secondItem="s6R-eq-0DX" secondAttribute="bottom" constant="18" id="dRS-RO-0J6"/>
-                                    <constraint firstItem="s6R-eq-0DX" firstAttribute="leading" secondItem="gck-hJ-FqW" secondAttribute="leading" constant="20" id="e6C-oi-gxv"/>
+                                    <constraint firstItem="s6R-eq-0DX" firstAttribute="leading" secondItem="gck-hJ-FqW" secondAttribute="leading" id="e6C-oi-gxv"/>
                                     <constraint firstItem="32A-zX-r4j" firstAttribute="top" secondItem="HHz-xn-fyK" secondAttribute="bottom" constant="8" id="faO-0F-uVf"/>
-                                    <constraint firstAttribute="trailing" secondItem="s6R-eq-0DX" secondAttribute="trailing" constant="20" id="k4Q-L1-JWL"/>
+                                    <constraint firstAttribute="trailing" secondItem="s6R-eq-0DX" secondAttribute="trailing" id="k4Q-L1-JWL"/>
                                     <constraint firstItem="6s5-9i-zu8" firstAttribute="top" secondItem="gck-hJ-FqW" secondAttribute="top" constant="8" id="l5X-D8-fAI"/>
                                     <constraint firstItem="32A-zX-r4j" firstAttribute="leading" secondItem="gck-hJ-FqW" secondAttribute="leading" constant="58" id="nO1-ll-IXL"/>
                                 </constraints>
@@ -403,6 +414,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="busName" destination="HHz-xn-fyK" id="aPk-U3-WAt"/>
+                        <outlet property="cancelBTNOut" destination="mXw-dW-EGG" id="eu8-q6-W4K"/>
                         <outlet property="driverName" destination="FkL-cn-zxx" id="wfs-ND-krY"/>
                         <outlet property="endDate" destination="Ed6-8R-kpQ" id="hfx-Lq-Q6R"/>
                         <outlet property="from" destination="6VO-rV-jpB" id="RFb-1x-WZe"/>
@@ -754,17 +766,17 @@
             <objects>
                 <viewController id="5Jq-nv-iQF" customClass="addTripVC" customModule="Smart_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x15-Kx-mDf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cM-Zl-v4Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-jb-sNI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EuU-7U-E9f">
-                                                <rect key="frame" x="16" y="8" width="343" height="533"/>
+                                                <rect key="frame" x="16" y="60" width="343" height="777"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="اسم الرحله عربي" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpA-MC-cSO" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -829,7 +841,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="اسم المرشد" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYF-r3-dfV" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="رقم الحافله " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-Cf-eCS" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="122" width="343" height="45"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
@@ -889,7 +901,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="رقم الحافله " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-Cf-eCS" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="اسم المرشد" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYF-r3-dfV" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="244" width="343" height="45"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
@@ -949,7 +961,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="حاله الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5M-W9-Gyd" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="الناقل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5M-W9-Gyd" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="366" width="343" height="45"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
@@ -979,7 +991,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="موعد بدء الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTQ-Mk-62z" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="السعر" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doa-qj-73a" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="427" width="343" height="45"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
@@ -1009,8 +1021,128 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="موعد انتهاء الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMV-Va-B5U" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="عدد الركاب" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlP-io-gnC" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="488" width="343" height="45"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                                <real key="value" value="101"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="تاريخ بدء الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTQ-Mk-62z" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="549" width="343" height="45"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                                <real key="value" value="101"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder=" تاريخ انتهاء الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMV-Va-B5U" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="610" width="343" height="45"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                                <real key="value" value="101"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="توقيت بدايه الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geg-jx-ka2" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="671" width="343" height="45"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                                                <real key="value" value="101"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="توقيت نهايه الرحله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Io2-Bf-K7o" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="732" width="343" height="45"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="17"/>
@@ -1042,7 +1174,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjj-RZ-I1n">
-                                                <rect key="frame" x="90" y="564" width="195" height="40"/>
+                                                <rect key="frame" x="90" y="853" width="195" height="40"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="20"/>
                                                 <state key="normal" title="انشاء  رحله">
@@ -1052,15 +1184,28 @@
                                                     <action selector="addTrips:" destination="5Jq-nv-iQF" eventType="touchUpInside" id="6Qf-4p-mpO"/>
                                                 </connections>
                                             </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fy2-Dw-02y">
+                                                <rect key="frame" x="87" y="16" width="201" height="29"/>
+                                                <segments>
+                                                    <segment title="رحله مجدوله"/>
+                                                    <segment title="امر  تحميل فوري"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.086807422339916229" green="0.32498335838317871" blue="0.53392136096954346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="switchAction:" destination="5Jq-nv-iQF" eventType="valueChanged" id="PBf-E1-gfc"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="EuU-7U-E9f" firstAttribute="top" secondItem="V2w-jb-sNI" secondAttribute="top" constant="8" id="9fV-i6-ali"/>
+                                            <constraint firstItem="EuU-7U-E9f" firstAttribute="top" secondItem="fy2-Dw-02y" secondAttribute="bottom" constant="16" id="DXQ-pg-45P"/>
                                             <constraint firstItem="EuU-7U-E9f" firstAttribute="leading" secondItem="V2w-jb-sNI" secondAttribute="leading" constant="16" id="LhZ-54-z3b"/>
+                                            <constraint firstItem="fy2-Dw-02y" firstAttribute="centerX" secondItem="V2w-jb-sNI" secondAttribute="centerX" id="R6t-Un-TU9"/>
+                                            <constraint firstItem="fy2-Dw-02y" firstAttribute="top" secondItem="V2w-jb-sNI" secondAttribute="top" constant="16" id="XXJ-UD-Brg"/>
                                             <constraint firstAttribute="trailing" secondItem="EuU-7U-E9f" secondAttribute="trailing" constant="16" id="hCQ-DC-7cA"/>
                                             <constraint firstItem="Xjj-RZ-I1n" firstAttribute="leading" secondItem="V2w-jb-sNI" secondAttribute="leading" constant="90" id="nsm-Nk-0rI"/>
-                                            <constraint firstAttribute="height" constant="700" id="qwN-WX-ESR"/>
-                                            <constraint firstItem="Xjj-RZ-I1n" firstAttribute="top" secondItem="EuU-7U-E9f" secondAttribute="bottom" constant="23" id="uns-NG-ZkI"/>
+                                            <constraint firstAttribute="height" constant="1000" id="qwN-WX-ESR"/>
+                                            <constraint firstItem="Xjj-RZ-I1n" firstAttribute="top" secondItem="EuU-7U-E9f" secondAttribute="bottom" constant="16" id="uns-NG-ZkI"/>
                                             <constraint firstAttribute="trailing" secondItem="Xjj-RZ-I1n" secondAttribute="trailing" constant="90" id="xrW-AB-KnP"/>
                                         </constraints>
                                     </view>
@@ -1084,17 +1229,22 @@
                         <viewLayoutGuide key="safeArea" id="Rou-WQ-DaT"/>
                     </view>
                     <navigationItem key="navigationItem" title="رحله جديده" id="m9K-6Z-kzh"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="EndTime" destination="RMV-Va-B5U" id="c8S-Kf-2fd"/>
                         <outlet property="busNumTF" destination="VZI-Cf-eCS" id="waH-cL-gcf"/>
                         <outlet property="driverNameTF" destination="Qkv-0g-v3s" id="aht-bj-2UX"/>
+                        <outlet property="endTimeTF" destination="Io2-Bf-K7o" id="Ehu-el-yma"/>
                         <outlet property="guidNameTF" destination="ZYF-r3-dfV" id="3Us-qA-iQP"/>
                         <outlet property="memberNameTF" destination="hxe-aa-r8h" id="iug-XK-Loy"/>
                         <outlet property="nameARTF" destination="gpA-MC-cSO" id="NgD-50-mBE"/>
                         <outlet property="nameEnTF" destination="87R-pb-F6A" id="tuz-gH-yMo"/>
+                        <outlet property="numberOfpassange" destination="MlP-io-gnC" id="2SV-Bl-ANQ"/>
+                        <outlet property="price" destination="doa-qj-73a" id="1Gf-uD-Mzo"/>
                         <outlet property="scrollView" destination="2cM-Zl-v4Z" id="jPm-Sf-hQ5"/>
                         <outlet property="startTime" destination="bTQ-Mk-62z" id="6IB-4h-HEE"/>
+                        <outlet property="startTimeTF" destination="geg-jx-ka2" id="kfA-45-Riw"/>
+                        <outlet property="statesSwitch" destination="fy2-Dw-02y" id="PSF-Nl-HVm"/>
                         <outlet property="stutse" destination="M5M-W9-Gyd" id="nap-kh-fLi"/>
                     </connections>
                 </viewController>

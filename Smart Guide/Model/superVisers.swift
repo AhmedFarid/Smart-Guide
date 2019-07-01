@@ -78,17 +78,17 @@ class superViserMember: NSObject {
     
     var id: String
     var name: String
-    var price: String
+    //var price: String
     var userTokenCompany: String
     
     
     
     init?(dict: [String: JSON]){
         
-        guard let id = dict["id"]?.string,let name = dict["from_to"]?.string,let price = dict["price"]?.string,let userTokenCompany = dict["userTokenCompany"]?.string else {return nil}
+        guard let id = dict["id"]?.string,let name = dict["from_to"]?.string,let userTokenCompany = dict["userTokenCompany"]?.string else {return nil}
         self.id = id
         self.name = name
-        self.price = price
+        //self.price = price
         self.userTokenCompany = userTokenCompany
     }
 //    /"from_to" : "فراخ | Welcome asdasdasd",

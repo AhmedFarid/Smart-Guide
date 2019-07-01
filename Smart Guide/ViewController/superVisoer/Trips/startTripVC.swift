@@ -20,45 +20,74 @@ class startTripVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if tripStatus == "1"{
-            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+            startUbateBTNOutle.setTitle("تعليق الرحله", for: UIControl.State.normal)
         }else if tripStatus == "3"{
-            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+            startUbateBTNOutle.setTitle("استكمال الرحله", for: UIControl.State.normal)
         }else if tripStatus == "7"{
-            startUbateBTNOutle.setTitle("بداء الرحلة", for: UIControl.State.normal)
+            startUbateBTNOutle.setTitle("تعليق الرحله", for: UIControl.State.normal)
+        }else {
+            startUbateBTNOutle.setTitle("تعليق الرحلة", for: UIControl.State.normal)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if tripStatus == "1"{
+            startUbateBTNOutle.setTitle("تعليق الرحله", for: UIControl.State.normal)
+        }else if tripStatus == "3"{
+            startUbateBTNOutle.setTitle("استكمال الرحله", for: UIControl.State.normal)
+        }else if tripStatus == "7"{
+            startUbateBTNOutle.setTitle("تعليق الرحله", for: UIControl.State.normal)
         }else {
             startUbateBTNOutle.setTitle("تعليق الرحلة", for: UIControl.State.normal)
         }
     }
     
     @IBAction func startTrip(_ sender: Any) {
-        if tripStatus == "1" || tripStatus == "3" ||  tripStatus == "7"{
+       // if tripStatus == "1" || tripStatus == "3" ||  tripStatus == "7"{
+         if tripStatus == "3"{
             API_SuperVisour.startTrip(trip_id: trip_id, headings: head.text ?? "", message: massageTF.text ?? ""){ (error: Error?, success, data,stutus) in
                 if success {
                     if stutus == true{
-                        let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
-                        self.showAlert(title: title, message: data ?? "")
+                        let title = NSLocalizedString("إستكامل الرحله", comment: "profuct list lang")
+                        let alert = UIAlertController(title: title, message: data ?? "", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "تم", style: UIAlertAction.Style.default, handler: { action in
+                            let vc = UIStoryboard.init(name: "supervisor", bundle: Bundle.main).instantiateViewController(withIdentifier: "1") as? homeSuperVC
+                            self.navigationController?.pushViewController(vc!, animated: true)
+
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+//
+//                        self.showAlert(title: title, message:
                     }else {
-                        let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
+                        let title = NSLocalizedString("بداء الرحله", comment: "profuct list lang")
                         self.showAlert(title: title, message: data ?? "")
                     }
                 }else {
                     print("Error")
                 }
             }
-            }else {
-            API_SuperVisour.tripPause(trip_id: trip_id, headings: head.text ?? "", message: massageTF.text ?? "", status: "10"){ (error: Error?, success, data,stutus) in
+            }else if tripStatus == "1" || tripStatus == "7"{
+            API_SuperVisour.tripPause(trip_id: trip_id, headings: head.text ?? "", message: massageTF.text ?? "", status: "3"){ (error: Error?, success, data,stutus) in
                 if success {
                     if stutus == true{
-                        let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
-                        self.showAlert(title: title, message: data ?? "")
+                        let title = NSLocalizedString("تعليق الرحله", comment: "profuct list lang")
+                        let alert = UIAlertController(title: title, message: data ?? "", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "تم", style: UIAlertAction.Style.default, handler: { action in
+                            let vc = UIStoryboard.init(name: "supervisor", bundle: Bundle.main).instantiateViewController(withIdentifier: "1") as? homeSuperVC
+                            self.navigationController?.pushViewController(vc!, animated: true)
+                            
+                        }))
+                        self.present(alert, animated: true, completion: nil)
                     }else {
-                        let title = NSLocalizedString("تعديل الرحله", comment: "profuct list lang")
+                        let title = NSLocalizedString("تعليق الرحله", comment: "profuct list lang")
                         self.showAlert(title: title, message: data ?? "")
                     }
                 }else {
                     print("Error")
                 }
             }
+            
+         }else {
             
         }
     }
