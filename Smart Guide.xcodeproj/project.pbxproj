@@ -38,6 +38,7 @@
 		69AA6E582278A4110075E502 /* driverMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA6E572278A4110075E502 /* driverMapVC.swift */; };
 		69C5BDC22254C41800FBC0CD /* rounndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5BDC12254C41800FBC0CD /* rounndedView.swift */; };
 		69C5BDC42254C6D200FBC0CD /* homeSuperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5BDC32254C6D200FBC0CD /* homeSuperVC.swift */; };
+		69D5B9B522CCB93900CF0897 /* API+Notifatction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5B9B422CCB93900CF0897 /* API+Notifatction.swift */; };
 		69DC5F0C226F34EA00B39603 /* guides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F0B226F34EA00B39603 /* guides.swift */; };
 		69DC5F0E226F395600B39603 /* API+Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F0D226F395600B39603 /* API+Guide.swift */; };
 		69DC5F11226F3A3100B39603 /* getTripsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC5F10226F3A3100B39603 /* getTripsVC.swift */; };
@@ -87,6 +88,7 @@
 		6947A4012268EB2600708143 /* dateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateVC.swift; sourceTree = "<group>"; };
 		6952AE96226F2AB30018E803 /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
 		695454D52254F8E100034C26 /* tripceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripceCell.swift; sourceTree = "<group>"; };
+		697A367E22CBBA9D007C891D /* Smart Guide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Smart Guide.entitlements"; sourceTree = "<group>"; };
 		6981DAE6226DF95A00EC9A9C /* roundedTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTV.swift; sourceTree = "<group>"; };
 		6981DAE8226E010B00EC9A9C /* startTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startTripVC.swift; sourceTree = "<group>"; };
 		699A292D226C7E7A00211DB9 /* editTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTripVC.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		69AA6E572278A4110075E502 /* driverMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverMapVC.swift; sourceTree = "<group>"; };
 		69C5BDC12254C41800FBC0CD /* rounndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rounndedView.swift; sourceTree = "<group>"; };
 		69C5BDC32254C6D200FBC0CD /* homeSuperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeSuperVC.swift; sourceTree = "<group>"; };
+		69D5B9B422CCB93900CF0897 /* API+Notifatction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Notifatction.swift"; sourceTree = "<group>"; };
 		69DC5F0B226F34EA00B39603 /* guides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guides.swift; sourceTree = "<group>"; };
 		69DC5F0D226F395600B39603 /* API+Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Guide.swift"; sourceTree = "<group>"; };
 		69DC5F10226F3A3100B39603 /* getTripsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTripsVC.swift; sourceTree = "<group>"; };
@@ -249,6 +252,7 @@
 		75046F79224A224F0022E46B /* Smart Guide */ = {
 			isa = PBXGroup;
 			children = (
+				697A367E22CBBA9D007C891D /* Smart Guide.entitlements */,
 				75046F7A224A224F0022E46B /* AppDelegate.swift */,
 				75046F81224A22510022E46B /* Assets.xcassets */,
 				6947A3F82268BFAD00708143 /* status.plist */,
@@ -323,6 +327,7 @@
 				69DC5F1C226F6F1500B39603 /* API+Notifications.swift */,
 				69AA6E4E22788B910075E502 /* API+Driver.swift */,
 				699BEF0322C39A670045C7DD /* API+Members.swift */,
+				69D5B9B422CCB93900CF0897 /* API+Notifatction.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -422,6 +427,11 @@
 					75046F76224A224F0022E46B = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -493,6 +503,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -503,6 +514,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -566,6 +578,7 @@
 				69AA6E4F22788B910075E502 /* API+Driver.swift in Sources */,
 				6947A4002268E58200708143 /* resultsVC.swift in Sources */,
 				6914551A225628E900570939 /* detialsTripVC.swift in Sources */,
+				69D5B9B522CCB93900CF0897 /* API+Notifatction.swift in Sources */,
 				69DC5F19226F660000B39603 /* endTripVC.swift in Sources */,
 				75046FA6224A6F0C0022E46B /* superVisers.swift in Sources */,
 				6952AE97226F2AB30018E803 /* menuVC.swift in Sources */,
@@ -717,6 +730,7 @@
 			baseConfigurationReference = 26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart Guide/Smart Guide.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Z34DQ34UQ;
@@ -739,6 +753,7 @@
 			baseConfigurationReference = 2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Smart Guide/Smart Guide.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Z34DQ34UQ;

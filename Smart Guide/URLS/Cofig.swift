@@ -68,4 +68,6 @@ struct URLs {
     
     static let endTripMember = main + "endTripMember"
     
+    static let getFirebaseToken = main + "getFirebaseToken"
+    
 }

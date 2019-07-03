@@ -377,7 +377,7 @@ class addTripVC: UIViewController {
         }
         let compay = helper.getAPIToken().companyId ?? ""
         
-        API_SuperVisour.addTrib(name_en: nameEn , name_ar: nameAr, guide_id: guides, driver_id: driverID, bus_id: bus, start_date: startTim, end_date: endTimes, path_id: members, company_id: compay, price: prices, status: states,number_passenger: numberOfpassange.text ?? "", start_time: startTimeTF.text ?? "", end_time: endTimeTF.text ?? ""){ (error: Error?, success, data,stutus) in
+        API_SuperVisour.addTrib(name_en: nameEn , name_ar: nameAr, guide_id: guides, driver_id: driverID, bus_id: bus, start_date: startTim, end_date: endTimes, path_id: members, company_id: compay, price: prices, status: states,number_passenger: numberOfpassange.text ?? "", start_time: startTimeTF.text ?? "", end_time: endTimeTF.text ?? "",carrier_id: careeID){ (error: Error?, success, data,stutus) in
             if success {
                 if stutus == true{
                     let title = NSLocalizedString("اضافه رحله", comment: "profuct list lang")

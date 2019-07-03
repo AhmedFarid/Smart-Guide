@@ -355,7 +355,7 @@ class API_SuperVisour: NSObject {
         
     }
     
-    class func addTrib(name_en: String, name_ar: String, guide_id: String, driver_id: String,bus_id: String, start_date: String, end_date: String, path_id: String,company_id: String, price: String,status: String,number_passenger: String,start_time: String,end_time: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
+    class func addTrib(name_en: String, name_ar: String, guide_id: String, driver_id: String,bus_id: String, start_date: String, end_date: String, path_id: String,company_id: String, price: String,status: String,number_passenger: String,start_time: String,end_time: String,carrier_id: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?, _ status: Bool?)->Void) {
         
         let url = URLs.addTrip
         
@@ -384,7 +384,8 @@ class API_SuperVisour: NSObject {
             "start_date":start_date,
             "end_date": end_date,
             "start_time": start_time,
-            "end_time": end_time
+            "end_time": end_time,
+            "carrier_id": carrier_id
         ]
         
         print(parameters)

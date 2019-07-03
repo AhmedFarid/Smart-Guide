@@ -15,5 +15,7 @@ target 'Smart Guide' do
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
+  
 
 end
