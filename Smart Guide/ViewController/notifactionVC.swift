@@ -55,4 +55,15 @@ extension notifactionVC: UITableViewDelegate ,UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "suge", sender: notifaction[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destaiantion = segue.destination as? notifactionDetialsVC{
+            if let sub = sender as? notifacations{
+                destaiantion.singleItem = sub
+            }
+        }
+    }
 }

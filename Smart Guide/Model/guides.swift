@@ -92,11 +92,12 @@ class getRequestPauseTrips: NSObject {
     var pathId: String
     var startTime: String
     var startDate: String
+    var mobil_guide: String
     
     
     init?(dict: [String: JSON]){
         
-        guard let requestId = dict["requestId"]?.int,let from = dict["from"]?.string,let to = dict["to"]?.string,let tripId = dict["tripId"]?.string,let status = dict["status"]?.string,let companyId = dict["companyId"]?.string,let driver_id = dict["driver_id"]?.string,let driverName = dict["driverName"]?.string,let guideId = dict["guideId"]?.string,let guideName = dict["guideName"]?.string,let busId = dict["busId"]?.string,let busNumber = dict["busNumber"]?.string,let pathId = dict["pathId"]?.string,let startTime = dict["startTime"]?.string,let startDate = dict["startDate"]?.string else {return nil}
+        guard let requestId = dict["requestId"]?.int,let from = dict["from"]?.string,let to = dict["to"]?.string,let tripId = dict["tripId"]?.string,let status = dict["status"]?.string,let companyId = dict["companyId"]?.string,let driver_id = dict["driver_id"]?.string,let driverName = dict["driverName"]?.string,let guideId = dict["guideId"]?.string,let guideName = dict["guideName"]?.string,let busId = dict["busId"]?.string,let busNumber = dict["busNumber"]?.string,let pathId = dict["pathId"]?.string,let startTime = dict["startTime"]?.string,let startDate = dict["startDate"]?.string,let mobil_guide = dict["mobil_guide"]?.string else {return nil}
         self.requestId = requestId
         self.from = from
         self.to = to
@@ -112,5 +113,6 @@ class getRequestPauseTrips: NSObject {
         self.pathId = pathId
         self.startTime = startTime
         self.startDate = startDate
+        self.mobil_guide = mobil_guide
     }
 }

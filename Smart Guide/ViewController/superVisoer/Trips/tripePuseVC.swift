@@ -24,7 +24,7 @@ class tripePuseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         busName.text = " اسم الحافله \(singleItem?.busNumber ?? "")"
-        guidName.text = " اسم المرشد \(singleItem?.guideName ?? "")"
+        guidName.text = " اسم المرشد \(singleItem?.guideName ?? "")\nرقم المرشد \(singleItem?.mobil_guide ?? "")"
         driverName.text = " اسم السائق \(singleItem?.driverName ?? "")"
         from.text = " مكان بداء الرحله \(singleItem?.from ?? "")"
         to.text = " مكان الوصلو \(singleItem?.to ?? "")"
@@ -47,6 +47,20 @@ class tripePuseVC: UIViewController {
         }
         
     }
+    
+    @IBAction func callGuid(_ sender: Any) {
+        if let url = URL(string: "tel://\(singleItem?.mobil_guide ?? "")"),
+            UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler:nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } else {
+            // add error message here
+        }
+    }
+    
     @IBAction func mapCVBTN(_ sender: Any) {
         API_SuperVisour.requestAnswer(type: "no",requestId: singleItem?.requestId ?? 0, headings: "لقد رفضت علي الطلب",message: "لقد رفضت علي الطلب"){ (error: Error?, success, data,stutus) in
             if success {

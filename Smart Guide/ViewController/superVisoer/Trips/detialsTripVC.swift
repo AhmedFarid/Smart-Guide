@@ -11,6 +11,7 @@ import UIKit
 class detialsTripVC: UIViewController {
     
     var singleItem: trips?
+    //var singleItems: notifacations?
     
     @IBOutlet weak var busName: UILabel!
     @IBOutlet weak var status: UILabel!

@@ -57,6 +57,7 @@ class detilesMemberVC: UIViewController {
     
     
     
+    
     @IBAction func startTrip(_ sender: Any) {
         performSegue(withIdentifier: "suge1", sender: nil)
     }

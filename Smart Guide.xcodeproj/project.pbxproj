@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6914551A225628E900570939 /* detialsTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69145519225628E900570939 /* detialsTripVC.swift */; };
+		6933391822CE149A00073ED2 /* notifactionDetialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6933391722CE149A00073ED2 /* notifactionDetialsVC.swift */; };
 		69393ED622707AE000707576 /* guidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69393ED522707AE000707576 /* guidesVC.swift */; };
 		69393ED822707CDE00707576 /* requestesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69393ED722707CDE00707576 /* requestesCell.swift */; };
 		69393EDA22708DD600707576 /* tripePuseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69393ED922708DD600707576 /* tripePuseVC.swift */; };
@@ -77,6 +78,7 @@
 		26014FD88B59AE7262094D38 /* Pods-Smart Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.debug.xcconfig"; sourceTree = "<group>"; };
 		2AA2D9C85DBFB6F91A2FDB4E /* Pods-Smart Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart Guide/Pods-Smart Guide.release.xcconfig"; sourceTree = "<group>"; };
 		69145519225628E900570939 /* detialsTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detialsTripVC.swift; sourceTree = "<group>"; };
+		6933391722CE149A00073ED2 /* notifactionDetialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifactionDetialsVC.swift; sourceTree = "<group>"; };
 		69393ED522707AE000707576 /* guidesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidesVC.swift; sourceTree = "<group>"; };
 		69393ED722707CDE00707576 /* requestesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestesCell.swift; sourceTree = "<group>"; };
 		69393ED922708DD600707576 /* tripePuseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripePuseVC.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				699A2933226C8C8300211DB9 /* mapVC.swift */,
 				6981DAE8226E010B00EC9A9C /* startTripVC.swift */,
 				69393ED922708DD600707576 /* tripePuseVC.swift */,
+				6933391722CE149A00073ED2 /* notifactionDetialsVC.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			files = (
 				69DC5F1B226F6D3500B39603 /* notifacations.swift in Sources */,
 				69DC5F1F226F769900B39603 /* notifactionCell.swift in Sources */,
+				6933391822CE149A00073ED2 /* notifactionDetialsVC.swift in Sources */,
 				75046F7D224A224F0022E46B /* loginAuhtVC.swift in Sources */,
 				699A292E226C7E7A00211DB9 /* editTripVC.swift in Sources */,
 				699A2934226C8C8300211DB9 /* mapVC.swift in Sources */,
