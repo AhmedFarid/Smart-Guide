@@ -27,21 +27,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="atQ-rf-kzE">
-                                    <size key="itemSize" width="157" height="149"/>
+                                    <size key="itemSize" width="157" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="aPO-7q-3ZY" customClass="guidtripsCell" customModule="Smart_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="81.5" y="10" width="157" height="149"/>
+                                        <rect key="frame" x="81.5" y="10" width="157" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="157" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJD-UN-xPY" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="149"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="170"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus-side-view" translatesAutoresizingMaskIntoConstraints="NO" id="BGH-as-I90">
                                                             <rect key="frame" x="0.0" y="0.0" width="157" height="83"/>
@@ -50,7 +50,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylc-S5-C0Q">
-                                                            <rect key="frame" x="0.0" y="83" width="157" height="66"/>
+                                                            <rect key="frame" x="0.0" y="83" width="157" height="87"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAA-05-4CT">
                                                                     <rect key="frame" x="8" y="8" width="141" height="20"/>
@@ -64,16 +64,24 @@
                                                                     <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zs4-jB-JfP">
+                                                                    <rect key="frame" x="8" y="63" width="141" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                                    <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.074509803920000006" green="0.2700257599" blue="0.46326947210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="aAA-05-4CT" secondAttribute="trailing" constant="8" id="BDR-ke-aE9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="ehV-vf-5mj" secondAttribute="trailing" constant="8" id="Hci-qo-fPG"/>
+                                                                <constraint firstItem="Zs4-jB-JfP" firstAttribute="leading" secondItem="ylc-S5-C0Q" secondAttribute="leading" constant="8" id="KcU-n8-kXT"/>
                                                                 <constraint firstItem="ehV-vf-5mj" firstAttribute="top" secondItem="aAA-05-4CT" secondAttribute="bottom" constant="8" id="Qr6-JL-CYr"/>
-                                                                <constraint firstAttribute="bottom" secondItem="ehV-vf-5mj" secondAttribute="bottom" constant="11" id="ZxN-q4-Pqb"/>
                                                                 <constraint firstItem="aAA-05-4CT" firstAttribute="leading" secondItem="ylc-S5-C0Q" secondAttribute="leading" constant="8" id="aAB-3y-HhQ"/>
                                                                 <constraint firstItem="aAA-05-4CT" firstAttribute="top" secondItem="ylc-S5-C0Q" secondAttribute="top" constant="8" id="cdv-by-6tJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Zs4-jB-JfP" secondAttribute="trailing" constant="8" id="och-6I-y2E"/>
                                                                 <constraint firstItem="ehV-vf-5mj" firstAttribute="leading" secondItem="ylc-S5-C0Q" secondAttribute="leading" constant="8" id="rCa-Jn-tnL"/>
+                                                                <constraint firstItem="Zs4-jB-JfP" firstAttribute="top" secondItem="ehV-vf-5mj" secondAttribute="bottom" constant="8" id="t6K-sS-Lmc"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -118,6 +126,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="name" destination="aAA-05-4CT" id="4WZ-fk-w9y"/>
+                                            <outlet property="pathName" destination="Zs4-jB-JfP" id="MnC-hq-qgG"/>
                                             <outlet property="statues" destination="ehV-vf-5mj" id="wPo-rX-z7q"/>
                                         </connections>
                                     </collectionViewCell>

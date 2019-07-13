@@ -201,21 +201,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K5a-qG-EQ4">
-                                    <size key="itemSize" width="157" height="149"/>
+                                    <size key="itemSize" width="157" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rZJ-yl-jfs" customClass="tripceCell" customModule="Smart_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="157" height="149"/>
+                                        <rect key="frame" x="10" y="10" width="157" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="157" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jW6-m5-fOZ" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="149"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="170"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus-side-view" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-XC-8Fv">
                                                             <rect key="frame" x="0.0" y="0.0" width="157" height="83"/>
@@ -224,7 +224,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKo-Qe-Ba1">
-                                                            <rect key="frame" x="0.0" y="83" width="157" height="66"/>
+                                                            <rect key="frame" x="0.0" y="83" width="157" height="87"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inT-h9-r9v">
                                                                     <rect key="frame" x="8" y="8" width="141" height="20"/>
@@ -238,13 +238,21 @@
                                                                     <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4z-zB-amP">
+                                                                    <rect key="frame" x="8" y="63" width="141" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
+                                                                    <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.074509803920000006" green="0.2700257599" blue="0.46326947210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="I4z-zB-amP" firstAttribute="top" secondItem="d16-eH-gcr" secondAttribute="bottom" constant="8" id="2dq-Gd-FDf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="I4z-zB-amP" secondAttribute="trailing" constant="8" id="3t0-ZT-kex"/>
                                                                 <constraint firstItem="d16-eH-gcr" firstAttribute="leading" secondItem="iKo-Qe-Ba1" secondAttribute="leading" constant="8" id="4XC-ez-vbL"/>
                                                                 <constraint firstItem="inT-h9-r9v" firstAttribute="top" secondItem="iKo-Qe-Ba1" secondAttribute="top" constant="8" id="5mw-HZ-JSl"/>
                                                                 <constraint firstItem="d16-eH-gcr" firstAttribute="top" secondItem="inT-h9-r9v" secondAttribute="bottom" constant="8" id="HH0-Bj-rdG"/>
-                                                                <constraint firstAttribute="bottom" secondItem="d16-eH-gcr" secondAttribute="bottom" constant="11" id="Rfd-ws-fSF"/>
+                                                                <constraint firstItem="I4z-zB-amP" firstAttribute="leading" secondItem="iKo-Qe-Ba1" secondAttribute="leading" constant="8" id="RAn-Qs-Tgb"/>
                                                                 <constraint firstAttribute="trailing" secondItem="inT-h9-r9v" secondAttribute="trailing" constant="8" id="Vlr-d2-Pwx"/>
                                                                 <constraint firstItem="inT-h9-r9v" firstAttribute="leading" secondItem="iKo-Qe-Ba1" secondAttribute="leading" constant="8" id="htj-kP-Q2e"/>
                                                                 <constraint firstAttribute="trailing" secondItem="d16-eH-gcr" secondAttribute="trailing" constant="8" id="x5Y-8C-PsC"/>
@@ -292,6 +300,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="name" destination="inT-h9-r9v" id="b9b-I6-tXD"/>
+                                            <outlet property="pathName" destination="I4z-zB-amP" id="0IX-SB-IKD"/>
                                             <outlet property="statues" destination="d16-eH-gcr" id="OUA-a5-Md1"/>
                                         </connections>
                                     </collectionViewCell>
@@ -326,13 +335,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D37-oL-ipC" customClass="rounndedView" customModule="Smart_Guide" customModuleProvider="target">
-                                <rect key="frame" x="16" y="66" width="343" height="471"/>
+                                <rect key="frame" x="16" y="82.5" width="343" height="438"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cgg-pp-1Yv">
-                                        <rect key="frame" x="0.0" y="421" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="391" width="343" height="29"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-ph-suz">
-                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="29"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="عرض المسار">
@@ -343,7 +352,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGl-gH-A2f">
-                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="32"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="29"/>
                                                 <color key="backgroundColor" red="0.086807422339999996" green="0.32498335839999998" blue="0.53392136099999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <state key="normal" title="تم الاستلام بنجاح">
@@ -356,7 +365,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaS-pE-Pdc" customClass="roundedTF" customModule="Smart_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="8" width="243" height="149"/>
+                                        <rect key="frame" x="50" y="8" width="243" height="143"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus-side-view" translatesAutoresizingMaskIntoConstraints="NO" id="clp-ti-GHy">
                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="83"/>
@@ -365,16 +374,16 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqC-3Y-0HF">
-                                                <rect key="frame" x="0.0" y="83" width="243" height="66"/>
+                                                <rect key="frame" x="0.0" y="83" width="243" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwi-i5-F73">
-                                                        <rect key="frame" x="8" y="8" width="227" height="19.5"/>
+                                                        <rect key="frame" x="8" y="8" width="227" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                         <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJX-AB-Jfh">
-                                                        <rect key="frame" x="8" y="35.5" width="227" height="19.5"/>
+                                                        <rect key="frame" x="8" y="32.5" width="227" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                         <color key="textColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -427,52 +436,52 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fI-lQ-uhp">
-                                        <rect key="frame" x="16" y="173" width="311" height="240"/>
+                                        <rect key="frame" x="16" y="167" width="311" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-Nl-NPg">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTh-aa-HrP">
-                                                <rect key="frame" x="0.0" y="31.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQS-LF-jfz">
-                                                <rect key="frame" x="0.0" y="63" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="57" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxg-7d-vo8">
-                                                <rect key="frame" x="0.0" y="94.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="85.5" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwN-TN-6f9">
-                                                <rect key="frame" x="0.0" y="126" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="114" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y06-9P-pYO">
-                                                <rect key="frame" x="0.0" y="157.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="142.5" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-w2-Rpe">
-                                                <rect key="frame" x="0.0" y="189" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="171" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VZ-dP-joT">
-                                                <rect key="frame" x="0.0" y="220.5" width="311" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="199.5" width="311" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AraAlharbiAlhanoof" family="Ara Alharbi Alhanoof" pointSize="14"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

@@ -12,13 +12,13 @@ import Alamofire
 
 class API_SuperVisour: NSObject {
     
-    class func getGuide (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserGuides]?)-> Void) {
+    class func getGuide (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserGuides]?,_ id: String?,_ name: String?)-> Void) {
         
         
         let url = URLs.getGuide
         
         guard let company_id = helper.getAPIToken().companyId else {
-            completion(nil,nil)
+            completion(nil,nil,nil,nil)
             return
         }
         
@@ -35,14 +35,15 @@ class API_SuperVisour: NSObject {
             switch response.result
             {
             case .failure(let error):
-                completion(error, nil)
+                completion(error, nil,nil,nil)
                 print(error)
                 
             case .success(let value):
                 print(value)
                 let json = JSON(value)
+                print(json)
                 guard let dataArray = json["data"].array else{
-                    completion(nil, nil)
+                    completion(nil, nil,nil,nil)
                     return
                 }
                 print(dataArray)
@@ -52,17 +53,22 @@ class API_SuperVisour: NSObject {
                         products.append(prodect)
                     }
                 }
-                completion(nil, products)
+                completion(nil, products,nil,nil)
+                if let id = json["default"]["id"].string{
+                    let name = json["default"]["name"].string
+                
+                completion(nil, products,id,name)
+                }
             }
         }
     }
     
-    class func getDriver (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserDriver]?)-> Void) {
+    class func getDriver (bus_id: String,completion: @escaping (_ error: Error?,_ sparParts: [superViserDriver]?,_ id: String?,_ name: String?)-> Void) {
         
         
         let url = URLs.getDriver
         guard let company_id = helper.getAPIToken().companyId else {
-            completion(nil,nil)
+            completion(nil,nil,nil,nil)
             return
         }
         
@@ -79,14 +85,14 @@ class API_SuperVisour: NSObject {
             switch response.result
             {
             case .failure(let error):
-                completion(error, nil)
+                completion(error, nil,nil,nil)
                 print(error)
                 
             case .success(let value):
                 print(value)
                 let json = JSON(value)
                 guard let dataArray = json["data"].array else{
-                    completion(nil, nil)
+                    completion(nil, nil,nil,nil)
                     return
                 }
                 print(dataArray)
@@ -96,7 +102,12 @@ class API_SuperVisour: NSObject {
                         products.append(prodect)
                     }
                 }
-                completion(nil, products)
+                completion(nil, products,nil,nil)
+                if let id = json["default"]["id"].string{
+                    let name = json["default"]["name"].string
+                    
+                    completion(nil, products,id,name)
+                }
             }
         }
     }

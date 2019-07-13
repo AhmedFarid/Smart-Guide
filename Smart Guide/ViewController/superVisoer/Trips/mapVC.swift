@@ -80,7 +80,7 @@ class mapVC: UIViewController {
         let directionRequset = MKDirections.Request()
         directionRequset.source = MKMapItem(placemark: sourcePlaceMark)
         directionRequset.destination = MKMapItem(placemark: dstinationPlaceMark)
-        directionRequset.transportType = .automobile
+        directionRequset.transportType = .any
         let directions = MKDirections(request: directionRequset)
         directions.calculate { (responese, error) in
             guard let directionResponse = responese else {
@@ -140,6 +140,22 @@ class mapVC: UIViewController {
 
 
 extension mapVC: MKMapViewDelegate {
+    
+    // MARK: - MKMapViewDelegate
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        
+        renderer.strokeColor = UIColor(red: 17.0/255.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1)
+        
+        renderer.lineWidth = 5.0
+        
+        return renderer
+    }
+    
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MyPin"
         if annotation is MKUserLocation {
@@ -169,11 +185,12 @@ extension mapVC: MKMapViewDelegate {
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.blue
-        renderer.lineWidth = 4.0
-        return renderer
-    }
+//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//        let renderer = MKPolylineRenderer(overlay: overlay)
+//        renderer.strokeColor = UIColor.blue
+//        renderer.lineWidth = 4.0
+//        return renderer
+//    }
+    
     
 }

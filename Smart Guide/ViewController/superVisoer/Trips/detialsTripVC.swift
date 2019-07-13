@@ -33,9 +33,9 @@ class detialsTripVC: UIViewController {
         tripName.text = " اسم الرحله \(singleItem?.tripName ?? "")"
         guidName.text = " اسم المرشد \(singleItem?.guideName ?? "")"
         driverName.text = " اسم السائق \(singleItem?.driverName ?? "")"
-        from.text = " مكان بداء الرحله \(singleItem?.from ?? "")"
-        to.text = " مكان الوصلو \(singleItem?.to ?? "")"
-        startDate.text = " موعد بداء الرحله \(singleItem?.dateStart ?? "")"
+        from.text = "نقطه البداية \(singleItem?.from ?? "")"
+        to.text = "نقطه النهايه \(singleItem?.to ?? "")"
+        startDate.text = " موعد بدء الرحله \(singleItem?.dateStart ?? "")"
         endDate.text = " موعد انهاء الرحله \(singleItem?.dateEnd ?? "")"
         numberOfBassenger.text = " عدد الركاب \(singleItem?.numberPassenger ?? "")"
         

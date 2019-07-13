@@ -157,10 +157,13 @@ class addTripVC: UIViewController {
     
     
     @objc private func handleRefreshGuide() {
-        API_SuperVisour.getGuide(bus_id: bus){ (error: Error?, guide: [superViserGuides]?) in
+        API_SuperVisour.getGuide(bus_id: bus){ (error: Error?, guide: [superViserGuides]?,id,name) in
             if let guide = guide {
                 self.guide = guide
                 print("xxx\(self.guide)")
+                self.guidNameTF.text = name ?? ""
+                self.guides = id ?? ""
+
                 self.textEnabeld()
             }
         }
@@ -168,11 +171,14 @@ class addTripVC: UIViewController {
     }
     
     @objc private func handleRefreshDrivers() {
-        API_SuperVisour.getDriver(bus_id: bus){ (error: Error?, drivers: [superViserDriver]?) in
+        API_SuperVisour.getDriver(bus_id: bus){ (error: Error?, drivers: [superViserDriver]?,id,name) in
             if let drivers = drivers {
                 self.drivers = drivers
                 print("xxx\(self.drivers)")
                 self.textEnabeld()
+                self.driverNameTF.text = name ?? ""
+                self.driverID = id ?? ""
+                self.getCarier()
             }
         }
         
@@ -436,6 +442,7 @@ extension addTripVC: UIPickerViewDelegate, UIPickerViewDataSource {
             bus = buss[row].id
             createmeGuidePiker()
             createmeDriversPiker()
+            getCarier()
             self.view.endEditing(false)
         }else if pickerView.tag == 1{
             memberNameTF.text = member[row].name

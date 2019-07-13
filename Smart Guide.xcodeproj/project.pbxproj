@@ -57,7 +57,6 @@
 		75046F82224A22510022E46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75046F81224A22510022E46B /* Assets.xcassets */; };
 		75046F85224A22510022E46B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75046F83224A22510022E46B /* LaunchScreen.storyboard */; };
 		75046F8E224A2E440022E46B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F8D224A2E440022E46B /* GradientView.swift */; };
-		75046F92224A36610022E46B /* Alharbi Alhanoof Font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */; };
 		75046F94224A41D70022E46B /* roundedTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F93224A41D70022E46B /* roundedTF.swift */; };
 		75046F96224A4BEB0022E46B /* textimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F95224A4BEB0022E46B /* textimage.swift */; };
 		75046F9E224A65030022E46B /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75046F9D224A65030022E46B /* helper.swift */; };
@@ -130,7 +129,6 @@
 		75046F84224A22510022E46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75046F86224A22510022E46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75046F8D224A2E440022E46B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alharbi Alhanoof Font.otf"; sourceTree = "<group>"; };
 		75046F93224A41D70022E46B /* roundedTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTF.swift; sourceTree = "<group>"; };
 		75046F95224A4BEB0022E46B /* textimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textimage.swift; sourceTree = "<group>"; };
 		75046F9D224A65030022E46B /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 		75046F90224A36280022E46B /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				75046F91224A36610022E46B /* Alharbi Alhanoof Font.otf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -467,7 +464,6 @@
 				75046FAE224A82800022E46B /* guide.storyboard in Resources */,
 				75046F82224A22510022E46B /* Assets.xcassets in Resources */,
 				75046FAC224A826F0022E46B /* driver.storyboard in Resources */,
-				75046F92224A36610022E46B /* Alharbi Alhanoof Font.otf in Resources */,
 				699A2930226C86AA00211DB9 /* GoogleService-Info.plist in Resources */,
 				75046FA2224A658D0022E46B /* supervisor.storyboard in Resources */,
 				75046F80224A224F0022E46B /* auth.storyboard in Resources */,
